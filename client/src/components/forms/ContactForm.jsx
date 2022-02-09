@@ -1,11 +1,15 @@
 import * as React from "react";
+
+// form imports MUI
 import {
   Card,
   CardContent,
   TextField,
   Typography,
   MenuItem,
+  Button,
 } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 // forms global variables
 const servicesOptions = [
@@ -26,17 +30,28 @@ export default function ContactForm() {
   // styles variables
   const cardStyles = {
     padding: 4,
+    borderRadius: 5,
+  };
+  const formTitleDisplayStyles = {
+    display: "flex",
+    justifyContent: "center",
   };
   const textFieldStyles = {
     margin: "10px 0px",
   };
 
+  const submitButtonStyles = {
+    gap: 1,
+    backgroundColor: "black",
+  };
+
   return (
     <>
       <Card sx={cardStyles}>
-        <CardContent>
-          <Typography> Contact Beyond Services </Typography>
+        <CardContent sx={formTitleDisplayStyles}>
+          <Typography variant="h4"> Contact Beyond Services </Typography>
         </CardContent>
+
         <CardContent>
           <TextField
             fullWidth
@@ -77,6 +92,9 @@ export default function ContactForm() {
             label="Message"
             id="fullWidth"
           />
+          <Button variant="contained" sx={submitButtonStyles}>
+            <SendIcon /> Submit
+          </Button>
         </CardContent>
       </Card>
     </>

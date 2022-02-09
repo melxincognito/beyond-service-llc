@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import MeetTeamPage from "./pages/MeetTeamPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
+import "./App.css";
 
 export default function App() {
   return (

@@ -49,7 +49,7 @@ const NavBar = () => {
   };
   // styles variables
   const navBarStyles = {
-    backgroundColor: "purple",
+    bgcolor: "#482880",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 
