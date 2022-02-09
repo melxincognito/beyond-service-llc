@@ -1,5 +1,8 @@
+// page functionality imports
 import * as React from "react";
+import { Link } from "react-router-dom";
 
+// MUI imports
 import {
   AppBar,
   Box,
@@ -13,13 +16,15 @@ import {
   Tooltip,
   MenuItem,
 } from "@mui/material";
-
 import MenuIcon from "@mui/icons-material/Menu";
+
+// global variables
 
 const pages = ["About Us", "Services", "The Team"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
+  // other variables for NavBar
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -80,16 +85,16 @@ const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <MenuItem>
+              <MenuItem component={Link} to="/">
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              <MenuItem>
-                <Typography textAlign="center">About Us</Typography>
+              <MenuItem component={Link} to="/meetTheTeam">
+                <Typography textAlign="center">Meet the team</Typography>
               </MenuItem>
-              <MenuItem>
+              <MenuItem component={Link} to="/services">
                 <Typography textAlign="center">Services</Typography>
               </MenuItem>
-              <MenuItem>
+              <MenuItem component={Link} to="/contact">
                 <Typography textAlign="center">Contact Us</Typography>
               </MenuItem>
             </Menu>
