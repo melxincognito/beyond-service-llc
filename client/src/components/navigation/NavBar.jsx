@@ -12,7 +12,8 @@ import {
   Menu,
   Container,
   Avatar,
-  Button,
+  Tabs,
+  Tab,
   Tooltip,
   MenuItem,
 } from "@mui/material";
@@ -20,13 +21,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 // global variables
 
-const pages = ["About Us", "Services", "The Team"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
-  // other variables for NavBar
+  // variables for NavBar functionality
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [value, setValue] = React.useState("one");
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,8 +44,24 @@ const NavBar = () => {
     setAnchorElUser(null);
   };
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  // styles variables
+  const navBarStyles = {
+    backgroundColor: "purple",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
+  };
+
+  const tabsStyles = {
+    bgcolor: "rgba(255, 255, 255, 0.35)",
+    borderRadius: 5,
+    pt: 1.3,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
+  };
+
   return (
-    <AppBar position="fixed">
+    <AppBar position="fixed" sx={navBarStyles}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -108,15 +125,33 @@ const NavBar = () => {
             Bee
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Tabs
+              sx={tabsStyles}
+              value={value}
+              onChange={handleChange}
+              textColor="secondary"
+              indicatorColor="secondary"
+            >
+              <Tab value="one" label="Home" component={Link} to="/" />
+              <Tab
+                value="two"
+                label="Meet the team"
+                component={Link}
+                to="/meetTheTeam"
+              />
+              <Tab
+                value="three"
+                label="Our Services"
+                component={Link}
+                to="/services"
+              />
+              <Tab
+                value="four"
+                label="Contact Us"
+                component={Link}
+                to="/contact"
+              />
+            </Tabs>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
