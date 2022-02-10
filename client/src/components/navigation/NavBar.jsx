@@ -27,7 +27,7 @@ const NavBar = () => {
   // variables for NavBar functionality
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [value, setValue] = React.useState("one");
+  const [value, setValue] = React.useState(1);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -142,27 +142,27 @@ const NavBar = () => {
               textColor="secondary"
               indicatorColor="secondary"
             >
-              <Tab value="one" label="Home" component={Link} to="/" />
+              <Tab value={1} label="Home" component={Link} to="/" />
               <Tab
-                value="two"
+                value={2}
                 label="Meet the team"
                 component={Link}
                 to="/meetTheTeam"
               />
               <Tab
-                value="three"
+                value={3}
                 label="Our Services"
                 component={Link}
                 to="/services"
               />
               <Tab
-                value="four"
+                value={4}
                 label="Project Gallery"
                 component={Link}
                 to="/projectGallery"
               />
               <Tab
-                value="five"
+                value={5}
                 label="Contact Us"
                 component={Link}
                 to="/contact"
