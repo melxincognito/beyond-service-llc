@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import MeetTeamPage from "./pages/MeetTeamPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
+import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import "./App.css";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/meetTheTeam" element={<MeetTeamPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/projectGallery" element={<ProjectGalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Layout>

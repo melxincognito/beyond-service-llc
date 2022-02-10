@@ -53,6 +53,13 @@ const NavBar = () => {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 
+  const tabsContainerStyles = {
+    flexGrow: 1,
+    alignContent: "center",
+    justifyContent: "center",
+    display: { xs: "none", md: "flex" },
+  };
+
   const tabsStyles = {
     bgcolor: "rgba(255, 255, 255, 0.35)",
     borderRadius: 5,
@@ -111,6 +118,9 @@ const NavBar = () => {
               <MenuItem component={Link} to="/services">
                 <Typography textAlign="center">Services</Typography>
               </MenuItem>
+              <MenuItem component={Link} to="/projectGallery">
+                <Typography textAlign="center">Project Gallery</Typography>
+              </MenuItem>
               <MenuItem component={Link} to="/contact">
                 <Typography textAlign="center">Contact Us</Typography>
               </MenuItem>
@@ -124,7 +134,7 @@ const NavBar = () => {
           >
             Beyond Service
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={tabsContainerStyles}>
             <Tabs
               sx={tabsStyles}
               value={value}
@@ -147,6 +157,12 @@ const NavBar = () => {
               />
               <Tab
                 value="four"
+                label="Project Gallery"
+                component={Link}
+                to="/projectGallery"
+              />
+              <Tab
+                value="five"
                 label="Contact Us"
                 component={Link}
                 to="/contact"
