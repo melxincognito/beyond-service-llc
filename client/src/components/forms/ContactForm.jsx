@@ -11,6 +11,13 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
+
 // forms global variables
 const servicesOptions = [
   { value: "Construction", label: "Construction" },
@@ -18,13 +25,28 @@ const servicesOptions = [
   { value: "Electrical", label: "Electrical" },
 ];
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 export default function ContactForm() {
   // form functionality variables
+
+  const [open, setOpen] = React.useState(false);
 
   const [serviceInquiry, setServiceInquiry] = React.useState("Construction");
 
   const handleServiceChange = (event) => {
     setServiceInquiry(event.target.value);
+  };
+
+  // form functionality functions
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   // styles variables
@@ -73,10 +95,11 @@ export default function ContactForm() {
             id="serviceInquirySelection"
             fullWidth
             select
-            label="Service Catefory"
+            label="Service Category"
             value={serviceInquiry}
             onChange={handleServiceChange}
             helperText="Select the service category you're inquiring about"
+            required
           >
             {servicesOptions.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -91,12 +114,35 @@ export default function ContactForm() {
             rows={5}
             label="Message"
             id="fullWidth"
+            required
           />
-          <Button variant="contained" sx={submitButtonStyles}>
+          <Button
+            variant="contained"
+            sx={submitButtonStyles}
+            onClick={handleClickOpen}
+          >
             <SendIcon /> Submit
           </Button>
         </CardContent>
       </Card>
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"Thanks for reaching out to us!!"}</DialogTitle>
+
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            We'll get back to you as soon as we can ☺️
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
     </>
   );
 }
