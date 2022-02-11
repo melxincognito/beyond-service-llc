@@ -201,6 +201,7 @@ const NavBar = () => {
               <LinkedInIcon fontSize="large" onClick={linkedInPageClick} />
               <YouTubeIcon fontSize="large" onClick={youtubePageClick} />
             </div>
+            <hr size="1" width="95%" color="white" />
             <div>
               <Paper
                 sx={{
