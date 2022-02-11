@@ -21,7 +21,7 @@ export default function BottomNavLabel() {
         {" "}
         <Typography>
           {" "}
-          © 2022 - Beyond Services LLC | All Rights Reserved
+          © 2022 - Beyond Service LLC | All Rights Reserved
         </Typography>
       </Paper>
     </div>

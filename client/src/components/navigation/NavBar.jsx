@@ -14,14 +14,14 @@ import {
   Tabs,
   Tab,
   MenuItem,
+  Paper,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 // global variables
 
 const NavBar = () => {
@@ -66,6 +66,7 @@ const NavBar = () => {
   const navBarStyles = {
     bgcolor: "#482880",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
+    padding: 2,
   };
 
   const tabsContainerStyles = {
@@ -185,12 +186,34 @@ const NavBar = () => {
             </Tabs>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <FacebookIcon fontSize="large" onClick={facebookPageClick} />
-            <TwitterIcon fontSize="large" onClick={twitterPageClick} />
+          <Box
+            sx={{
+              flexGrow: 0,
+              bgcolor: "#331c59",
+              padding: 2,
+              borderRadius: 5,
+            }}
+          >
+            <div>
+              <FacebookIcon fontSize="large" onClick={facebookPageClick} />
+              <TwitterIcon fontSize="large" onClick={twitterPageClick} />
 
-            <LinkedInIcon fontSize="large" onClick={linkedInPageClick} />
-            <YouTubeIcon fontSize="large" onClick={youtubePageClick} />
+              <LinkedInIcon fontSize="large" onClick={linkedInPageClick} />
+              <YouTubeIcon fontSize="large" onClick={youtubePageClick} />
+            </div>
+            <div>
+              <Paper
+                sx={{
+                  bgcolor: "#1d1032",
+                  color: "white",
+                  padding: "0 6px",
+                }}
+              >
+                <Typography variant="overline">
+                  <LocalPhoneIcon fontSize="xxsmall" /> Call us at (480)000-0000
+                </Typography>
+              </Paper>
+            </div>
           </Box>
         </Toolbar>
       </Container>

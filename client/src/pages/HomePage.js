@@ -1,10 +1,26 @@
 import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
+import HeaderImg from "../assets/sunset.jpg";
 
 export default function HomePage() {
+  const cardStyles = {
+    borderRadius: 5,
+    display: "grid",
+    alignContent: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  };
   return (
     <>
-      <Card>
+      <img
+        height="350"
+        width="100%"
+        src={HeaderImg}
+        alt="
+        sunset"
+      />
+
+      <Card sx={cardStyles}>
         <CardContent>
           <div>
             <Typography variant="h4">Hello There! </Typography>

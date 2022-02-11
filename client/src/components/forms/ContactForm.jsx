@@ -71,7 +71,7 @@ export default function ContactForm() {
     <>
       <Card sx={cardStyles}>
         <CardContent sx={formTitleDisplayStyles}>
-          <Typography variant="h4"> Contact Beyond Services </Typography>
+          <Typography variant="h4"> Contact Beyond Service </Typography>
         </CardContent>
 
         <CardContent>
