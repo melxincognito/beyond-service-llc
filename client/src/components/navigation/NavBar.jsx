@@ -11,42 +11,57 @@ import {
   Typography,
   Menu,
   Container,
-  Avatar,
   Tabs,
   Tab,
-  Tooltip,
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 // global variables
-
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavBar = () => {
   // variables for NavBar functionality
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   const [value, setValue] = React.useState(1);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // social link external page routes
+  function facebookPageClick() {
+    window.open("https://www.facebook.com/", "_blank");
+  }
+
+  function twitterPageClick() {
+    window.open("https://www.twitter.com/", "_blank");
+  }
+
+  function youtubePageClick() {
+    window.open("https://www.youtube.com/", "_blank");
+  }
+
+  function linkedInPageClick() {
+    window.open(
+      "https://www.linkedin.com/in/rodriguezjonathon/#experience",
+      "_blank"
+    );
+  }
+
   // styles variables
   const navBarStyles = {
     bgcolor: "#482880",
@@ -171,33 +186,11 @@ const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+            <FacebookIcon fontSize="large" onClick={facebookPageClick} />
+            <TwitterIcon fontSize="large" onClick={twitterPageClick} />
+
+            <LinkedInIcon fontSize="large" onClick={linkedInPageClick} />
+            <YouTubeIcon fontSize="large" onClick={youtubePageClick} />
           </Box>
         </Toolbar>
       </Container>

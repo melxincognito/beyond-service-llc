@@ -9,7 +9,7 @@ export default function MeetTeamPage() {
   };
 
   return (
-    <div>
+    <>
       <Card sx={cardStyles}>
         Meet the Team
         <CardContent>
@@ -17,6 +17,7 @@ export default function MeetTeamPage() {
           <div> Juan Rodriguez - Field Manager </div>
         </CardContent>
       </Card>
-    </div>
+      <hr size="2" width="95%" color="white" />
+    </>
   );
 }
