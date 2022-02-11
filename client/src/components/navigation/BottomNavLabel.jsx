@@ -11,7 +11,7 @@ export default function BottomNavLabel() {
           left: 0,
           right: 0,
           color: "white",
-          bgcolor: "#482880",
+          bgcolor: "#23143e",
           display: "flex",
           alignContent: "center",
           justifyContent: "center",

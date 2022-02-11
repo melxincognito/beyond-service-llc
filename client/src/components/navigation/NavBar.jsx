@@ -64,9 +64,10 @@ const NavBar = () => {
 
   // styles variables
   const navBarStyles = {
-    bgcolor: "#482880",
+    bgcolor: "white",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
     padding: 2,
+    color: "#23143e",
   };
 
   const tabsContainerStyles = {
@@ -83,10 +84,24 @@ const NavBar = () => {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 
+  const socialLinkContainerStyles = {
+    flexGrow: 0,
+    bgcolor: "rgba(138, 138, 138, 0.38)",
+    padding: 2,
+    borderRadius: 5,
+  };
+
+  const contactPhonePaperStyles = {
+    bgcolor: "#23143e",
+    color: "white",
+    padding: "0 6px",
+  };
+
   return (
     <AppBar position="fixed" sx={navBarStyles}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          {/* Logo for not collapsed view */}
           <Typography
             variant="h6"
             noWrap
@@ -107,6 +122,7 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
+            {/* menu for collapsed view */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -128,8 +144,8 @@ const NavBar = () => {
               <MenuItem component={Link} to="/">
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              <MenuItem component={Link} to="/meetTheTeam">
-                <Typography textAlign="center">Meet the team</Typography>
+              <MenuItem component={Link} to="/aboutUs">
+                <Typography textAlign="center">About Us</Typography>
               </MenuItem>
               <MenuItem component={Link} to="/services">
                 <Typography textAlign="center">Services</Typography>
@@ -142,29 +158,28 @@ const NavBar = () => {
               </MenuItem>
             </Menu>
           </Box>
+
+          {/* logo for collapsed view */}
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            Beyond Service
+            Beyond Service LLC
           </Typography>
+          {/* tabs for computer screen size without a collapsed view </p> */}
           <Box sx={tabsContainerStyles}>
             <Tabs
               sx={tabsStyles}
               value={value}
               onChange={handleChange}
+              variant="scrollable"
               textColor="secondary"
               indicatorColor="secondary"
             >
               <Tab value={1} label="Home" component={Link} to="/" />
-              <Tab
-                value={2}
-                label="Meet the team"
-                component={Link}
-                to="/meetTheTeam"
-              />
+              <Tab value={2} label="About Us" component={Link} to="/aboutUs" />
               <Tab
                 value={3}
                 label="Our Services"
@@ -185,15 +200,8 @@ const NavBar = () => {
               />
             </Tabs>
           </Box>
-
-          <Box
-            sx={{
-              flexGrow: 0,
-              bgcolor: "#331c59",
-              padding: 2,
-              borderRadius: 5,
-            }}
-          >
+          {/* social links and contact phone */}
+          <Box sx={socialLinkContainerStyles}>
             <div>
               <FacebookIcon fontSize="large" onClick={facebookPageClick} />
               <TwitterIcon fontSize="large" onClick={twitterPageClick} />
@@ -203,13 +211,7 @@ const NavBar = () => {
             </div>
             <hr size="1" width="95%" color="white" />
             <div>
-              <Paper
-                sx={{
-                  bgcolor: "#1d1032",
-                  color: "white",
-                  padding: "0 6px",
-                }}
-              >
+              <Paper id="contactPhone" sx={contactPhonePaperStyles}>
                 <Typography variant="overline">
                   <LocalPhoneIcon fontSize="xxsmall" /> Call us at (480)000-0000
                 </Typography>
