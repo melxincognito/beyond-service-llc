@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography, Box } from "@mui/material";
 import HeaderImg from "../assets/sunset.jpg";
 
 export default function HomePage() {
@@ -9,16 +9,29 @@ export default function HomePage() {
     alignContent: "center",
     justifyContent: "center",
     textAlign: "center",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
+
+  const topImageStyles = {
+    display: "flex",
+    alignContent: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    justifyItems: "center",
+    width: "100%",
+  };
+
   return (
     <>
-      <img
-        height="350"
-        width="100%"
-        src={HeaderImg}
-        alt="
+      <Box sx={topImageStyles}>
+        <img
+          height="350"
+          width="90%"
+          src={HeaderImg}
+          alt="
         sunset"
-      />
+        />
+      </Box>
 
       <Card sx={cardStyles}>
         <CardContent>

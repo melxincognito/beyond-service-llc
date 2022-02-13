@@ -5,8 +5,9 @@ import { Container } from "@mui/material";
 
 export default function Layout(props) {
   const layoutStyle = {
+    display: "flex-box",
     alignContent: "center",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     padding: 3,
     marginTop: "9rem",
     marginBottom: "5rem",

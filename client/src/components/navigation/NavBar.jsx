@@ -15,12 +15,14 @@ import {
   Tab,
   MenuItem,
   Paper,
+  Grid,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 // global variables
 
@@ -61,6 +63,9 @@ const NavBar = () => {
       "_blank"
     );
   }
+  function googlePageClick() {
+    window.open("https://www.google.com/", "_blank");
+  }
 
   // styles variables
   const navBarStyles = {
@@ -68,6 +73,7 @@ const NavBar = () => {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
     padding: 2,
     color: "#23143e",
+    top: 0,
   };
 
   const tabsContainerStyles = {
@@ -86,9 +92,15 @@ const NavBar = () => {
 
   const socialLinkContainerStyles = {
     flexGrow: 0,
+
     bgcolor: "rgba(138, 138, 138, 0.38)",
     padding: 2,
     borderRadius: 5,
+    marginTop: -4,
+  };
+
+  const socialLinksStyles = {
+    margin: 0.3,
   };
 
   const contactPhonePaperStyles = {
@@ -177,6 +189,8 @@ const NavBar = () => {
               variant="scrollable"
               textColor="secondary"
               indicatorColor="secondary"
+              allowScrollButtonsMobile
+              scrollButtons
             >
               <Tab value={1} label="Home" component={Link} to="/" />
               <Tab value={2} label="About Us" component={Link} to="/aboutUs" />
@@ -202,13 +216,34 @@ const NavBar = () => {
           </Box>
           {/* social links and contact phone */}
           <Box sx={socialLinkContainerStyles}>
-            <div>
-              <FacebookIcon fontSize="large" onClick={facebookPageClick} />
-              <TwitterIcon fontSize="large" onClick={twitterPageClick} />
+            <Grid>
+              <FacebookIcon
+                sx={socialLinksStyles}
+                fontSize="large"
+                onClick={facebookPageClick}
+              />
+              <TwitterIcon
+                sx={socialLinksStyles}
+                fontSize="large"
+                onClick={twitterPageClick}
+              />
 
-              <LinkedInIcon fontSize="large" onClick={linkedInPageClick} />
-              <YouTubeIcon fontSize="large" onClick={youtubePageClick} />
-            </div>
+              <LinkedInIcon
+                sx={socialLinksStyles}
+                fontSize="large"
+                onClick={linkedInPageClick}
+              />
+              <YouTubeIcon
+                sx={socialLinksStyles}
+                fontSize="large"
+                onClick={youtubePageClick}
+              />
+              <GoogleIcon
+                sx={socialLinksStyles}
+                fontSize="large"
+                onClick={googlePageClick}
+              />
+            </Grid>
             <hr size="1" width="95%" color="white" />
             <div>
               <Paper id="contactPhone" sx={contactPhonePaperStyles}>
