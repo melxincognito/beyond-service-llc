@@ -46,7 +46,7 @@ export default function HomePage() {
     padding: "0 6px",
   };
 
-  // functionality
+  // external page routes
 
   function facebookPageClick() {
     window.open("https://www.facebook.com/", "_blank");
