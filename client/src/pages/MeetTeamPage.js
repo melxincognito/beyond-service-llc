@@ -8,17 +8,27 @@ import Juan from "../assets/Juan.jpg";
 
 export default function MeetTeamPage() {
   // styles
+
   const cardStyles = {
     borderRadius: 5,
-    display: "grid",
+    display: "flex-box",
     alignContent: "center",
     justifyContent: "center",
     justifyItems: "center",
   };
 
+  const headerCardStyles = {
+    display: "flex",
+    justifyContent: "center",
+    margin: 2,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    borderRadius: "4px 25px 4px 25px",
+  };
+
   const teamMemberCardStyles = {
     display: "flex",
     justifyContent: "space-evenly",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
   };
 
   const teamMemberImgStyles = {
@@ -37,7 +47,11 @@ export default function MeetTeamPage() {
   return (
     <>
       <Card sx={cardStyles}>
-        <Typography variant="h4"> Meet the Team </Typography>
+        <Card sx={headerCardStyles}>
+          <CardContent>
+            <Typography variant="h4"> Meet the Team </Typography>
+          </CardContent>
+        </Card>
 
         <CardContent sx={{ display: "flex-box" }}>
           <Card sx={teamMemberCardStyles}>

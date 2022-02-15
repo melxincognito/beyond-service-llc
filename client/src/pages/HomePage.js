@@ -15,6 +15,9 @@ export default function HomePage() {
     justifyContent: "center",
     textAlign: "center",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    width: "40%",
+    margin: "auto",
+    backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
 
   const topImageStyles = {
@@ -26,7 +29,6 @@ export default function HomePage() {
     width: "100%",
   };
   const socialLinkContainerStyles = {
-    flexGrow: 0,
     bgcolor: "rgba(138, 138, 138, 0.38)",
     padding: 2,
     borderRadius: 5,
@@ -70,7 +72,10 @@ export default function HomePage() {
     <>
       <Box sx={topImageStyles}>
         <img
-          width="90%"
+          style={{
+            width: "100%",
+            borderRadius: 5,
+          }}
           src={HeaderImg}
           alt="
         sunset"
@@ -79,26 +84,22 @@ export default function HomePage() {
           <Card sx={cardStyles}>
             <CardContent>
               <div>
-                <Typography variant="h4">Hello There! </Typography>
+                <Typography variant="h4">Beyond Service LLC </Typography>
               </div>{" "}
-              Beyond services thrives by running our business on flexibility and
-              are driven by providing our customer innovative and cost effective
-              services Who we are Valley locals who are passionate about
-              building up our local community
+              Our quality of service is BEYOND comparison!
             </CardContent>
             <CardContent>
               <div>
                 <Typography variant="h4">Who we are</Typography>
               </div>
               Valley locals who are passionate about building up our local
-              community. We take the time to understand each clients needs and
-              provide the best results to build up our community to the best of
-              our abilities.
+              community. We specialize in commercial and residential projects
+              and we're able to deliver the best results.
             </CardContent>
           </Card>
         </Box>
       </Box>
-      <hr size="2" width="95%" color="#23143e" />
+      <hr size="2" width="100%" color="#23143e" />
       <Box sx={socialLinkContainerStyles}>
         <Grid>
           <FacebookIcon

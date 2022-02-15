@@ -9,8 +9,8 @@ export default function Layout(props) {
     alignContent: "center",
     justifyContent: "space-evenly",
     padding: 3,
-    marginTop: "9rem",
-    marginBottom: "5rem",
+    marginTop: "8rem",
+    marginBottom: "1rem",
   };
   return (
     <>
