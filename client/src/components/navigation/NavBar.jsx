@@ -55,7 +55,7 @@ const NavBar = () => {
 
   const tabsStyles = {
     bgcolor: "rgba(255, 255, 255, 0.35)",
-    borderRadius: 5,
+    borderRadius: 1,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 

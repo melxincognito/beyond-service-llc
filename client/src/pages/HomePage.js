@@ -102,6 +102,16 @@ export default function HomePage() {
         </Box>
       </Box>
       <hr size="2" width="100%" color="#23143e" />
+      <Box sx={{ backgroundColor: "gray" }}>
+        <Box sx={{ position: "absolute" }}>
+          {" "}
+          <Card sx={cardStyles}>
+            {" "}
+            <CardContent>buenas dias las tias </CardContent>
+          </Card>{" "}
+        </Box>
+      </Box>
+
       <Box sx={socialLinkContainerStyles}>
         <Grid>
           <FacebookIcon
