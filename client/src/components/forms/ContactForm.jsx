@@ -132,7 +132,7 @@ export default function ContactForm() {
         onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle>{"Thanks for reaching out to us!!"}</DialogTitle>
+        <DialogTitle>{"Thanks for reaching out!"}</DialogTitle>
 
         <DialogContent>
           <DialogContentText id="alert-dialog-description">

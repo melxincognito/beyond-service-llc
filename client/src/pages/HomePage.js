@@ -25,7 +25,7 @@ export default function HomePage() {
     <>
       <Box sx={topImageStyles}>
         <img
-          height="350"
+          height=""
           width="90%"
           src={HeaderImg}
           alt="
