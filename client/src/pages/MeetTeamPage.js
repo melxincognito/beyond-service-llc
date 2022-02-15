@@ -1,9 +1,13 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Box, Typography } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+// images
 import Jonathan from "../assets/Jonathan.jpg";
 import Juan from "../assets/Juan.jpg";
 
 export default function MeetTeamPage() {
+  // styles
   const cardStyles = {
     borderRadius: 5,
     display: "grid",
@@ -23,6 +27,13 @@ export default function MeetTeamPage() {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
 
+  function linkedInPageClick() {
+    window.open(
+      "https://www.linkedin.com/in/rodriguezjonathon/#experience",
+      "_blank"
+    );
+  }
+
   return (
     <>
       <Card sx={cardStyles}>
@@ -40,7 +51,7 @@ export default function MeetTeamPage() {
 
             <Box sx={{ width: "70%" }}>
               <CardContent>
-                <Typography variant="h6">
+                <Typography variant="h5">
                   Jonathan Rodriguez - Director{" "}
                 </Typography>
                 <Typography>
@@ -56,6 +67,13 @@ export default function MeetTeamPage() {
                   installation company.{" "}
                 </Typography>
               </CardContent>
+              <Box display="flex" sx={{ marginLeft: 2.5 }}>
+                <LinkedInIcon onClick={linkedInPageClick} />{" "}
+                <Typography variant="subtitle2">
+                  {" "}
+                  Read more about Jonathan on LinkedIn
+                </Typography>
+              </Box>
             </Box>
           </Card>
           <Card sx={teamMemberCardStyles}>
@@ -70,16 +88,16 @@ export default function MeetTeamPage() {
             <Box sx={{ width: "70%" }}>
               {" "}
               <CardContent>
-                <Typography variant="h6">
+                <Typography variant="h5">
                   Juan Rodriguez - Field Manager{" "}
                 </Typography>
                 <Typography>
                   {" "}
-                  Juan has many years of experience working in the construction
-                  industry. From general contracting, plumbing, electrical..
-                  Juan is a jack of all trades. With so many years of hands on
-                  experience it only makes sense that Juan manages everything
-                  directly in the field.
+                  Juan is also a Phoenix local with many years of experience
+                  working in the construction industry. From general
+                  contracting, plumbing, electrical.. Juan is a jack of all
+                  trades. With so many years of hands on experience under his
+                  belt, Juan ensures all the work completed is top quality.
                 </Typography>
               </CardContent>
             </Box>
