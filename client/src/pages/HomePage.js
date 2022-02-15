@@ -8,6 +8,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 export default function HomePage() {
+  // center card style
   const cardStyles = {
     borderRadius: "5px 25px 5px 25px",
     display: "grid",
@@ -32,6 +33,7 @@ export default function HomePage() {
     bgcolor: "rgba(138, 138, 138, 0.38)",
     padding: 2,
     borderRadius: 5,
+    width: "40%",
   };
 
   const socialLinksStyles = {
