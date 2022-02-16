@@ -175,7 +175,7 @@ export default function HomePage() {
         </Box>
         <ArrowForwardIosIcon />
       </Box>
-
+      <hr size="2" width="100%" color="#23143e" />
       {/*social links and contact info*/}
       <Box sx={socialLinkContainerStyles}>
         <Grid>
