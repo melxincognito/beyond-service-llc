@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, CardContent, Typography, Box, Grid, Paper } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Grid,
+  Paper,
+  Container,
+} from "@mui/material";
 import HeaderImg from "../assets/sunset.jpg";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -7,6 +15,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
 export default function HomePage() {
   // center card style
   const cardStyles = {
@@ -28,6 +39,17 @@ export default function HomePage() {
     alignItems: "center",
     justifyItems: "center",
     width: "100%",
+  };
+
+  const customerReviewCardStyles = {
+    borderRadius: "5px 25px 5px 25px",
+    display: "grid",
+    alignContent: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    margin: "10px auto 10px auto",
+    backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
   const socialLinkContainerStyles = {
     bgcolor: "rgba(138, 138, 138, 0.38)",
@@ -71,7 +93,13 @@ export default function HomePage() {
   }
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "grid",
+        justifyItems: "center",
+      }}
+    >
+      {/* top intro pic with card */}
       <Box sx={topImageStyles}>
         <img
           style={{
@@ -102,16 +130,53 @@ export default function HomePage() {
         </Box>
       </Box>
       <hr size="2" width="100%" color="#23143e" />
-      <Box sx={{ backgroundColor: "gray" }}>
-        <Box sx={{ position: "absolute" }}>
+
+      {/*customer testimonials */}
+      <Box
+        sx={{
+          backgroundColor: "gray",
+          width: "95%",
+          borderRadius: 1.5,
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+        }}
+      >
+        <ArrowBackIosIcon />
+        <Box>
           {" "}
-          <Card sx={cardStyles}>
+          <Card sx={customerReviewCardStyles}>
             {" "}
-            <CardContent>buenas dias las tias </CardContent>
+            <CardContent>
+              <Container
+                sx={{
+                  borderRadius: "50%",
+                  backgroundColor: "pink",
+                  height: 100,
+                  width: 100,
+                  margin: "5px auto",
+                }}
+              />{" "}
+              <Typography> Customer Name</Typography>
+              <Typography variant="caption">
+                {" "}
+                " They did a great job on my home construction project. I would
+                recommend them to anyone in the valley "
+              </Typography>
+              <div>
+                <ul style={{ display: "inline-flex" }}>
+                  <li> </li>
+                  <li> </li>
+                  <li> </li>
+                </ul>
+              </div>
+            </CardContent>
           </Card>{" "}
         </Box>
+        <ArrowForwardIosIcon />
       </Box>
 
+      {/*social links and contact info*/}
       <Box sx={socialLinkContainerStyles}>
         <Grid>
           <FacebookIcon
@@ -150,6 +215,6 @@ export default function HomePage() {
           </Paper>
         </div>
       </Box>
-    </>
+    </Box>
   );
 }
