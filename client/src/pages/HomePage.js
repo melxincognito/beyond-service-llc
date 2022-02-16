@@ -165,8 +165,8 @@ export default function HomePage() {
               </Typography>
               <div>
                 <ul style={{ display: "inline-flex" }}>
-                  <li> </li>
-                  <li> </li>
+                  <li style={{ marginRight: 20 }}> </li>
+                  <li style={{ marginRight: 20 }}> </li>
                   <li> </li>
                 </ul>
               </div>
