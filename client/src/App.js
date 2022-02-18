@@ -8,11 +8,39 @@ import ContactPage from "./pages/ContactPage";
 import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
-
+import { amber, deepOrange, grey } from "@mui/material/colors";
 import { Switch } from "@mui/material";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
+
+  const getDesignTokens = (mode) => ({
+    palette: {
+      primary: {
+        ...amber,
+        ...(mode === "dark" && {
+          main: amber[300],
+        }),
+      },
+      ...(mode === "dark" && {
+        background: {
+          default: deepOrange[900],
+          paper: deepOrange[900],
+        },
+      }),
+      text: {
+        ...(mode === "light"
+          ? {
+              primary: grey[900],
+              secondary: grey[800],
+            }
+          : {
+              primary: "#fff",
+              secondary: grey[500],
+            }),
+      },
+    },
+  });
 
   const setTheme = createTheme({
     palette: {
@@ -23,7 +51,11 @@ export default function App() {
   return (
     <ThemeProvider theme={setTheme}>
       <Layout>
-        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)} />
+        <Switch
+          color="warning"
+          checked={darkMode}
+          onChange={() => setDarkMode(!darkMode)}
+        />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/aboutUs" element={<MeetTeamPage />} />
