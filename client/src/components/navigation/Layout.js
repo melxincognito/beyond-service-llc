@@ -6,7 +6,7 @@ import { Container, Paper } from "@mui/material";
 export default function Layout(props) {
   const paperStyle = {
     bgcolor: "#212121",
-    padding: 2,
+    padding: 1,
     marginTop: "-12px",
     width: "100%",
     marginLeft: "-8px",
