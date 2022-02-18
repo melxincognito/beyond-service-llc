@@ -9,6 +9,9 @@ const theme = createTheme({
       main: "#ff8f00",
     },
   },
+  typography: {
+    fontFamily: ["Fira Sans"],
+  },
 });
 
 export default theme;

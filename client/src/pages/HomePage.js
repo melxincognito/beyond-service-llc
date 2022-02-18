@@ -99,7 +99,6 @@ export default function HomePage() {
         justifyItems: "center",
       }}
     >
-      {/* top intro pic with card */}
       <Box sx={topImageStyles}>
         <img
           style={{
@@ -129,7 +128,10 @@ export default function HomePage() {
           </Card>
         </Box>
       </Box>
-      <hr size="2" width="100%" color="#23143e" />
+
+      {/* top intro pic with card */}
+
+      <hr size="1" width="100%" color="white" />
 
       {/*customer testimonials */}
       <Box
@@ -175,7 +177,7 @@ export default function HomePage() {
         </Box>
         <ArrowForwardIosIcon />
       </Box>
-      <hr size="2" width="100%" color="#23143e" />
+      <hr size="1" width="100%" color="white" />
       {/*social links and contact info*/}
       <Box sx={socialLinkContainerStyles}>
         <Grid>

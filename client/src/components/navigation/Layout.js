@@ -1,22 +1,31 @@
 import React from "react";
 import BottomNavLabel from "./BottomNavLabel";
 import NavBar from "./NavBar";
-import { Container } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 
 export default function Layout(props) {
+  const paperStyle = {
+    bgcolor: "#212121",
+    padding: 2,
+    marginTop: "-12px",
+    width: "100%",
+    marginLeft: "-8px",
+  };
+
   const layoutStyle = {
-    display: "flex-box",
     alignContent: "center",
     justifyContent: "space-evenly",
     padding: 3,
-    marginTop: "8rem",
+    marginTop: "5rem",
     marginBottom: "1rem",
   };
   return (
     <>
-      <NavBar />
-      <Container sx={layoutStyle}>{props.children}</Container>
-      <BottomNavLabel />
+      <Paper sx={paperStyle}>
+        <NavBar />
+        <Container sx={layoutStyle}>{props.children}</Container>
+        <BottomNavLabel />{" "}
+      </Paper>
     </>
   );
 }
