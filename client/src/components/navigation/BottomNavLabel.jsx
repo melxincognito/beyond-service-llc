@@ -6,12 +6,12 @@ export default function BottomNavLabel() {
     <div>
       <Paper
         sx={{
+          bgcolor: "secondary.main",
           position: "fixed",
           bottom: 0,
           left: 0,
           right: 0,
-          color: "white",
-          bgcolor: "#23143e",
+          color: "primary.main",
           display: "flex",
           alignContent: "center",
           justifyContent: "center",

@@ -97,6 +97,7 @@ export default function HomePage() {
       sx={{
         display: "grid",
         justifyItems: "center",
+        gap: "15px",
       }}
     >
       <Box sx={topImageStyles}>
