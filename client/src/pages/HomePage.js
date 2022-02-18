@@ -8,7 +8,7 @@ import {
   Paper,
   Container,
 } from "@mui/material";
-import HeaderImg from "../assets/sunset.jpg";
+import HeaderImg from "../assets/photos/sunset.jpg";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";

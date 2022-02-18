@@ -3,8 +3,8 @@ import { Card, CardContent, CardMedia, Box, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 // images
-import Jonathan from "../assets/Jonathan.jpg";
-import Juan from "../assets/Juan.jpg";
+import Jonathan from "../assets/photos/Jonathan.jpg";
+import Juan from "../assets/photos/Juan.jpg";
 
 export default function MeetTeamPage() {
   // styles

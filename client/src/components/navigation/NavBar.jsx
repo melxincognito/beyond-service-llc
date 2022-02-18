@@ -39,7 +39,7 @@ const NavBar = () => {
 
   // styles variables
   const navBarStyles = {
-    bgcolor: "white",
+    bgcolor: "primary",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
     padding: 2,
     color: "#23143e",
