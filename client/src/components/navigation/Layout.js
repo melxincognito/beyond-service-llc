@@ -5,10 +5,12 @@ import { Container, Paper } from "@mui/material";
 
 export default function Layout(props) {
   const paperStyle = {
+    position: "fixed",
     bgcolor: "#212121",
     padding: 1,
     marginTop: "-12px",
     width: "100%",
+    height: "100%",
     marginLeft: "-8px",
   };
 
