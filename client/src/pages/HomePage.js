@@ -63,7 +63,7 @@ export default function HomePage() {
   };
 
   const contactPhonePaperStyles = {
-    bgcolor: "#23143e",
+    bgcolor: "primary.main",
     color: "white",
     padding: "0 6px",
   };

@@ -21,11 +21,14 @@ export default function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <Layout>
-        <Switch
-          color="warning"
-          checked={darkMode}
-          onChange={() => setDarkMode(!darkMode)}
-        />
+        {" "}
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <Switch
+            color="secondary"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+        </div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/aboutUs" element={<MeetTeamPage />} />
