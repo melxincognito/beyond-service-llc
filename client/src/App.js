@@ -8,48 +8,16 @@ import ContactPage from "./pages/ContactPage";
 import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material";
-import { amber, deepOrange, grey } from "@mui/material/colors";
 import { Switch } from "@mui/material";
+
+import theme from "./assets/theme";
+import { darkTheme } from "./assets/theme";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const getDesignTokens = (mode) => ({
-    palette: {
-      primary: {
-        ...amber,
-        ...(mode === "dark" && {
-          main: amber[300],
-        }),
-      },
-      ...(mode === "dark" && {
-        background: {
-          default: deepOrange[900],
-          paper: deepOrange[900],
-        },
-      }),
-      text: {
-        ...(mode === "light"
-          ? {
-              primary: grey[900],
-              secondary: grey[800],
-            }
-          : {
-              primary: "#fff",
-              secondary: grey[500],
-            }),
-      },
-    },
-  });
-
-  const setTheme = createTheme({
-    palette: {
-      mode: darkMode ? "light" : "dark",
-    },
-  });
-
   return (
-    <ThemeProvider theme={setTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <Layout>
         <Switch
           color="warning"
