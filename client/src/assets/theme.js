@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
   palette: {
     primary: {
+      // dark is overall paper background color
       dark: "#fafafa",
       main: "#801313",
     },
@@ -18,6 +19,7 @@ const theme = createTheme({
 export const darkTheme = createTheme({
   palette: {
     primary: {
+      // dark is overall paper background color
       dark: "#212121",
       main: "#23143e",
     },
