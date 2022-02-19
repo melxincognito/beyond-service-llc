@@ -18,7 +18,16 @@ const theme = createTheme({
 
 export const darkTheme = createTheme({
   palette: {
-    mode: "dark",
+    primary: {
+      dark: "#00b8d4",
+      main: "#76ff03",
+    },
+    secondary: {
+      main: "#311b92",
+    },
+  },
+  typography: {
+    fontFamily: ["Fira Sans"],
   },
 });
 
