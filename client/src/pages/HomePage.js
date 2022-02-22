@@ -127,7 +127,7 @@ export default function HomePage() {
 
       {/* top intro pic with card */}
 
-      <hr size="1" width="100%" color="white" />
+      <hr size="1" width="100%" color="gray" />
 
       {/*customer testimonials */}
       <Box
@@ -173,7 +173,7 @@ export default function HomePage() {
         </Box>
         <ArrowForwardIosIcon />
       </Box>
-      <hr size="1" width="100%" color="white" />
+      <hr size="1" width="100%" color="gray" />
       {/*social links and contact info*/}
       <Box sx={socialLinkContainerStyles}>
         <Grid>

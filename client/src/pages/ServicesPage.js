@@ -20,6 +20,7 @@ export default function ServicesPage() {
           <Typography> We are also able to offer plumbing services</Typography>
         </CardContent>
       </Card>
+      <hr size="1" width="100%" color="gray" />
     </>
   );
 }

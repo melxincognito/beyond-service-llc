@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <div>
       <ContactForm />
-      <hr size="2" width="95%" color="white" />
+      <hr size="1" width="100%" color="gray" />
     </div>
   );
 }

@@ -125,7 +125,7 @@ export default function MeetTeamPage() {
           </Card>
         </CardContent>
       </Card>
-      <hr size="2" width="95%" color="white" />
+      <hr size="1" width="100%" color="gray" />
     </div>
   );
 }
