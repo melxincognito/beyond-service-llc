@@ -9,6 +9,7 @@ const theme = createTheme({
     },
     secondary: {
       main: "#ff8f00", // yellow
+      light: "rgba(255, 255, 255, 0.36)", // white and transparent
     },
   },
   typography: {
@@ -25,6 +26,7 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: "#fafafa", // white
+      light: "rgba(255, 255, 255, 0.60)", // white and transparent
     },
   },
   typography: {

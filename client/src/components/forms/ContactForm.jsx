@@ -53,6 +53,7 @@ export default function ContactForm() {
   const cardStyles = {
     padding: 4,
     borderRadius: 5,
+    bgcolor: "secondary.light",
   };
   const formTitleDisplayStyles = {
     display: "flex",

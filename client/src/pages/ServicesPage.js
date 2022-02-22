@@ -2,9 +2,17 @@ import React from "react";
 import { Card, CardContent, Typography } from "@mui/material";
 
 export default function ServicesPage() {
+  const cardStyles = {
+    borderRadius: 5,
+    display: "flex-box",
+    alignContent: "center",
+    justifyContent: "center",
+    justifyItems: "center",
+    bgcolor: "secondary.light",
+  };
   return (
     <>
-      <Card>
+      <Card sx={cardStyles}>
         <CardContent>
           <Typography variant="h3"> Services</Typography>
           <Typography>

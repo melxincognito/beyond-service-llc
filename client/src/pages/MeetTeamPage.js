@@ -3,9 +3,6 @@ import React from "react";
 import { Card, CardContent, CardMedia, Box, Typography } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-//theme provider
-import theme from "../assets/theme";
-import { ThemeProvider } from "@mui/material";
 // images
 import Jonathan from "../assets/photos/Jonathan.jpg";
 import Juan from "../assets/photos/Juan.jpg";
@@ -19,6 +16,7 @@ export default function MeetTeamPage() {
     alignContent: "center",
     justifyContent: "center",
     justifyItems: "center",
+    bgcolor: "secondary.light",
   };
 
   const headerCardStyles = {
@@ -27,12 +25,14 @@ export default function MeetTeamPage() {
     margin: 2,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
     borderRadius: "4px 25px 4px 25px",
+    bgcolor: "secondary.light",
   };
 
   const teamMemberCardStyles = {
     display: "flex",
     justifyContent: "space-evenly",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    bgcolor: "secondary.light",
   };
 
   const teamMemberImgStyles = {
