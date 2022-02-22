@@ -59,6 +59,15 @@ const NavBar = () => {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 
+  const mobileTabContainerStyles = {
+    width: "20rem",
+    height: "100%",
+    display: "block",
+    float: "left",
+    bgcolor: "primary.main",
+    color: "secondary.main",
+  };
+
   const mobileTabStyle = {
     display: "block",
     width: "100%",
@@ -112,15 +121,7 @@ const NavBar = () => {
               onClose={handleCloseNavMenu}
               sx={{}}
             >
-              <Container
-                sx={{
-                  width: "30em",
-                  height: "100%",
-
-                  display: "block",
-                  float: "left",
-                }}
-              >
+              <Container sx={mobileTabContainerStyles}>
                 <MenuItem component={Link} to="/" sx={mobileTabStyle}>
                   <Typography textAlign="center">Home</Typography>
                 </MenuItem>

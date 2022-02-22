@@ -4,11 +4,11 @@ const theme = createTheme({
   palette: {
     primary: {
       // dark is overall paper background color
-      dark: "#fafafa",
-      main: "#801313",
+      dark: "#fafafa", // white
+      main: "#801313", // maroon
     },
     secondary: {
-      main: "#ff8f00",
+      main: "#ff8f00", // yellow
     },
   },
   typography: {
@@ -20,11 +20,11 @@ export const darkTheme = createTheme({
   palette: {
     primary: {
       // dark is overall paper background color
-      dark: "#212121",
-      main: "#23143e",
+      dark: "#212121", // black
+      main: "#23143e", // purple
     },
     secondary: {
-      main: "#fafafa",
+      main: "#fafafa", // white
     },
   },
   typography: {
