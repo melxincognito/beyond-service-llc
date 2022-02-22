@@ -59,6 +59,12 @@ const NavBar = () => {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
   };
 
+  const mobileTabStyle = {
+    display: "block",
+    width: "100%",
+    padding: "18px 20px",
+  };
+
   return (
     <AppBar position="fixed" sx={navBarStyles}>
       <Container maxWidth="xl">
@@ -73,7 +79,12 @@ const NavBar = () => {
             Beyond Service LLC
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -99,25 +110,37 @@ const NavBar = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              sx={{}}
             >
-              <MenuItem component={Link} to="/">
-                <Typography textAlign="center">Home</Typography>
-              </MenuItem>
-              <MenuItem component={Link} to="/aboutUs">
-                <Typography textAlign="center">About Us</Typography>
-              </MenuItem>
-              <MenuItem component={Link} to="/services">
-                <Typography textAlign="center">Services</Typography>
-              </MenuItem>
-              <MenuItem component={Link} to="/projectGallery">
-                <Typography textAlign="center">Project Gallery</Typography>
-              </MenuItem>
-              <MenuItem component={Link} to="/contact">
-                <Typography textAlign="center">Contact Us</Typography>
-              </MenuItem>
+              <Container
+                sx={{
+                  width: "30em",
+                  height: "100%",
+
+                  display: "block",
+                  float: "left",
+                }}
+              >
+                <MenuItem component={Link} to="/" sx={mobileTabStyle}>
+                  <Typography textAlign="center">Home</Typography>
+                </MenuItem>
+                <MenuItem component={Link} to="/aboutUs" sx={mobileTabStyle}>
+                  <Typography textAlign="center">About Us</Typography>
+                </MenuItem>
+                <MenuItem component={Link} to="/services" sx={mobileTabStyle}>
+                  <Typography textAlign="center">Services</Typography>
+                </MenuItem>
+                <MenuItem
+                  component={Link}
+                  to="/projectGallery"
+                  sx={mobileTabStyle}
+                >
+                  <Typography textAlign="center">Project Gallery</Typography>
+                </MenuItem>
+                <MenuItem component={Link} to="/contact" sx={mobileTabStyle}>
+                  <Typography textAlign="center">Contact Us</Typography>
+                </MenuItem>
+              </Container>
             </Menu>
           </Box>
 
