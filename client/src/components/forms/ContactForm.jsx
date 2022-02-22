@@ -58,6 +58,9 @@ export default function ContactForm() {
   const formTitleDisplayStyles = {
     display: "flex",
     justifyContent: "center",
+    bgcolor: "secondary.light",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    borderRadius: "4px 25px 4px 25px",
   };
   const textFieldStyles = {
     margin: "10px 0px",
