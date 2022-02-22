@@ -13,8 +13,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
 import GoogleIcon from "@mui/icons-material/Google";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+// testimonies
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
@@ -27,7 +29,7 @@ export default function HomePage() {
     justifyContent: "center",
     textAlign: "center",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
-    width: "40%",
+
     margin: "auto",
     backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
@@ -66,6 +68,7 @@ export default function HomePage() {
     bgcolor: "primary.main",
     color: "white",
     padding: "0 6px",
+    display: "flex",
   };
 
   // external page routes
@@ -117,14 +120,6 @@ export default function HomePage() {
                 <Typography variant="h4">Beyond Service LLC </Typography>
               </div>{" "}
               Our quality of service is BEYOND comparison!
-            </CardContent>
-            <CardContent>
-              <div>
-                <Typography variant="h4">Who we are</Typography>
-              </div>
-              Valley locals who are passionate about building up our local
-              community. We specialize in commercial and residential projects
-              and we're able to deliver the best results.
             </CardContent>
           </Card>
         </Box>
@@ -192,17 +187,19 @@ export default function HomePage() {
             fontSize="large"
             onClick={twitterPageClick}
           />
-
+          <InstagramIcon fontSize="large" />
           <LinkedInIcon
             sx={socialLinksStyles}
             fontSize="large"
             onClick={linkedInPageClick}
           />
+
           <YouTubeIcon
             sx={socialLinksStyles}
             fontSize="large"
             onClick={youtubePageClick}
           />
+
           <GoogleIcon
             sx={socialLinksStyles}
             fontSize="large"
