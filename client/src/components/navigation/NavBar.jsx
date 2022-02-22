@@ -64,7 +64,7 @@ const NavBar = () => {
     height: "100%",
     display: "block",
     float: "left",
-    bgcolor: "primary.main",
+    bgcolor: "primary.dark",
     color: "secondary.main",
   };
 
