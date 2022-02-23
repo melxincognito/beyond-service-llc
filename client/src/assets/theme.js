@@ -11,9 +11,15 @@ const theme = createTheme({
       main: "#ff8f00", // yellow
       light: "rgba(255, 255, 255, 0.36)", // white and transparent
     },
+    success: {
+      main: "#801313", // maroon
+    },
   },
   typography: {
     h6: {
+      fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
+    },
+    h5: {
       fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
     },
     h4: {
@@ -35,7 +41,7 @@ export const darkTheme = createTheme({
       light: "rgba(255, 255, 255, 0.60)", // white and transparent
     },
     success: {
-      main: "#D96098", // pink
+      main: "rgba(0, 128, 163, 0.77)", // blue
     },
   },
   typography: {

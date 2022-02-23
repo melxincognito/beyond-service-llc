@@ -29,9 +29,10 @@ export default function HomePage() {
     justifyContent: "center",
     textAlign: "center",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
-
     margin: "auto",
     backgroundColor: "rgba(255, 255, 255, 0.53)",
+    padding: 2,
+    spacing: 12,
   };
 
   const topImageStyles = {
@@ -117,9 +118,22 @@ export default function HomePage() {
           <Card sx={cardStyles}>
             <CardContent>
               <div>
-                <Typography variant="h4">Beyond Service LLC </Typography>
+                <Typography variant="h4">
+                  {" "}
+                  Phonix General Contractors
+                </Typography>
+              </div>
+              <div>
+                <Typography variant="h4" color="success.main">
+                  Beyond Service LLC{" "}
+                </Typography>
               </div>{" "}
-              Our quality of service is BEYOND comparison!
+              <div>
+                <Typography variant="h4">
+                  {" "}
+                  Our quality of service is BEYOND comparison!
+                </Typography>
+              </div>
             </CardContent>
           </Card>
         </Box>
