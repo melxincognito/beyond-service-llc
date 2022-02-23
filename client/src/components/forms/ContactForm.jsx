@@ -62,13 +62,20 @@ export default function ContactForm() {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
     borderRadius: "4px 25px 4px 25px",
   };
+
+  const formInputContainerStyles = {
+    bgcolor: "secondary.light",
+    marginTop: 3,
+    borderRadius: 4,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+  };
   const textFieldStyles = {
     margin: "10px 0px",
   };
 
   const submitButtonStyles = {
     gap: 1,
-    backgroundColor: "black",
+    backgroundColor: "primary.main",
   };
 
   return (
@@ -78,7 +85,7 @@ export default function ContactForm() {
           <Typography variant="h4"> Contact Beyond Service </Typography>
         </CardContent>
 
-        <CardContent>
+        <CardContent sx={formInputContainerStyles}>
           <TextField
             fullWidth
             sx={textFieldStyles}
