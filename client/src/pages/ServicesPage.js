@@ -10,11 +10,23 @@ export default function ServicesPage() {
     justifyItems: "center",
     bgcolor: "secondary.light",
   };
+  const headerCardStyles = {
+    display: "flex",
+    justifyContent: "center",
+    margin: 2,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    borderRadius: "4px 25px 4px 25px",
+    bgcolor: "secondary.light",
+  };
+
   return (
     <>
       <Card sx={cardStyles}>
         <CardContent>
-          <Typography variant="h3"> Services</Typography>
+          <CardContent sx={headerCardStyles}>
+            <Typography variant="h4"> Services</Typography>
+          </CardContent>
+
           <Typography>
             {" "}
             We are able to provide our services to both commercial and
