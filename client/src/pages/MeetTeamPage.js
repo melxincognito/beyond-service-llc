@@ -33,6 +33,7 @@ export default function MeetTeamPage() {
     justifyContent: "space-evenly",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
     bgcolor: "secondary.light",
+    borderRadius: 4,
   };
 
   const teamMemberImgStyles = {
@@ -85,11 +86,8 @@ export default function MeetTeamPage() {
                   installation company.{" "}
                 </Typography>
               </CardContent>
-              <Box display="flex" sx={{ marginLeft: 2.5 }}>
-                <LinkedInIcon
-                  onClick={linkedInPageClick}
-                  color="primary.dark"
-                />{" "}
+              <Box display="flex" sx={{ marginLeft: 2.5, marginBottom: 2 }}>
+                <LinkedInIcon onClick={linkedInPageClick} />{" "}
                 <Typography variant="subtitle2" color="primary.main">
                   {" "}
                   Read more about Jonathan on LinkedIn
