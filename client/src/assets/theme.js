@@ -33,7 +33,10 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Fira Sans"],
+    h6: {
+      fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
+    },
+    fontFamily: ["Fira Sans"], // global font variable for typography
   },
 });
 
