@@ -34,6 +34,9 @@ export const darkTheme = createTheme({
       main: "#fafafa", // white
       light: "rgba(255, 255, 255, 0.60)", // white and transparent
     },
+    success: {
+      main: "#D96098", // pink
+    },
   },
   typography: {
     h6: {

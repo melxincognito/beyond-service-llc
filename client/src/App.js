@@ -24,7 +24,7 @@ export default function App() {
         {" "}
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <Switch
-            color="secondary"
+            color="success"
             checked={darkMode}
             onChange={() => setDarkMode(!darkMode)}
           />
