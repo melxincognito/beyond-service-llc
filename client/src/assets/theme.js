@@ -16,6 +16,9 @@ const theme = createTheme({
     h6: {
       fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
     },
+    h4: {
+      fontFamily: ["Lobster Two"],
+    },
     fontFamily: ["Fira Sans"], // global font variable for typography
   },
 });
@@ -35,6 +38,9 @@ export const darkTheme = createTheme({
   typography: {
     h6: {
       fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
+    },
+    h4: {
+      fontFamily: ["Lobster Two"],
     },
     fontFamily: ["Fira Sans"], // global font variable for typography
   },
