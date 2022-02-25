@@ -271,6 +271,46 @@ export default function HomePage() {
             </Paper>
           </div>
         </Box>
+        <Box sx={socialLinkContainerStyles}>
+          <Grid>
+            <FacebookIcon
+              sx={socialLinksStyles}
+              fontSize="large"
+              onClick={facebookPageClick}
+            />
+            <TwitterIcon
+              sx={socialLinksStyles}
+              fontSize="large"
+              onClick={twitterPageClick}
+            />
+            <InstagramIcon fontSize="large" />
+            <LinkedInIcon
+              sx={socialLinksStyles}
+              fontSize="large"
+              onClick={linkedInPageClick}
+            />
+
+            <YouTubeIcon
+              sx={socialLinksStyles}
+              fontSize="large"
+              onClick={youtubePageClick}
+            />
+
+            <GoogleIcon
+              sx={socialLinksStyles}
+              fontSize="large"
+              onClick={googlePageClick}
+            />
+          </Grid>
+          <hr size="1" width="95%" color="white" />
+          <div>
+            <Paper id="contactPhone" sx={contactPhonePaperStyles}>
+              <Typography variant="overline">
+                <LocalPhoneIcon fontSize="xxsmall" /> Call us at (480)000-0000
+              </Typography>
+            </Paper>
+          </div>
+        </Box>
       </Box>
     </Box>
   );
