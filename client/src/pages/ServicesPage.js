@@ -38,7 +38,7 @@ export default function ServicesPage() {
   };
 
   const accordionColor = {
-    bgcolor: "secondary.light",
+    bgcolor: "accordion.main",
   };
 
   return (
@@ -92,6 +92,18 @@ export default function ServicesPage() {
                 aria-controls="panel3"
                 id="panel3"
               >
+                <Typography>Framing</Typography>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography>Home Framing</Typography>
+              </AccordionDetails>
+            </Accordion>
+            <Accordion sx={accordionColor}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel4"
+                id="panel4"
+              >
                 <Typography>Home Renovations/Remodels</Typography>
               </AccordionSummary>
               <AccordionDetails>
@@ -104,8 +116,8 @@ export default function ServicesPage() {
             <Accordion sx={accordionColor}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel4"
-                id="panel4"
+                aria-controls="panel5"
+                id="panel5"
               >
                 <Typography>Custom Luxury Bathrooms</Typography>
               </AccordionSummary>
@@ -119,8 +131,8 @@ export default function ServicesPage() {
             <Accordion sx={accordionColor}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel5"
-                id="panel5"
+                aria-controls="panel6"
+                id="panel6"
               >
                 <Typography>Plumbing</Typography>
               </AccordionSummary>

@@ -14,6 +14,9 @@ const theme = createTheme({
     success: {
       main: "#801313", // maroon
     },
+    accordion: {
+      main: "rgba(7, 2, 14, 0.11)", // gray low opacity
+    },
   },
   typography: {
     h6: {
@@ -40,8 +43,12 @@ export const darkTheme = createTheme({
       main: "#fafafa", // white
       light: "rgba(255, 255, 255, 0.60)", // white and transparent
     },
+
     success: {
       main: "rgba(0, 128, 163, 0.77)", // blue
+    },
+    accordion: {
+      main: "rgba(14, 6, 50, 0.17)", // dark purple
     },
   },
   typography: {
