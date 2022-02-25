@@ -12,7 +12,7 @@ import {
 export default function ProjectGalleryPage() {
   const mainCardStyles = {
     bgcolor: "secondary.light",
-    borderRadius: 4,
+    borderRadius: 5,
     padding: 2,
   };
 
