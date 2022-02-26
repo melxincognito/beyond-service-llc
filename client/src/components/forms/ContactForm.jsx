@@ -1,10 +1,10 @@
 import * as React from "react";
 
-// email forward imports
+// contact form forward imports
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { useNavigate } from "react-router-dom";
-// form imports MUI
+// form styling imports MUI
 import {
   Card,
   CardContent,
@@ -22,7 +22,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 
-// forms global variables
+// forms global selections
 const servicesOptions = [
   { value: "Construction", label: "Construction" },
   { value: "Plumbing", label: "Plumbing" },
@@ -44,7 +44,7 @@ export default function ContactForm() {
     setServiceInquiry(event.target.value);
   };
 
-  // form functionality functions
+  // pop up functionality after form submittal
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -54,7 +54,7 @@ export default function ContactForm() {
     routeChange();
   };
 
-  // email forward functions
+  // form forwarding functions
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -72,7 +72,8 @@ export default function ContactForm() {
       })
       .catch((err) => console.log(err));
   };
-  // navigate back to homepage after form emails
+
+  // navigate back to homepage after form forwards to email
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/`;
