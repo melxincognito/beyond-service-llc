@@ -1,5 +1,9 @@
 import * as React from "react";
 
+// email forward imports
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+import { useNavigate } from "react-router-dom";
 // form imports MUI
 import {
   Card,
@@ -47,6 +51,32 @@ export default function ContactForm() {
 
   const handleClose = () => {
     setOpen(false);
+    routeChange();
+  };
+
+  // email forward functions
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_fa6qhtn",
+        "template_etcs82f",
+        form.current,
+        "user_wKGjgdwvgNqEiJyejXWHN"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+  // navigate back to homepage after form emails
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/`;
+    navigate(path);
   };
 
   // styles variables
@@ -84,56 +114,62 @@ export default function ContactForm() {
         <CardContent sx={formTitleDisplayStyles}>
           <Typography variant="h4"> Contact Beyond Service </Typography>
         </CardContent>
-
         <CardContent sx={formInputContainerStyles}>
-          <TextField
-            fullWidth
-            sx={textFieldStyles}
-            label="Name"
-            id="contactName"
-            required
-          />
-          <TextField
-            fullWidth
-            sx={textFieldStyles}
-            label="Contact Phone"
-            type="tel"
-            id="contactPhone"
-            required
-          />
-          <TextField
-            sx={textFieldStyles}
-            id="serviceInquirySelection"
-            fullWidth
-            select
-            label="Service Category"
-            value={serviceInquiry}
-            onChange={handleServiceChange}
-            helperText="Select the service category you're inquiring about"
-            required
-          >
-            {servicesOptions.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            fullWidth
-            multiline
-            sx={textFieldStyles}
-            rows={5}
-            label="Message"
-            id="fullWidth"
-            required
-          />
-          <Button
-            variant="contained"
-            sx={submitButtonStyles}
-            onClick={handleClickOpen}
-          >
-            <SendIcon /> Submit
-          </Button>
+          <form ref={form} onSubmit={sendEmail}>
+            <TextField
+              fullWidth
+              sx={textFieldStyles}
+              label="Name"
+              id="contactName"
+              name="name"
+              required
+            />
+            <TextField
+              fullWidth
+              sx={textFieldStyles}
+              label="Contact Phone"
+              type="tel"
+              id="contactPhone"
+              name="phone"
+              required
+            />
+            <TextField
+              sx={textFieldStyles}
+              id="serviceInquirySelection"
+              fullWidth
+              select
+              label="Service Category"
+              value={serviceInquiry}
+              onChange={handleServiceChange}
+              name="service"
+              helperText="Select the service category you're inquiring about"
+              required
+            >
+              {servicesOptions.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+            <TextField
+              fullWidth
+              multiline
+              sx={textFieldStyles}
+              rows={5}
+              label="Message"
+              id="fullWidth"
+              name="message"
+              required
+            />
+            <Button
+              variant="contained"
+              type="submit"
+              sx={submitButtonStyles}
+              onClick={handleClickOpen}
+            >
+              <SendIcon /> Submit
+            </Button>
+          </form>
         </CardContent>
       </Card>
       <Dialog
