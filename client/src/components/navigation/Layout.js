@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import BottomNavLabel from "./BottomNavLabel";
 import NavBar from "./NavBar";
-import { Container, Paper } from "@mui/material";
-import { Switch } from "@mui/material";
-import ContactInformation from "../information/ContactInformation";
+import { Container, Paper, Switch } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../assets/theme";
 import { darkTheme } from "../../assets/theme";
+import ContactInformation from "../information/ContactInformation";
 
 export default function Layout(props) {
   // set dark/light mode state and toggle function
