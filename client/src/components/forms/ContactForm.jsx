@@ -83,7 +83,7 @@ export default function ContactForm() {
   // styles variables
   const cardStyles = {
     padding: 4,
-    borderRadius: 5,
+    borderRadius: 2,
     bgcolor: "secondary.light",
   };
   const formTitleDisplayStyles = {

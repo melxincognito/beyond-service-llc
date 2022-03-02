@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function ServicesPage() {
   const cardStyles = {
-    borderRadius: 5,
+    borderRadius: 2,
     display: "flex-box",
     alignContent: "center",
     justifyContent: "center",

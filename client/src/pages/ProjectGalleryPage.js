@@ -13,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function ProjectGalleryPage() {
   const mainCardStyles = {
     bgcolor: "secondary.light",
-    borderRadius: 5,
+    borderRadius: 2,
     padding: 2,
   };
 

@@ -12,7 +12,7 @@ export default function MeetTeamPage() {
   // styles
 
   const cardStyles = {
-    borderRadius: 5,
+    borderRadius: 2,
     display: "flex-box",
     alignContent: "center",
     justifyContent: "center",
