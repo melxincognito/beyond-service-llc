@@ -14,6 +14,7 @@ import { darkTheme } from "./assets/theme";
 
 // switch for theme change
 import { Switch } from "@mui/material";
+import ContactInformation from "./components/information/ContactInformation";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -28,6 +29,7 @@ export default function App() {
             checked={darkMode}
             onChange={() => setDarkMode(!darkMode)}
           />
+          <ContactInformation />
         </div>
         <Routes>
           <Route path="/" element={<HomePage />} />

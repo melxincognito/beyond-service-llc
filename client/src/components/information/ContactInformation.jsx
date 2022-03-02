@@ -1,13 +1,22 @@
 import React from "react";
-import { Card, CardContent, Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 export default function ContactInformation() {
-  const cardStyles = {
-    borderRadius: 5,
-    display: "grid",
-    alignContent: "center",
-    justifyContent: "center",
-    textAlign: "center",
+  const contactPhonePaperStyles = {
+    bgcolor: "primary.main",
+    color: "white",
+    padding: "0 6px",
+    display: "flex",
+    justifyContent: "space-around",
   };
-  return <></>;
+  return (
+    <>
+      <Paper id="contactPhone" sx={contactPhonePaperStyles}>
+        <Typography variant="overline">
+          <LocalPhoneIcon fontSize="xxsmall" /> Call us at (480)000-0000
+        </Typography>
+      </Paper>
+    </>
+  );
 }
