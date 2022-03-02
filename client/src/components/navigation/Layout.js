@@ -21,7 +21,6 @@ export default function Layout(props) {
     marginTop: "2em",
     width: "100%",
     height: "100%",
-    //marginLeft: "-8px",
     overflow: "scroll",
   };
 
