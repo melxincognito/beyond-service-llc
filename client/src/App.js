@@ -17,18 +17,23 @@ import { Switch } from "@mui/material";
 import ContactInformation from "./components/information/ContactInformation";
 
 export default function App() {
+  // state and function to toggle light and dark mode
   const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+  const themeToggleContainerStyles = {
+    display: "flex",
+    justifyContent: "flex-end",
+    marginBottom: 7,
+  };
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : theme}>
       <Layout>
-        {" "}
-        <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <Switch
-            color="success"
-            checked={darkMode}
-            onChange={() => setDarkMode(!darkMode)}
-          />
+        <div style={themeToggleContainerStyles}>
+          <Switch color="success" checked={darkMode} onChange={toggleTheme} />
           <ContactInformation />
         </div>
         <Routes>

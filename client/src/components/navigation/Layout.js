@@ -7,7 +7,7 @@ export default function Layout(props) {
   const paperStyle = {
     position: "fixed",
     bgcolor: "primary.dark",
-    marginTop: "-12px",
+    marginTop: "2em",
     width: "100%",
     height: "100%",
     marginLeft: "-8px",

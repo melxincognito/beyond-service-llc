@@ -16,6 +16,8 @@ import {
   MenuItem,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import { Twitter, LinkedIn, Instagram } from "@mui/icons-material";
 
 // global variables
 
@@ -73,6 +75,26 @@ const NavBar = () => {
     width: "100%",
     padding: "18px 20px",
   };
+  const socialLinkStyles = {
+    p: 0.5,
+  };
+
+  // social link external page routes
+
+  function twitterPageClick() {
+    window.open("https://www.twitter.com/", "_blank");
+  }
+
+  function facebookPageClick() {
+    window.open("https://www.facebook.com/", "_blank");
+  }
+  function instagramPageClick() {
+    window.open("https://www.instagram.com/", "_blank");
+  }
+
+  function linkedInPageClick() {
+    window.open("https://www.linkedin.com/", "_blank");
+  }
 
   return (
     <AppBar position="fixed" sx={navBarStyles}>
@@ -189,6 +211,33 @@ const NavBar = () => {
             </Tabs>
           </Box>
           {/* social links and contact phone */}
+
+          <Box display="grid" sx={{ flexGrow: 0 }}>
+            <Box display="flex">
+              <Twitter
+                sx={socialLinkStyles}
+                fontSize="large"
+                onClick={twitterPageClick}
+              />
+              <FacebookIcon
+                sx={socialLinkStyles}
+                fontSize="large"
+                onClick={facebookPageClick}
+              />
+            </Box>
+            <Box>
+              <Instagram
+                sx={socialLinkStyles}
+                fontSize="large"
+                onClick={instagramPageClick}
+              />
+              <LinkedIn
+                sx={socialLinkStyles}
+                fontSize="large"
+                onClick={linkedInPageClick}
+              />
+            </Box>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
