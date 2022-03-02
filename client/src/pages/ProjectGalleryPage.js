@@ -8,6 +8,7 @@ import {
   ImageListItem,
   Typography,
 } from "@mui/material";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function ProjectGalleryPage() {
   const mainCardStyles = {
@@ -46,86 +47,95 @@ export default function ProjectGalleryPage() {
 
   return (
     <>
-      <Card sx={mainCardStyles}>
-        <CardContent sx={headerCardStyles}>
-          <Typography variant="h4"> Project Gallery</Typography>
-        </CardContent>
-        <Box sx={mainContainerStyles}>
-          <Box sx={galleryStyles}>
-            <Box sx={galleryTitleStyles}>
-              <Typography variant="h6"> Bathrooms</Typography>
-            </Box>
+      <AnimatePresence>
+        <motion.div
+          transition={{ delay: 0.17 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <Card sx={mainCardStyles}>
+            <CardContent sx={headerCardStyles}>
+              <Typography variant="h4"> Project Gallery</Typography>
+            </CardContent>
+            <Box sx={mainContainerStyles}>
+              <Box sx={galleryStyles}>
+                <Box sx={galleryTitleStyles}>
+                  <Typography variant="h6"> Bathrooms</Typography>
+                </Box>
 
-            <ImageList variant="masonry" cols={3} gap={8}>
-              {itemDataBathrooms.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </Box>
+                <ImageList variant="masonry" cols={3} gap={8}>
+                  {itemDataBathrooms.map((item) => (
+                    <ImageListItem key={item.img}>
+                      <img
+                        src={`${item.img}?w=248&fit=crop&auto=format`}
+                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </Box>
 
-          <Box sx={galleryStyles}>
-            <Box sx={galleryTitleStyles}>
-              <Typography variant="h6"> Kitchen Remodels</Typography>
-            </Box>
+              <Box sx={galleryStyles}>
+                <Box sx={galleryTitleStyles}>
+                  <Typography variant="h6"> Kitchen Remodels</Typography>
+                </Box>
 
-            <ImageList variant="masonry" cols={3} gap={8}>
-              {itemDataRemodels.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </Box>
-          <Box sx={galleryStyles}>
-            <Box sx={galleryTitleStyles}>
-              <Typography variant="h6"> Project 3</Typography>
-            </Box>
+                <ImageList variant="masonry" cols={3} gap={8}>
+                  {itemDataRemodels.map((item) => (
+                    <ImageListItem key={item.img}>
+                      <img
+                        src={`${item.img}?w=248&fit=crop&auto=format`}
+                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </Box>
+              <Box sx={galleryStyles}>
+                <Box sx={galleryTitleStyles}>
+                  <Typography variant="h6"> Project 3</Typography>
+                </Box>
 
-            <ImageList variant="masonry" cols={3} gap={8}>
-              {itemData.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </Box>
-          <Box sx={galleryStyles}>
-            <Box sx={galleryTitleStyles}>
-              <Typography variant="h6"> Project 4</Typography>
+                <ImageList variant="masonry" cols={3} gap={8}>
+                  {itemData.map((item) => (
+                    <ImageListItem key={item.img}>
+                      <img
+                        src={`${item.img}?w=248&fit=crop&auto=format`}
+                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </Box>
+              <Box sx={galleryStyles}>
+                <Box sx={galleryTitleStyles}>
+                  <Typography variant="h6"> Project 4</Typography>
+                </Box>
+                <ImageList variant="masonry" cols={3} gap={8}>
+                  {itemData.map((item) => (
+                    <ImageListItem key={item.img}>
+                      <img
+                        src={`${item.img}?w=248&fit=crop&auto=format`}
+                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                        alt={item.title}
+                        loading="lazy"
+                      />
+                    </ImageListItem>
+                  ))}
+                </ImageList>
+              </Box>
             </Box>
-            <ImageList variant="masonry" cols={3} gap={8}>
-              {itemData.map((item) => (
-                <ImageListItem key={item.img}>
-                  <img
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={item.title}
-                    loading="lazy"
-                  />
-                </ImageListItem>
-              ))}
-            </ImageList>
-          </Box>
-        </Box>
-      </Card>
-      <hr size="1" width="100%" color="gray" />
+          </Card>
+          <hr size="1" width="100%" color="gray" />
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }
