@@ -1,21 +1,7 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Grid,
-  Paper,
-  Container,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GoogleIcon from "@mui/icons-material/Google";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+
 // testimonies
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -54,48 +40,6 @@ export default function HomePage() {
     margin: "10px auto 10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
-  const socialLinkContainerStyles = {
-    bgcolor: "rgba(138, 138, 138, 0.38)",
-    padding: 2,
-    borderRadius: 5,
-    width: "40%",
-  };
-
-  const socialLinksStyles = {
-    margin: 0.3,
-  };
-
-  const contactPhonePaperStyles = {
-    bgcolor: "primary.main",
-    color: "white",
-    padding: "0 6px",
-    display: "flex",
-    justifyContent: "space-around",
-  };
-
-  // external page routes
-
-  function facebookPageClick() {
-    window.open("https://www.facebook.com/", "_blank");
-  }
-
-  function twitterPageClick() {
-    window.open("https://www.twitter.com/", "_blank");
-  }
-
-  function youtubePageClick() {
-    window.open("https://www.youtube.com/", "_blank");
-  }
-
-  function linkedInPageClick() {
-    window.open(
-      "https://www.linkedin.com/in/rodriguezjonathon/#experience",
-      "_blank"
-    );
-  }
-  function googlePageClick() {
-    window.open("https://www.google.com/", "_blank");
-  }
 
   return (
     <Box
