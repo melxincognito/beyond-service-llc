@@ -34,7 +34,7 @@ export default function MeetTeamPage() {
     justifyContent: "space-evenly",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
     bgcolor: "secondary.light",
-    borderRadius: 4,
+    borderRadius: 3.5,
   };
 
   const teamMemberImgStyles = {
@@ -116,7 +116,7 @@ export default function MeetTeamPage() {
                   {" "}
                   <CardContent>
                     <Typography variant="h5">
-                      Juan Rodriguez - Field Manager{" "}
+                      Juan Rodriguez - Executive Manager{" "}
                     </Typography>
                     <Typography>
                       {" "}

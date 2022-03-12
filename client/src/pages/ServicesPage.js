@@ -70,20 +70,6 @@ export default function ServicesPage() {
                 <Accordion sx={accordionColor}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1"
-                    id="panel1"
-                  >
-                    <Typography>A Track Homes </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>
-                      The A Track homes are here for clear
-                    </Typography>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion sx={accordionColor}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2"
                     id="panel2"
                   >
@@ -145,6 +131,18 @@ export default function ServicesPage() {
                     id="panel6"
                   >
                     <Typography>Plumbing</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>The plumbers can plumb the plumbing</Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion sx={accordionColor}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel7"
+                    id="panel7"
+                  >
+                    <Typography>HVAC</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>The plumbers can plumb the plumbing</Typography>
