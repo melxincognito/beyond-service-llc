@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardContent,
-  Box,
-  ImageList,
-  ImageListItem,
-  Typography,
-} from "@mui/material";
+import { Card, CardContent, Box, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import itemData from "../data/photogalleryimgs.json";
-import itemDataBathrooms from "../data/photogalleryimgs.json";
-import itemDataRemodels from "../data/photogalleryimgs.json";
 
 export default class ProjectGalleryPage extends Component {
   render() {
@@ -37,16 +28,6 @@ export default class ProjectGalleryPage extends Component {
       justifyContent: "space-around",
     };
 
-    const galleryStyles = {
-      width: 500,
-      height: 450,
-      overflowY: "scroll",
-    };
-
-    const galleryTitleStyles = {
-      display: "flex",
-      justifyContent: "center",
-    };
     return (
       <div>
         <AnimatePresence>
@@ -61,81 +42,16 @@ export default class ProjectGalleryPage extends Component {
                 <Typography variant="h4"> Project Gallery</Typography>
               </CardContent>
               <Box sx={mainContainerStyles}>
-                <Box sx={galleryStyles}>
-                  <Box sx={galleryTitleStyles}>
-                    <Typography variant="h6"> Bathrooms</Typography>
-                  </Box>
-
-                  <ImageList variant="masonry" cols={3} gap={8}>
-                    {itemDataBathrooms.itemDataBathrooms.map((item) => (
-                      <ImageListItem
-                        key={item.photoIndex}
-                        onClick={() => this.setState({ isOpen: true })}
-                      >
-                        <img
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          alt={item.title}
-                          loading="lazy"
-                        />
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
-                </Box>
-
-                <Box sx={galleryStyles}>
-                  <Box sx={galleryTitleStyles}>
-                    <Typography variant="h6"> Kitchen Remodels</Typography>
-                  </Box>
-
-                  <ImageList variant="masonry" cols={3} gap={8}>
-                    {itemDataRemodels.itemDataRemodels.map((item) => (
-                      <ImageListItem key={item.img}>
-                        <img
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          alt={item.title}
-                          loading="lazy"
-                        />
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
-                </Box>
-                <Box sx={galleryStyles}>
-                  <Box sx={galleryTitleStyles}>
-                    <Typography variant="h6"> Project 3</Typography>
-                  </Box>
-
-                  <ImageList variant="masonry" cols={3} gap={8}>
-                    {itemData.itemData.map((item) => (
-                      <ImageListItem key={item.img}>
-                        <img
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          alt={item.title}
-                          loading="lazy"
-                        />
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
-                </Box>
-                <Box sx={galleryStyles}>
-                  <Box sx={galleryTitleStyles}>
-                    <Typography variant="h6"> Project 4</Typography>
-                  </Box>
-                  <ImageList variant="masonry" cols={3} gap={8}>
-                    {itemData.itemData.map((item) => (
-                      <ImageListItem key={item.img}>
-                        <img
-                          src={`${item.img}?w=248&fit=crop&auto=format`}
-                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                          alt={item.title}
-                          loading="lazy"
-                        />
-                      </ImageListItem>
-                    ))}
-                  </ImageList>
-                </Box>
+                <div>
+                  {itemData.itemData.map((item) => (
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      width="220"
+                      height="240"
+                    />
+                  ))}{" "}
+                </div>
               </Box>
             </Card>
             <hr size="1" width="100%" color="gray" />
