@@ -11,20 +11,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import itemData from "../data/photogalleryimgs.json";
 import itemDataBathrooms from "../data/photogalleryimgs.json";
 import itemDataRemodels from "../data/photogalleryimgs.json";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+
 export default class ProjectGalleryPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      photoIndex: 0,
-      isOpen: false,
-    };
-  }
   render() {
-    const { photoIndex, isOpen } = this.state;
-
     const mainCardStyles = {
       bgcolor: "secondary.light",
       borderRadius: 2,
@@ -93,35 +82,7 @@ export default class ProjectGalleryPage extends Component {
                     ))}
                   </ImageList>
                 </Box>
-                {isOpen && (
-                  <Lightbox
-                    mainSrc={itemDataBathrooms[photoIndex]}
-                    nextSrc={
-                      itemDataBathrooms[
-                        (photoIndex + 1) % itemDataBathrooms.length
-                      ]
-                    }
-                    prevSrc={
-                      itemDataBathrooms[
-                        (photoIndex + itemDataBathrooms.length - 1) %
-                          itemDataBathrooms.length
-                      ]
-                    }
-                    onCloseRequest={() => this.setState({ isOpen: false })}
-                    onMovePrevRequest={() =>
-                      this.setState({
-                        photoIndex:
-                          (photoIndex + itemDataBathrooms.length - 1) %
-                          itemDataBathrooms.length,
-                      })
-                    }
-                    onMoveNextRequest={() =>
-                      this.setState({
-                        photoIndex: (photoIndex + 1) % itemDataBathrooms.length,
-                      })
-                    }
-                  />
-                )}
+
                 <Box sx={galleryStyles}>
                   <Box sx={galleryTitleStyles}>
                     <Typography variant="h6"> Kitchen Remodels</Typography>
