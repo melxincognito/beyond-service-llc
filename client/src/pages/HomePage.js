@@ -55,7 +55,6 @@ export default function HomePage() {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop: "15rem",
   };
   const customerReviewCardStyles = {
     borderRadius: "5px 25px 5px 25px",
@@ -74,7 +73,7 @@ export default function HomePage() {
     bgcolor: "accordion.main",
     left: 0,
   };
-  const horizontalImgGalleryBottomSpacerStyles = {
+  const spacerStyles = {
     margin: "0 0 -50px 0",
     height: "100px",
     bgcolor: "primary.dark",
@@ -121,73 +120,75 @@ export default function HomePage() {
             </Box>
           </Box>
         </Box>{" "}
-        <hr size="1" width="100%" color="gray" />
-        <Box sx={customerReviewContainerStyles}>
-          <ArrowBackIosIcon />
-          <Box>
+        <Box id="pageContentContainer" sx={{ marginTop: "20rem" }}>
+          <Box sx={customerReviewContainerStyles}>
             {" "}
-            <Card sx={customerReviewCardStyles}>
+            <ArrowBackIosIcon />
+            <Box>
               {" "}
-              <CardContent>
-                <Container
-                  sx={{
-                    borderRadius: "50%",
-                    backgroundColor: "pink",
-                    height: 100,
-                    width: 100,
-                    margin: "5px auto",
-                  }}
-                />{" "}
-                <Typography> Customer Name</Typography>
-                <Typography variant="caption">
-                  {" "}
-                  " They did a great job on my home construction project. I
-                  would recommend them to anyone in the valley "
-                </Typography>
-                <div>
-                  <ul style={{ display: "inline-flex" }}>
-                    <li style={{ marginRight: 20 }}> </li>
-                    <li style={{ marginRight: 20 }}> </li>
-                    <li> </li>
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
+              <Card sx={customerReviewCardStyles}>
+                {" "}
+                <CardContent>
+                  <Container
+                    sx={{
+                      borderRadius: "50%",
+                      backgroundColor: "pink",
+                      height: 100,
+                      width: 100,
+                      margin: "5px auto",
+                    }}
+                  />{" "}
+                  <Typography> Customer Name</Typography>
+                  <Typography variant="caption">
+                    {" "}
+                    " They did a great job on my home construction project. I
+                    would recommend them to anyone in the valley "
+                  </Typography>
+                  <div>
+                    <ul style={{ display: "inline-flex" }}>
+                      <li style={{ marginRight: 20 }}> </li>
+                      <li style={{ marginRight: 20 }}> </li>
+                      <li> </li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </Box>
+            <ArrowForwardIosIcon />
           </Box>
-          <ArrowForwardIosIcon />
-        </Box>
-        <hr size="1" width="100%" color="gray" />
-        {/*horizontal image gallery */}
-        <Box
-          id="horizontalImgGalleryContainer"
-          sx={horizontalImgGalleryContainerStyles}
-        >
-          {" "}
-          <ul
-            style={{
-              marginLeft: 0,
-              padding: 0,
-              whiteSpace: "nowrap",
-              width: "100%",
-              overflowX: "auto",
-            }}
+          <hr size="1" width="100%" color="gray" />
+          {/*horizontal image gallery */}
+          <Box
+            id="horizontalImgGalleryContainer"
+            sx={horizontalImgGalleryContainerStyles}
           >
-            {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-              <a href="#">
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  width="220"
-                  height="220"
-                  style={{ margin: " 0 7px" }}
-                />
-              </a>
-            ))}{" "}
-          </ul>{" "}
-          <Box id="spacer" sx={horizontalImgGalleryBottomSpacerStyles}>
             {" "}
-          </Box>
-        </Box>{" "}
+            <ul
+              style={{
+                marginLeft: 0,
+                padding: 0,
+                whiteSpace: "nowrap",
+                width: "100%",
+                overflowX: "auto",
+              }}
+            >
+              {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
+                <a href="#">
+                  <img
+                    src={item.img}
+                    alt={item.alt}
+                    width="220"
+                    height="220"
+                    style={{ margin: " 0 7px" }}
+                  />
+                </a>
+              ))}{" "}
+            </ul>{" "}
+            <Box id="spacer" sx={spacerStyles}>
+              {" "}
+            </Box>
+          </Box>{" "}
+        </Box>
       </motion.div>
     </AnimatePresence>
   );
