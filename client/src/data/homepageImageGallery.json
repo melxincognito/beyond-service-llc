@@ -1,0 +1,39 @@
+{
+  "homepageImgGalleryData": [
+    {
+      "img": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80",
+      "alt": "bathroom",
+      "id": 1
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1600607688066-890987f18a86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      "alt": "bathroom",
+      "id": 2
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1521783593447-5702b9bfd267?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1804&q=80",
+      "alt": "bathroom",
+      "id": 3
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1512916958891-fcf61b2160df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGx1eHVyeSUyMGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      "alt": "bathroom",
+      "id": 4
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1567767326925-e2047bf469d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGx1eHVyeSUyMGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      "alt": "something",
+      "id": 5
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1602860739945-9a61573cd62d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      "alt": "backyard",
+      "id": 6
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1596205250168-c3583813eea0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      "alt": "kitchen",
+      "id": 7
+    }
+  ]
+}
