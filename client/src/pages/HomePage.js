@@ -84,14 +84,14 @@ export default function HomePage() {
               alignItems: "center",
               justifyItems: "center",
               width: "100%",
-              marginTop: "12rem",
+              marginTop: "18rem",
             }}
           >
             <img
               style={{
                 width: "100%",
-                height: "50%",
-                position: "fixed",
+                height: "70%",
+                position: "absolute",
                 zIndex: -1,
               }}
               src={HeaderImg}
