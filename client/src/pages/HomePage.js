@@ -23,6 +23,12 @@ export default function HomePage() {
     spacing: 12,
   };
 
+  const contentContainerStyles = {
+    display: "grid",
+    justifyItems: "center",
+    gap: "15px",
+  };
+
   const topImageStyles = {
     display: "flex",
     alignContent: "center",
@@ -51,13 +57,9 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Box
-          sx={{
-            display: "grid",
-            justifyItems: "center",
-            gap: "15px",
-          }}
-        >
+        <Box sx={contentContainerStyles}>
+          {" "}
+          {/* top intro pic with card */}
           <Box sx={topImageStyles}>
             <img
               style={{
@@ -92,11 +94,7 @@ export default function HomePage() {
               </Card>
             </Box>
           </Box>
-
-          {/* top intro pic with card */}
-
           <hr size="1" width="100%" color="gray" />
-
           {/*customer testimonials */}
           <Box
             sx={{
@@ -142,6 +140,67 @@ export default function HomePage() {
             <ArrowForwardIosIcon />
           </Box>
           <hr size="1" width="100%" color="gray" />
+          <Box>
+            <ul
+              style={{
+                margin: 0,
+                padding: 0,
+                whiteSpace: "nowrap",
+                width: "900px",
+                overflowX: "auto",
+                backgroundColor: "#ddd",
+              }}
+            >
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+              <li style={{ display: "inline" }}>
+                <img
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+                  alt="bathroom"
+                  width="150px"
+                  height="150px"
+                />
+              </li>
+            </ul>
+          </Box>
         </Box>{" "}
       </motion.div>
     </AnimatePresence>
