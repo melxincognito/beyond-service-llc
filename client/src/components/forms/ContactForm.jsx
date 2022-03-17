@@ -12,15 +12,19 @@ import {
   Typography,
   MenuItem,
   Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Slide,
+  FormControl,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
-import Slide from "@mui/material/Slide";
 
 // forms global selections
 const servicesOptions = [
@@ -100,6 +104,7 @@ export default function ContactForm() {
     borderRadius: 4,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
   };
+
   const textFieldStyles = {
     margin: "10px 0px",
   };
@@ -117,56 +122,104 @@ export default function ContactForm() {
         </CardContent>
         <CardContent sx={formInputContainerStyles}>
           <form ref={form} onSubmit={sendEmail}>
-            <TextField
-              fullWidth
-              sx={textFieldStyles}
-              label="Name"
-              id="contactName"
-              name="name"
-              required
-            />
-            <TextField
-              fullWidth
-              sx={textFieldStyles}
-              label="Contact Phone"
-              type="tel"
-              id="contactPhone"
-              name="phone"
-              required
-            />
-            <TextField
-              sx={textFieldStyles}
-              id="serviceInquirySelection"
-              fullWidth
-              select
-              label="Service Category"
-              value={serviceInquiry}
-              onChange={handleServiceChange}
-              name="service"
-              helperText="Select the service category you're inquiring about"
-              required
-            >
-              {servicesOptions.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-            <TextField
-              fullWidth
-              multiline
-              sx={textFieldStyles}
-              rows={5}
-              label="Message"
-              id="fullWidth"
-              name="message"
-              required
-            />
+            <div id="nameInputField">
+              <TextField
+                fullWidth
+                sx={textFieldStyles}
+                label="Name"
+                id="contactName"
+                name="name"
+                required
+              />
+            </div>
+            <div id="contactPhoneInputField">
+              <TextField
+                fullWidth
+                sx={textFieldStyles}
+                label="Contact Phone"
+                type="tel"
+                id="contactPhone"
+                name="phone"
+                required
+              />
+            </div>
+            <div id="contactEmailInputField">
+              <TextField
+                fullWidth
+                sx={textFieldStyles}
+                label="Contact Email"
+                type="email"
+                id="contactEmail"
+                name="userEmail"
+                required
+              />
+            </div>{" "}
+            <div id="serviceInquiryInputField">
+              <TextField
+                sx={textFieldStyles}
+                id="serviceInquirySelection"
+                fullWidth
+                select
+                label="Service Category"
+                value={serviceInquiry}
+                onChange={handleServiceChange}
+                name="service"
+                helperText="Select the service category you're inquiring about"
+                required
+              >
+                {servicesOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+            <div id="preferredMethodOfContactField">
+              <FormControl>
+                <FormLabel id="radio-buttons-group-label">
+                  Preferred method of contact:
+                </FormLabel>
+                <RadioGroup
+                  row
+                  aria-labelledby="radio-buttons-group-label"
+                  name="contactMethod"
+                >
+                  <FormControlLabel
+                    value="phone"
+                    control={<Radio />}
+                    label="Phone Call"
+                  />
+                  <FormControlLabel
+                    value="text"
+                    control={<Radio />}
+                    label="Text"
+                  />
+                  <FormControlLabel
+                    value="email"
+                    control={<Radio />}
+                    label="E-mail"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
+            <div id="messageInputField">
+              <TextField
+                fullWidth
+                multiline
+                sx={textFieldStyles}
+                rows={5}
+                label="Message"
+                id="fullWidth"
+                name="message"
+                required
+              />
+            </div>
             <Button
               variant="contained"
               type="submit"
               sx={submitButtonStyles}
               onClick={handleClickOpen}
+              fullWidth
             >
               <SendIcon /> Submit
             </Button>
