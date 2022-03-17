@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
-
+import homepageImgGalleryData from "../data/homepageImageGallery.json";
 // testimonies
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
@@ -26,6 +26,8 @@ export default function HomePage() {
   const contentContainerStyles = {
     display: "grid",
     justifyItems: "center",
+    alignContent: "center",
+    justifyContent: "center",
     gap: "15px",
   };
 
@@ -38,6 +40,15 @@ export default function HomePage() {
     width: "100%",
   };
 
+  const customerReviewContainerStyles = {
+    backgroundColor: "gray",
+    width: "95%",
+    borderRadius: 1.5,
+    display: "flex",
+    justifyContent: "space-around",
+    alignItems: "center",
+    marginTop: "12rem",
+  };
   const customerReviewCardStyles = {
     borderRadius: "5px 25px 5px 25px",
     display: "grid",
@@ -57,19 +68,36 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Box sx={contentContainerStyles}>
-          {" "}
-          {/* top intro pic with card */}
-          <Box sx={topImageStyles}>
+        <Box
+          sx={{
+            display: "grid",
+            alignContent: "center",
+            justifyContent: "center",
+            gap: 12,
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              alignItems: "center",
+              justifyItems: "center",
+              width: "100%",
+              marginTop: "12rem",
+            }}
+          >
             <img
               style={{
                 width: "100%",
-                borderRadius: 5,
+                height: "50%",
+                position: "fixed",
+                zIndex: -1,
               }}
               src={HeaderImg}
               alt="
-        sunset"
-            />
+        pool house"
+            />{" "}
             <Box sx={{ position: "absolute" }}>
               <Card sx={cardStyles}>
                 <CardContent>
@@ -94,18 +122,7 @@ export default function HomePage() {
               </Card>
             </Box>
           </Box>
-          <hr size="1" width="100%" color="gray" />
-          {/*customer testimonials */}
-          <Box
-            sx={{
-              backgroundColor: "gray",
-              width: "95%",
-              borderRadius: 1.5,
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-            }}
-          >
+          <Box sx={customerReviewContainerStyles}>
             <ArrowBackIosIcon />
             <Box>
               {" "}
@@ -139,66 +156,35 @@ export default function HomePage() {
             </Box>
             <ArrowForwardIosIcon />
           </Box>
+        </Box>
+        <Box sx={contentContainerStyles}>
+          {" "}
+          {/* top intro pic with card */}
           <hr size="1" width="100%" color="gray" />
-          <Box>
+          {/*customer testimonials */}
+          <hr size="1" width="100%" color="gray" />
+          {/*horizontal image gallery */}
+          <Box
+            sx={{
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <ul
               style={{
                 margin: 0,
                 padding: 0,
                 whiteSpace: "nowrap",
-                width: "900px",
+                width: "100%",
                 overflowX: "auto",
                 backgroundColor: "#ddd",
               }}
             >
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
-              <li style={{ display: "inline" }}>
-                <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-                  alt="bathroom"
-                  width="150px"
-                  height="150px"
-                />
-              </li>
+              {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
+                <img src={item.img} alt={item.alt} width="200" height="200" />
+              ))}{" "}
             </ul>
           </Box>
         </Box>{" "}

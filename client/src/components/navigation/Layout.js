@@ -25,8 +25,7 @@ export default function Layout(props) {
   };
 
   const layoutStyle = {
-    padding: 3,
-    marginTop: "5rem",
+    marginTop: "6rem",
     marginBottom: "3rem",
   };
   const themeToggleContainerStyles = {
@@ -49,7 +48,7 @@ export default function Layout(props) {
               />
               <ContactInformation />
             </div>
-            {props.children}
+            <div style={{ left: 0 }}>{props.children}</div>
           </Container>
           <BottomNavLabel />{" "}
         </Paper>
