@@ -225,17 +225,17 @@ export default function ContactForm() {
                   name="contactMethod"
                 >
                   <FormControlLabel
-                    value="phone"
+                    value="Phone"
                     control={<Radio />}
                     label="Phone Call"
                   />
                   <FormControlLabel
-                    value="text"
+                    value="Text"
                     control={<Radio />}
                     label="Text"
                   />
                   <FormControlLabel
-                    value="email"
+                    value="Email"
                     control={<Radio />}
                     label="E-mail"
                   />
