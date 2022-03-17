@@ -239,6 +239,11 @@ export default function ContactForm() {
                     control={<Radio />}
                     label="E-mail"
                   />
+                  <FormControlLabel
+                    value="WhatsApp"
+                    control={<Radio />}
+                    label="WhatsApp"
+                  />
                 </RadioGroup>
               </FormControl>
             </div>
