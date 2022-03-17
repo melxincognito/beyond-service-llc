@@ -31,9 +31,24 @@
       "id": 6
     },
     {
-      "img": "https://images.unsplash.com/photo-1596205250168-c3583813eea0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-      "alt": "kitchen",
-      "id": 7
+      "img": "https://images.unsplash.com/photo-1567767326925-e2047bf469d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGx1eHVyeSUyMGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      "alt": "something",
+      "id": 5
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1602860739945-9a61573cd62d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      "alt": "backyard",
+      "id": 6
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1567767326925-e2047bf469d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGx1eHVyeSUyMGJhdGhyb29tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      "alt": "something",
+      "id": 5
+    },
+    {
+      "img": "https://images.unsplash.com/photo-1602860739945-9a61573cd62d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+      "alt": "backyard",
+      "id": 6
     }
   ]
 }

@@ -31,13 +31,21 @@ export default function HomePage() {
     gap: "15px",
   };
 
-  const topImageStyles = {
+  const topImageContainerStyles = {
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
     alignItems: "center",
     justifyItems: "center",
     width: "100%",
+    marginTop: "12rem",
+  };
+
+  const topImageStyles = {
+    width: "100%",
+    height: "50%",
+    position: "absolute",
+    zIndex: -1,
   };
 
   const customerReviewContainerStyles = {
@@ -47,7 +55,7 @@ export default function HomePage() {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    marginTop: "12rem",
+    marginTop: "15rem",
   };
   const customerReviewCardStyles = {
     borderRadius: "5px 25px 5px 25px",
@@ -68,37 +76,15 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Box
-          sx={{
-            display: "grid",
-            alignContent: "center",
-            justifyContent: "center",
-            gap: 12,
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              alignItems: "center",
-              justifyItems: "center",
-              width: "100%",
-              marginTop: "18rem",
-            }}
-          >
+        <Box id="mainContainer" sx={contentContainerStyles}>
+          <Box id="imageContainer" sx={topImageContainerStyles}>
             <img
-              style={{
-                width: "100%",
-                height: "70%",
-                position: "absolute",
-                zIndex: -1,
-              }}
+              style={topImageStyles}
               src={HeaderImg}
               alt="
-        pool house"
+        desert landscape"
             />{" "}
-            <Box sx={{ position: "absolute" }}>
+            <Box id="cardContainer" sx={{ position: "absolute" }}>
               <Card sx={cardStyles}>
                 <CardContent>
                   <div>
@@ -122,70 +108,78 @@ export default function HomePage() {
               </Card>
             </Box>
           </Box>
-          <Box sx={customerReviewContainerStyles}>
-            <ArrowBackIosIcon />
-            <Box>
+        </Box>{" "}
+        <hr size="1" width="100%" color="gray" />
+        <Box sx={customerReviewContainerStyles}>
+          <ArrowBackIosIcon />
+          <Box>
+            {" "}
+            <Card sx={customerReviewCardStyles}>
               {" "}
-              <Card sx={customerReviewCardStyles}>
-                {" "}
-                <CardContent>
-                  <Container
-                    sx={{
-                      borderRadius: "50%",
-                      backgroundColor: "pink",
-                      height: 100,
-                      width: 100,
-                      margin: "5px auto",
-                    }}
-                  />{" "}
-                  <Typography> Customer Name</Typography>
-                  <Typography variant="caption">
-                    {" "}
-                    " They did a great job on my home construction project. I
-                    would recommend them to anyone in the valley "
-                  </Typography>
-                  <div>
-                    <ul style={{ display: "inline-flex" }}>
-                      <li style={{ marginRight: 20 }}> </li>
-                      <li style={{ marginRight: 20 }}> </li>
-                      <li> </li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>{" "}
-            </Box>
-            <ArrowForwardIosIcon />
+              <CardContent>
+                <Container
+                  sx={{
+                    borderRadius: "50%",
+                    backgroundColor: "pink",
+                    height: 100,
+                    width: 100,
+                    margin: "5px auto",
+                  }}
+                />{" "}
+                <Typography> Customer Name</Typography>
+                <Typography variant="caption">
+                  {" "}
+                  " They did a great job on my home construction project. I
+                  would recommend them to anyone in the valley "
+                </Typography>
+                <div>
+                  <ul style={{ display: "inline-flex" }}>
+                    <li style={{ marginRight: 20 }}> </li>
+                    <li style={{ marginRight: 20 }}> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </Box>
+          <ArrowForwardIosIcon />
         </Box>
-        <Box sx={contentContainerStyles}>
-          {" "}
-          {/* top intro pic with card */}
-          <hr size="1" width="100%" color="gray" />
-          {/*customer testimonials */}
-          <hr size="1" width="100%" color="gray" />
-          {/*horizontal image gallery */}
+        <hr size="1" width="100%" color="gray" />
+        {/*horizontal image gallery */}
+        <Box
+          sx={{
+            position: "absolute",
+            width: "100%",
+            bgcolor: "gray",
+            left: 0,
+          }}
+        >
+          <ul
+            style={{
+              marginLeft: 0,
+              padding: 0,
+              whiteSpace: "nowrap",
+              width: "100%",
+              overflowX: "auto",
+              backgroundColor: "#ddd",
+              transform: "translateX(0)",
+              transition: "1s",
+            }}
+            onMouseOver="translateX(calc(200px - 100%))"
+          >
+            {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
+              <img src={item.img} alt={item.alt} width="200" height="200" />
+            ))}
+          </ul>{" "}
           <Box
+            id="spacer"
             sx={{
-              display: "flex",
-              alignContent: "center",
-              justifyContent: "center",
-              alignItems: "center",
+              margin: "0 0 -50px 0",
+              height: "100px",
+              bgcolor: "primary.dark",
             }}
           >
-            <ul
-              style={{
-                margin: 0,
-                padding: 0,
-                whiteSpace: "nowrap",
-                width: "100%",
-                overflowX: "auto",
-                backgroundColor: "#ddd",
-              }}
-            >
-              {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-                <img src={item.img} alt={item.alt} width="200" height="200" />
-              ))}{" "}
-            </ul>
+            {" "}
           </Box>
         </Box>{" "}
       </motion.div>
