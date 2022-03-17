@@ -173,7 +173,15 @@ export default function HomePage() {
             }}
           >
             {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-              <img src={item.img} alt={item.alt} width="220" height="220" />
+              <a href="#">
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  width="220"
+                  height="220"
+                  style={{ margin: " 0 7px" }}
+                />
+              </a>
             ))}{" "}
           </ul>{" "}
           <Box id="spacer" sx={horizontalImgGalleryBottomSpacerStyles}>
