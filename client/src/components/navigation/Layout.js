@@ -25,11 +25,9 @@ export default function Layout(props) {
   };
 
   const layoutStyle = {
-    alignContent: "center",
-    justifyContent: "space-evenly",
     padding: 3,
     marginTop: "5rem",
-    marginBottom: "1rem",
+    marginBottom: "3rem",
   };
   const themeToggleContainerStyles = {
     display: "flex",
