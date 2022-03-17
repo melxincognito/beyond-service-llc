@@ -68,6 +68,18 @@ export default function HomePage() {
     backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
 
+  const horizontalImgGalleryContainerStyles = {
+    position: "absolute",
+    width: "100%",
+    bgcolor: "accordion.main",
+    left: 0,
+  };
+  const horizontalImgGalleryBottomSpacerStyles = {
+    margin: "0 0 -50px 0",
+    height: "100px",
+    bgcolor: "primary.dark",
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -147,13 +159,10 @@ export default function HomePage() {
         <hr size="1" width="100%" color="gray" />
         {/*horizontal image gallery */}
         <Box
-          sx={{
-            position: "absolute",
-            width: "100%",
-            bgcolor: "gray",
-            left: 0,
-          }}
+          id="horizontalImgGalleryContainer"
+          sx={horizontalImgGalleryContainerStyles}
         >
+          {" "}
           <ul
             style={{
               marginLeft: 0,
@@ -161,24 +170,13 @@ export default function HomePage() {
               whiteSpace: "nowrap",
               width: "100%",
               overflowX: "auto",
-              backgroundColor: "#ddd",
-              transform: "translateX(0)",
-              transition: "1s",
             }}
-            onMouseOver="translateX(calc(200px - 100%))"
           >
             {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-              <img src={item.img} alt={item.alt} width="200" height="200" />
-            ))}
+              <img src={item.img} alt={item.alt} width="220" height="220" />
+            ))}{" "}
           </ul>{" "}
-          <Box
-            id="spacer"
-            sx={{
-              margin: "0 0 -50px 0",
-              height: "100px",
-              bgcolor: "primary.dark",
-            }}
-          >
+          <Box id="spacer" sx={horizontalImgGalleryBottomSpacerStyles}>
             {" "}
           </Box>
         </Box>{" "}
