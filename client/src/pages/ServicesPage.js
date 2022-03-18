@@ -41,6 +41,11 @@ export default function ServicesPage() {
   const accordionColor = {
     bgcolor: "accordion.main",
   };
+  const spacerStyles = {
+    margin: "0 0 -50px 0",
+    height: "100px",
+    bgcolor: "primary.dark",
+  };
 
   return (
     <>
@@ -152,6 +157,9 @@ export default function ServicesPage() {
             </CardContent>
           </Card>
           <hr size="1" width="100%" color="gray" />
+          <Box id="spacer" sx={spacerStyles}>
+            {" "}
+          </Box>
         </motion.div>
       </AnimatePresence>
     </>

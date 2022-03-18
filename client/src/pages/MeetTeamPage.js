@@ -43,6 +43,12 @@ export default function MeetTeamPage() {
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
 
+  const spacerStyles = {
+    margin: "0 0 -50px 0",
+    height: "100px",
+    bgcolor: "primary.dark",
+  };
+
   function linkedInPageClick() {
     window.open(
       "https://www.linkedin.com/in/rodriguezjonathon/#experience",
@@ -91,7 +97,9 @@ export default function MeetTeamPage() {
                       construction industry as a laborer and he wanted to expand
                       on that so he came back to the valley and began studying
                       to get licensed as a general contractor while working as a
-                      project manager at a flooring installation company.{" "}
+                      project manager at a flooring installation company.
+                      Jonathan is passionate about what he does and enjoys being
+                      able to make .{" "}
                     </Typography>
                   </CardContent>
                   <Box display="flex" sx={{ marginLeft: 2.5, marginBottom: 2 }}>
@@ -120,12 +128,13 @@ export default function MeetTeamPage() {
                     </Typography>
                     <Typography>
                       {" "}
-                      Juan is also a Phoenix local with many years of experience
-                      working in the construction industry. From general
-                      contracting, plumbing, electrical.. Juan is a jack of all
-                      trades. With so many years of hands on experience under
-                      his belt, Juan ensures all the work completed is top
-                      quality.
+                      Juan is another Phoenix local with many years of
+                      experience working in the construction industry. He's a
+                      jack of all trades with experience in general contracting,
+                      plumbing, electrical and more. Juan uses his many years of
+                      hands on experience to ensure all work completed by Beyond
+                      Service is top quality. He makes sure each clients vision
+                      for their home is able to become an infinite reality.
                     </Typography>
                   </CardContent>
                 </Box>
@@ -133,6 +142,9 @@ export default function MeetTeamPage() {
             </CardContent>
           </Card>
           <hr size="1" width="100%" color="gray" />
+          <Box id="spacer" sx={spacerStyles}>
+            {" "}
+          </Box>
         </motion.div>
       </AnimatePresence>
     </div>
