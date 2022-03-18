@@ -127,12 +127,13 @@ export default function ContactForm() {
     padding: 4,
     borderRadius: 2,
     bgcolor: "secondary.light",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
   const formTitleDisplayStyles = {
     display: "flex",
     justifyContent: "center",
     bgcolor: "secondary.light",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     borderRadius: "4px 25px 4px 25px",
   };
 
@@ -140,7 +141,7 @@ export default function ContactForm() {
     bgcolor: "secondary.light",
     marginTop: 3,
     borderRadius: 4,
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.2)",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
   };
 
   const textFieldStyles = {

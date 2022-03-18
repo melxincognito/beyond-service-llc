@@ -47,6 +47,7 @@ export default function HomePage() {
     height: "54%",
     position: "absolute",
     zIndex: -1,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
 
   const introCardContentContainerStyles = {
@@ -78,6 +79,8 @@ export default function HomePage() {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    marginBottom: 10,
   };
   const customerReviewCardStyles = {
     borderRadius: "5px 25px 5px 25px",
@@ -85,7 +88,7 @@ export default function HomePage() {
     alignContent: "center",
     justifyContent: "center",
     textAlign: "center",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
     margin: "10px auto 10px auto",
     backgroundColor: "rgba(255, 255, 255, 0.53)",
   };
@@ -193,9 +196,9 @@ export default function HomePage() {
                   top: "12rem",
                   left: "2rem",
                   border: "5px #801313 solid;",
+                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
                 }}
               >
-                {" "}
                 <img
                   src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
                   alt="pool"
@@ -216,6 +219,7 @@ export default function HomePage() {
                   left: "9rem",
                   zIndex: -1,
                   border: "5px orange solid;",
+                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
                 }}
               >
                 {" "}
@@ -230,7 +234,7 @@ export default function HomePage() {
                 />
               </Card>
             </Box>{" "}
-            <div className="hexagon" id="hexagon"></div>
+            <div className="hexagonBottom" id="hexagonBottom"></div>
           </Box>
           <Box id="spacer" sx={spacerStyles}>
             {" "}
@@ -245,18 +249,26 @@ export default function HomePage() {
                 <CardContent>
                   <Container
                     sx={{
-                      borderRadius: "50%",
-                      backgroundColor: "pink",
-                      height: 100,
-                      width: 100,
                       margin: "5px auto",
                     }}
-                  />{" "}
-                  <Typography> Customer Name</Typography>
+                  >
+                    {" "}
+                    <img
+                      src="https://images.unsplash.com/photo-1642792735536-b6f7ef18b918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80"
+                      alt="person"
+                      style={{
+                        width: "115px",
+                        height: "110px",
+                        borderRadius: "50%",
+                        boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+                      }}
+                    />
+                  </Container>{" "}
+                  <Typography> John</Typography>
                   <Typography variant="caption">
                     {" "}
-                    " They did a great job on my home construction project. I
-                    would recommend them to anyone in the valley "
+                    "Juan and Jonathan did a great job remodeling my home. I
+                    would recommend them to anyone in the valley"
                   </Typography>
                   <div>
                     <ul style={{ display: "inline-flex" }}>
@@ -269,9 +281,6 @@ export default function HomePage() {
               </Card>
             </Box>
             <ArrowForwardIosIcon />
-          </Box>
-          <Box id="spacer" sx={spacerStyles}>
-            {" "}
           </Box>
         </Box>{" "}
         {/*horizontal image gallery in seperate container on bottom bc it keeps getting pushed to the top */}

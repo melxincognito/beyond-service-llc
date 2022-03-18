@@ -1,4 +1,4 @@
-.hexagon {
+.hexagonBottom {
   top: 75rem;
   float: right;
   right: 1rem;
@@ -12,10 +12,11 @@
   box-sizing: border-box;
   transition: all 1s;
   border: 0.4vh solid transparent;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.6);
 }
 
-.hexagon:before,
-.hexagon:after {
+.hexagonBottom:before,
+.hexagonBottom:after {
   content: "";
   border: inherit;
   position: absolute;
@@ -29,10 +30,10 @@
 
 /* Align them in such a way
 that they form a hexagon */
-.hexagon:before {
+.hexagonBottom:before {
   transform: rotate(60deg);
 }
-.hexagon:after {
+.hexagonBottom:after {
   transform: rotate(-60deg);
 }
 
@@ -49,6 +50,7 @@ that they form a hexagon */
   box-sizing: border-box;
   transition: all 1s;
   border: 0.4vh solid transparent;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4);
 }
 
 .hexagonTop:before,
