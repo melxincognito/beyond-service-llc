@@ -1,0 +1,73 @@
+.hexagon {
+  top: 75rem;
+  float: right;
+  right: 1rem;
+  position: absolute;
+  margin: 0;
+  background-color: #801313;
+  border-radius: 10px;
+  width: 100px;
+  height: 63px;
+  box-sizing: border-box;
+  transition: all 1s;
+  border: 0.4vh solid transparent;
+}
+
+.hexagon:before,
+.hexagon:after {
+  content: "";
+  border: inherit;
+  position: absolute;
+  top: -0.5vh;
+  left: -0.5vh;
+  background-color: #801313;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+}
+
+/* Align them in such a way
+that they form a hexagon */
+.hexagon:before {
+  transform: rotate(60deg);
+}
+.hexagon:after {
+  transform: rotate(-60deg);
+}
+
+.hexagonTop {
+  top: 40rem;
+  float: left;
+  left: 1rem;
+  position: absolute;
+  margin: 0;
+  background-color: #ff8f00;
+  border-radius: 10px;
+  width: 100px;
+  height: 63px;
+  box-sizing: border-box;
+  transition: all 1s;
+  border: 0.4vh solid transparent;
+}
+
+.hexagonTop:before,
+.hexagonTop:after {
+  content: "";
+  border: inherit;
+  position: absolute;
+  top: -0.5vh;
+  left: -0.5vh;
+  background-color: #ff8f00;
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+}
+
+/* Align them in such a way
+  that they form a hexagon */
+.hexagonTop:before {
+  transform: rotate(60deg);
+}
+.hexagonTop:after {
+  transform: rotate(-60deg);
+}

@@ -7,6 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
+import "../App.css";
 
 export default function HomePage() {
   // center card style
@@ -43,7 +44,7 @@ export default function HomePage() {
 
   const topImageStyles = {
     width: "100%",
-    height: "50%",
+    height: "54%",
     position: "absolute",
     zIndex: -1,
   };
@@ -151,7 +152,7 @@ export default function HomePage() {
           }}
         >
           <Box id="introContentContainer" sx={introCardContentContainerStyles}>
-            {" "}
+            <div className="hexagonTop" id="hexagonTop"></div>
             <Box>
               <Card sx={introContentCardStyles}>
                 <CardContent
@@ -162,7 +163,7 @@ export default function HomePage() {
                     backgroundColor: "rgba(255, 255, 255, 0.53)",
                   }}
                 >
-                  <Typography variant="h4" color="secondary.main">
+                  <Typography variant="h4" color="primary.main">
                     {" "}
                     Who are we?
                   </Typography>
@@ -190,7 +191,7 @@ export default function HomePage() {
                   position: "relative",
                   top: "12rem",
                   left: "2rem",
-                  border: "5px rgba(0, 0, 0, 0.55) solid;",
+                  border: "5px #801313 solid;",
                 }}
               >
                 {" "}
@@ -227,7 +228,8 @@ export default function HomePage() {
                   }}
                 />
               </Card>
-            </Box>
+            </Box>{" "}
+            <div className="hexagon" id="hexagon"></div>
           </Box>
           <Box id="spacer" sx={spacerStyles}>
             {" "}
