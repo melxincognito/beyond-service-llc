@@ -14,7 +14,6 @@ import InfoIcon from "@mui/icons-material/Info";
 import { AnimatePresence, motion } from "framer-motion";
 import itemData from "../data/photogalleryimgs.json";
 import Lightbox from "../components/lightbox/Lightbox";
-import { bgcolor } from "@mui/system";
 
 export default function ProjectGalleryPage() {
   const [clickedImg, setClickedImg] = React.useState(null);
@@ -61,9 +60,9 @@ export default function ProjectGalleryPage() {
 
   // styles variables
   const mainCardStyles = {
-    bgcolor: "secondary.light",
+    padding: 4,
     borderRadius: 2,
-    padding: 2,
+    bgcolor: "secondary.light",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
     marginBottom: 20,
   };
@@ -71,17 +70,17 @@ export default function ProjectGalleryPage() {
   const headerCardStyles = {
     display: "flex",
     justifyContent: "center",
-    margin: 2,
+    bgcolor: "secondary.light",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     borderRadius: "4px 25px 4px 25px",
-    bgcolor: "secondary.light",
   };
 
   const mainContainerStyles = {
     display: "flex",
     flexWrap: "wrap",
     gap: 8,
-    margin: "0 auto",
+    marginTop: 0,
+
     justifyContent: "center",
   };
 

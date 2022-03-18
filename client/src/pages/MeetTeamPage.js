@@ -12,13 +12,15 @@ export default function MeetTeamPage() {
   // styles
 
   const cardStyles = {
+    padding: 2,
     borderRadius: 2,
+    bgcolor: "secondary.light",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+
     display: "flex-box",
     alignContent: "center",
     justifyContent: "center",
     justifyItems: "center",
-    bgcolor: "secondary.light",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
   };
 
   const headerCardStyles = {
