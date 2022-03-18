@@ -53,6 +53,7 @@ export default function ProjectGalleryPage() {
     borderRadius: 2,
     padding: 2,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    marginBottom: 20,
   };
 
   const headerCardStyles = {
