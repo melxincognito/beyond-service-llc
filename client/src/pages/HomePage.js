@@ -48,6 +48,28 @@ export default function HomePage() {
     zIndex: -1,
   };
 
+  const introCardContentContainerStyles = {
+    display: "flex",
+    gap: 2,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    justifyItems: "center",
+    marginRight: "10rem",
+    width: "90%",
+  };
+  const introContentCardStyles = {
+    borderRadius: "5px 25px 5px 25px",
+    display: "grid",
+    alignContent: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+    margin: 5,
+    padding: 2,
+    backgroundColor: "rgba(255, 255, 255, 0.53)",
+  };
+
   const customerReviewContainerStyles = {
     backgroundColor: "gray",
     width: "95%",
@@ -87,7 +109,7 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <Box id="mainContainer" sx={contentContainerStyles}>
+        <Box id="headImgContainer" sx={contentContainerStyles}>
           <Box id="imageContainer" sx={topImageContainerStyles}>
             <img
               style={topImageStyles}
@@ -120,7 +142,96 @@ export default function HomePage() {
             </Box>
           </Box>
         </Box>{" "}
-        <Box id="pageContentContainer" sx={{ marginTop: "20rem" }}>
+        <Box
+          id="pageContentContainer"
+          sx={{
+            marginTop: "20rem",
+            display: "grid",
+            gridTemplateColumns: "auto",
+          }}
+        >
+          <Box id="introContentContainer" sx={introCardContentContainerStyles}>
+            {" "}
+            <Box>
+              <Card sx={introContentCardStyles}>
+                <CardContent
+                  sx={{
+                    borderRadius: "5px 25px 5px 25px",
+                    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+                    margin: 1,
+                    backgroundColor: "rgba(255, 255, 255, 0.53)",
+                  }}
+                >
+                  <Typography variant="h4" color="secondary.main">
+                    {" "}
+                    Who are we?
+                  </Typography>
+                </CardContent>{" "}
+                <CardContent>
+                  {" "}
+                  <Typography>
+                    Phoenix locals providing only the BEST general contracting
+                    services to customers in the valley. We provide all types of
+                    services to our customers, from home remodels, plumbing and
+                    HVAC. Look around to find out more about what Beyond
+                    Services has to offer, don't be afraid to use or contact
+                    form or give us a call to find out more about how we can
+                    help turn your house into a the perfect home!
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Box>
+            <Box sx={{ position: "relative" }}>
+              <Card
+                sx={{
+                  borderRadius: "50%",
+                  width: "270px",
+                  height: "270px",
+                  position: "relative",
+                  top: "10rem",
+                  left: "2rem",
+                  border: "5px black solid;",
+                }}
+              >
+                {" "}
+                <img
+                  src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+                  alt="pool"
+                  style={{
+                    width: "270px",
+                    height: "270px",
+                    borderRadius: "50%",
+                  }}
+                />
+              </Card>
+              <Card
+                sx={{
+                  borderRadius: "50%",
+                  width: "300px",
+                  height: "300px",
+                  position: "relative",
+                  bottom: "15rem",
+                  left: "9rem",
+                  zIndex: -1,
+                  border: "5px red solid;",
+                }}
+              >
+                {" "}
+                <img
+                  src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+                  alt="pool"
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    borderRadius: "50%",
+                  }}
+                />
+              </Card>
+            </Box>
+          </Box>
+          <Box id="spacer" sx={spacerStyles}>
+            {" "}
+          </Box>
           <Box sx={customerReviewContainerStyles}>
             {" "}
             <ArrowBackIosIcon />
@@ -156,39 +267,40 @@ export default function HomePage() {
             </Box>
             <ArrowForwardIosIcon />
           </Box>
-          <hr size="1" width="100%" color="gray" />
-          {/*horizontal image gallery */}
-          <Box
-            id="horizontalImgGalleryContainer"
-            sx={horizontalImgGalleryContainerStyles}
-          >
+          <Box id="spacer" sx={spacerStyles}>
             {" "}
-            <ul
-              style={{
-                marginLeft: 0,
-                padding: 0,
-                whiteSpace: "nowrap",
-                width: "100%",
-                overflowX: "auto",
-              }}
-            >
-              {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-                <a href="#">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    width="220"
-                    height="220"
-                    style={{ margin: " 0 7px" }}
-                  />
-                </a>
-              ))}{" "}
-            </ul>{" "}
-            <Box id="spacer" sx={spacerStyles}>
-              {" "}
-            </Box>
-          </Box>{" "}
-        </Box>
+          </Box>
+        </Box>{" "}
+        {/*horizontal image gallery in seperate container on bottom bc it keeps getting pushed to the top */}
+        <Box
+          id="horizontalImgGalleryContainer"
+          sx={horizontalImgGalleryContainerStyles}
+        >
+          <ul
+            style={{
+              marginLeft: 0,
+              padding: 0,
+              whiteSpace: "nowrap",
+              width: "100%",
+              overflowX: "auto",
+            }}
+          >
+            {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
+              <a href="#">
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  width="220"
+                  height="220"
+                  style={{ margin: " 0 7px" }}
+                />
+              </a>
+            ))}{" "}
+          </ul>{" "}
+          <Box id="spacer" sx={spacerStyles}>
+            {" "}
+          </Box>
+        </Box>{" "}
       </motion.div>
     </AnimatePresence>
   );
