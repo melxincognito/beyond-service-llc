@@ -7,3 +7,5 @@ Site for Beyond Services LLC general contracting business. Users will be able to
 Styling library: MUIV5 - npm i @mui/material @emotion/react @emotion/styled @mui/styles @mui/icons-material
 
 Contact Form Forwarding: EMAIL-JS - npm i @emailjs-com
+
+Framer Motion: Framer-motion - npm i @framer-motion
