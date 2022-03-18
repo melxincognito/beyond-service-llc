@@ -44,7 +44,7 @@ export default function HomePage() {
 
   const topImageStyles = {
     width: "100%",
-    height: "54%",
+    height: "55%",
     position: "absolute",
     zIndex: -1,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
