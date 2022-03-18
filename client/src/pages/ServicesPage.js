@@ -73,6 +73,25 @@ export default function ServicesPage() {
               </Box>
 
               <CardContent>
+                {" "}
+                <Accordion sx={accordionColor}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1"
+                    id="panel1"
+                  >
+                    <Typography>Home Renovations/Remodels</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Upgrade your existing home to be the home you've always
+                      dreamed of. Our team can remodel a part of your home or we
+                      can gut the whole thing and make it like new. We'll go
+                      over why you're not satisfied with your current home and
+                      transform it to the home of your dreams.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
                 <Accordion sx={accordionColor}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -83,21 +102,29 @@ export default function ServicesPage() {
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
-                      Maybe you need a guest house in the back or you want to
-                      add a jacuzzi in the back.
+                      As we progress in our lives we realize our homes may need
+                      a little expanding. Beyond Service has you covered whether
+                      you're in need of a guest home, a garage or a nursery
+                      room. We'll make sure your new home addition blends
+                      perfectly with your existing home.
                     </Typography>
                   </AccordionDetails>
-                </Accordion>
+                </Accordion>{" "}
                 <Accordion sx={accordionColor}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel3"
                     id="panel3"
                   >
-                    <Typography>Framing</Typography>
+                    <Typography>Custom Luxury Bathrooms</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>Home Framing</Typography>
+                    <Typography>
+                      We love helping our clients create the perfect bathroom to
+                      suit their needs. Whether you're a single person or a
+                      married couple, we'll work with you to help make the
+                      perfect bathroom for your lifestyle.
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
                 <Accordion sx={accordionColor}>
@@ -106,12 +133,15 @@ export default function ServicesPage() {
                     aria-controls="panel4"
                     id="panel4"
                   >
-                    <Typography>Home Renovations/Remodels</Typography>
+                    <Typography>Plumbing</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
-                      Upgrade your existing home to be the home you've always
-                      dreamed of.
+                      Plumbing mistakes can be costly. Our team has extensive
+                      knowledge in the plumbing industry. Whether we're working
+                      on adding a new sink to the kitchen, a laundry room or a
+                      custom bathroom, you can trust our team to handle your
+                      pipes.{" "}
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -121,12 +151,17 @@ export default function ServicesPage() {
                     aria-controls="panel5"
                     id="panel5"
                   >
-                    <Typography>Custom Luxury Bathrooms</Typography>
+                    <Typography>HVAC (Heating & Air Conditioning)</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     <Typography>
-                      We can work with you from start to finish creating a
-                      luxury bathroom for your home
+                      Anyone living in the Valley of the Sun knows how important
+                      it is to have good air conditioning. Nobody wants to be
+                      stuck withour it in the summer months. Beyond Service can
+                      upgrade, fix and install HVAC systems to make sure your
+                      house stays cool in the summer and warm in the winter all
+                      while getting the proper ventilation throughout your
+                      living areas.{" "}
                     </Typography>
                   </AccordionDetails>
                 </Accordion>
@@ -136,22 +171,10 @@ export default function ServicesPage() {
                     aria-controls="panel6"
                     id="panel6"
                   >
-                    <Typography>Plumbing</Typography>
+                    <Typography>Framing</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>The plumbers can plumb the plumbing</Typography>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion sx={accordionColor}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel7"
-                    id="panel7"
-                  >
-                    <Typography>HVAC</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>The plumbers can plumb the plumbing</Typography>
+                    <Typography>Home Framing</Typography>
                   </AccordionDetails>
                 </Accordion>
               </CardContent>
