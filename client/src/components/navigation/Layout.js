@@ -41,11 +41,6 @@ export default function Layout(props) {
           <NavBar />
           <Container sx={layoutStyle}>
             <div style={themeToggleContainerStyles}>
-              <Switch
-                color="success"
-                checked={darkMode}
-                onChange={toggleTheme}
-              />
               <ContactInformation />
             </div>
             <div style={{ left: 0 }}>{props.children}</div>
