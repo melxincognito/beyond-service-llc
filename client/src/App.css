@@ -4,7 +4,8 @@
   right: 1rem;
   position: absolute;
   margin: 0;
-  background-color: #801313;
+  background: linear-gradient(to left, #801313, #911111);
+
   border-radius: 10px;
   width: 100px;
   height: 63px;
@@ -20,7 +21,7 @@
   position: absolute;
   top: -0.5vh;
   left: -0.5vh;
-  background-color: #801313;
+  background: linear-gradient(to left, #801313, #911111);
   border-radius: inherit;
   height: 100%;
   width: 100%;
@@ -41,7 +42,7 @@ that they form a hexagon */
   left: 1rem;
   position: absolute;
   margin: 0;
-  background-color: #ff8f00;
+  background: linear-gradient(to left, #ff8f00, #ff9f22);
   border-radius: 10px;
   width: 100px;
   height: 63px;
@@ -57,7 +58,7 @@ that they form a hexagon */
   position: absolute;
   top: -0.5vh;
   left: -0.5vh;
-  background-color: #ff8f00;
+  background: linear-gradient(to left, #ff8f00, #ff9f22);
   border-radius: inherit;
   height: 100%;
   width: 100%;

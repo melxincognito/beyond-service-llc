@@ -171,13 +171,14 @@ export default function HomePage() {
                 <CardContent>
                   {" "}
                   <Typography>
-                    Phoenix locals providing only the BEST general contracting
-                    services to customers in the valley. We provide all types of
-                    services to our customers, from home remodels, plumbing and
-                    HVAC. Look around to find out more about what Beyond
-                    Services has to offer, don't be afraid to use or contact
-                    form or give us a call to find out more about how we can
-                    help turn your house into a the perfect home!
+                    We're a team of Phoenix locals providing only the BEST
+                    general contracting services in the valley. We provide all
+                    types of services to our customers. From home remodels,
+                    plumbing to HVAC. Find out for yourself why we remain as one
+                    of Phoenix's preferred General Contractors. Look around to
+                    find out more about what Beyond Services has to offer. Feel
+                    free to use our contact form or give us a call if you want
+                    us to help turn your house into the perfect home!
                   </Typography>
                 </CardContent>
               </Card>
