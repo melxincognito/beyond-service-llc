@@ -185,21 +185,21 @@ export default function HomePage() {
               <Card
                 sx={{
                   borderRadius: "50%",
-                  width: "270px",
-                  height: "270px",
+                  width: "260px",
+                  height: "260px",
                   position: "relative",
-                  top: "10rem",
+                  top: "12rem",
                   left: "2rem",
-                  border: "5px black solid;",
+                  border: "5px rgba(0, 0, 0, 0.55) solid;",
                 }}
               >
                 {" "}
                 <img
-                  src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+                  src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
                   alt="pool"
                   style={{
-                    width: "270px",
-                    height: "270px",
+                    width: "260px",
+                    height: "260px",
                     borderRadius: "50%",
                   }}
                 />
@@ -207,22 +207,22 @@ export default function HomePage() {
               <Card
                 sx={{
                   borderRadius: "50%",
-                  width: "300px",
-                  height: "300px",
+                  width: "350px",
+                  height: "350px",
                   position: "relative",
                   bottom: "15rem",
                   left: "9rem",
                   zIndex: -1,
-                  border: "5px red solid;",
+                  border: "5px orange solid;",
                 }}
               >
                 {" "}
                 <img
-                  src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+                  src="https://images.unsplash.com/flagged/photo-1573168710465-7f7da9a23a15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmVtb2RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
                   alt="pool"
                   style={{
-                    width: "300px",
-                    height: "300px",
+                    width: "350px",
+                    height: "350px",
                     borderRadius: "50%",
                   }}
                 />
