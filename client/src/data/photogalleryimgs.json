@@ -2,42 +2,42 @@
   "itemData": [
     {
       "img": "https://live.staticflickr.com/65535/51941312130_458580a696_z.jpg",
-      "tag": "Standing Shower",
-      "id": 18
+      "tag": "Standing Shower Before",
+      "id": 1
     },
     {
       "img": "https://live.staticflickr.com/65535/51941315730_3467b7b8e5_z.jpg",
-      "tag": "Before shower",
+      "tag": "Constructing Standing Shower",
       "id": 2
     },
     {
       "img": "https://live.staticflickr.com/65535/51939711052_7ff2e4354e_z.jpg",
-      "tag": "After shower",
+      "tag": "Shower After",
       "id": 3
     },
     {
       "img": "https://live.staticflickr.com/65535/51940778518_2e9303f65d_z.jpg",
-      "tag": "Closet",
+      "tag": "Closet Remodel",
       "id": 4
     },
     {
       "img": "https://live.staticflickr.com/65535/51941315105_5b4312b67c_z.jpg",
-      "tag": "Closet II",
+      "tag": "Closet Remodel II",
       "id": 5
     },
     {
       "img": "https://live.staticflickr.com/65535/51941019279_58ea83438b_z.jpg",
-      "tag": "Closet III",
+      "tag": "Closet Remodel III",
       "id": 6
     },
     {
       "img": "https://live.staticflickr.com/65535/51940778158_8aa27a07e9_z.jpg",
-      "tag": "Closet IV",
+      "tag": "Closet Remodel IV",
       "id": 7
     },
     {
       "img": "https://live.staticflickr.com/65535/51941314700_516c08050a_z.jpg",
-      "tag": "Before Something??",
+      "tag": "Constructing Bathroom",
       "id": 8
     },
     {
@@ -56,34 +56,39 @@
       "id": 11
     },
     {
-      "img": "https://live.staticflickr.com/65535/51941313375_06cf3dc1c0_z.jpg",
-      "tag": "Shower After",
+      "img": "https://live.staticflickr.com/65535/51946840499_80130a3a24_z.jpg",
+      "tag": "Outdoor Gazeebo Construction",
       "id": 12
     },
     {
-      "img": "https://live.staticflickr.com/65535/51941313260_6db5c7dc03_z.jpg",
+      "img": "https://live.staticflickr.com/65535/51941313375_06cf3dc1c0_z.jpg",
       "tag": "Shower After",
       "id": 13
     },
     {
+      "img": "https://live.staticflickr.com/65535/51941313260_6db5c7dc03_z.jpg",
+      "tag": "Shower After",
+      "id": 14
+    },
+    {
       "img": "https://live.staticflickr.com/65535/51940697076_a3e9e807d0_z.jpg",
       "tag": "Tub During Construction",
-      "id": 17
+      "id": 15
     },
     {
       "img": "https://live.staticflickr.com/65535/51939708512_13f6d05247_z.jpg",
       "tag": "Tub after",
-      "id": 14
+      "id": 16
     },
     {
       "img": "https://live.staticflickr.com/65535/51940776303_a84043a7f3_z.jpg",
       "tag": "Tub Before",
-      "id": 15
+      "id": 17
     },
     {
       "img": "https://live.staticflickr.com/65535/51940776138_93690086b8_z.jpg",
       "tag": "Tub Before",
-      "id": 16
+      "id": 18
     }
   ]
 }

@@ -1,8 +1,20 @@
 import * as React from "react";
-import { Card, CardContent, Box, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Box,
+  Typography,
+  ImageList,
+  ImageListItem,
+  ImageListItemBar,
+  ListSubheader,
+  IconButton,
+} from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
 import { AnimatePresence, motion } from "framer-motion";
 import itemData from "../data/photogalleryimgs.json";
 import Lightbox from "../components/lightbox/Lightbox";
+import { bgcolor } from "@mui/system";
 
 export default function ProjectGalleryPage() {
   const [clickedImg, setClickedImg] = React.useState(null);
@@ -69,7 +81,7 @@ export default function ProjectGalleryPage() {
     display: "flex",
     flexWrap: "wrap",
     gap: 8,
-    margin: "auto",
+    margin: "0 auto",
     justifyContent: "center",
   };
 
@@ -88,25 +100,50 @@ export default function ProjectGalleryPage() {
             </CardContent>
             <Box sx={mainContainerStyles}>
               <div className="wrapper">
-                <div
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "auto auto auto auto",
-                    gap: 15,
-                  }}
-                >
-                  {itemData.itemData.map((item, index) => (
-                    <div key={index} className="wrapper-images">
-                      <img
-                        src={item.img}
-                        alt={item.tag}
-                        height="200"
-                        width="200"
-                        onClick={() => handleClick(item, index)}
-                      />
-                    </div>
-                  ))}
-                </div>
+                <Box className="image-list">
+                  <ImageList sx={{ width: "100%", height: 450 }}>
+                    <ImageListItem key="Subheader" cols={4}>
+                      <ListSubheader
+                        component="div"
+                        sx={{
+                          zIndex: 0,
+                          bgcolor: "secondary.main",
+                          color: "white",
+                          borderRadius: "4px 25px 4px 25px",
+                          display: "flex",
+                          justifyContent: "center",
+                          boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+                          marginBottom: 1,
+                        }}
+                      >
+                        Home Remodels
+                      </ListSubheader>
+                    </ImageListItem>
+                    {itemData.itemData.map((item, index) => (
+                      <ImageListItem key={index} className="wrapper-images">
+                        <img
+                          src={`${item.img}?w=248&fit=crop&auto=format`}
+                          srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                          alt={item.tag}
+                          loading="lazy"
+                          onClick={() => handleClick(item, index)}
+                        />
+                        <ImageListItemBar
+                          title={item.tag}
+                          actionIcon={
+                            <IconButton
+                              sx={{ color: "rgba(255, 255, 255, 0.54)" }}
+                              aria-label={`info about ${item.tag}`}
+                            >
+                              <InfoIcon />
+                            </IconButton>
+                          }
+                        />
+                      </ImageListItem>
+                    ))}
+                  </ImageList>
+                </Box>
+
                 {clickedImg && (
                   <Lightbox
                     clickedImg={clickedImg}
