@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import BottomNavLabel from "./BottomNavLabel";
 import NavBar from "./NavBar";
-import { Container, Paper, Switch } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../assets/theme";
-import { darkTheme } from "../../assets/theme";
 import ContactInformation from "../information/ContactInformation";
 
 export default function Layout(props) {
-  // set dark/light mode state and toggle function
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
   // styles variables
   const paperStyle = {
     position: "fixed",
@@ -36,7 +29,7 @@ export default function Layout(props) {
 
   return (
     <>
-      <ThemeProvider theme={darkMode ? darkTheme : theme}>
+      <ThemeProvider theme={theme}>
         <Paper sx={paperStyle}>
           <NavBar />
           <Container sx={layoutStyle}>
@@ -45,7 +38,7 @@ export default function Layout(props) {
             </div>
             <div style={{ left: 0 }}>{props.children}</div>
           </Container>
-          <BottomNavLabel />{" "}
+          <BottomNavLabel />
         </Paper>
       </ThemeProvider>
     </>
