@@ -16,14 +16,15 @@ import itemData from "../data/photogalleryimgs.json";
 import Lightbox from "../components/lightbox/Lightbox";
 
 export default function ProjectGalleryPage() {
+  // everything for the lightbox
   const [clickedImg, setClickedImg] = React.useState(null);
   const [currentIndex, setCurrentIndex] = React.useState(null);
-
+  // click to open the lightbox to the current image
   const handleClick = (item, index) => {
     setCurrentIndex(index);
     setClickedImg(item.img);
   };
-
+  // lightbox option to navigate to the right
   const handleRotationRight = () => {
     const totalLength = itemData.itemData.length;
     if (currentIndex + 1 >= totalLength) {
@@ -40,7 +41,7 @@ export default function ProjectGalleryPage() {
     setClickedImg(newItem);
     setCurrentIndex(newIndex);
   };
-
+  // lightbox option to navigate to the left
   const handleRotationLeft = () => {
     const totalLength = itemData.itemData.length;
     if (currentIndex === 0) {
@@ -93,6 +94,12 @@ export default function ProjectGalleryPage() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
+          <Card>
+            <form>
+              <input type="url" className="input" />
+              <button type="submit">Upload</button>
+            </form>
+          </Card>
           <Card sx={mainCardStyles}>
             <CardContent sx={headerCardStyles}>
               <Typography variant="h4"> Project Gallery</Typography>
