@@ -7,23 +7,7 @@ const listRef = ref(storage, "images/79d0748c-5600-479b-8249-733bfc99a44c.JPG");
 export default function DummyProjectGallery() {
   const [allImages, setImages] = React.useState([]);
 
-  function getFromFirebase() {
-    let storageRef = storage.ref();
-
-    storageRef
-      .listAll()
-      .then(function (res) {
-        res.items.forEach((imageRef) => {
-          imageRef.ref.openStream().then((url) => {
-            setImages((allImages) => [...allImages, url]);
-          });
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-  function dothis() {
+  function doThis() {
     getDownloadURL(listRef).then((url) => {
       console.log(url);
       setImages([url]);
@@ -34,7 +18,7 @@ export default function DummyProjectGallery() {
 
   return (
     <div>
-      <button onClick={dothis}> Click me </button>
+      <button onClick={doThis}> Click me </button>
       <div id="body">
         {allImages.map((image, index) => {
           return (
