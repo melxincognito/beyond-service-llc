@@ -82,7 +82,7 @@ export default function ServicesPage() {
                   >
                     <Typography>Home Renovations/Remodels</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>
                       Upgrade your existing home to be the home you've always
                       dreamed of. Our team can remodel a part of your home or we
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                   >
                     <Typography>Home Additions</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>
                       As we progress in our lives we realize our homes may need
                       a little expanding. Beyond Service has you covered whether
@@ -118,7 +118,7 @@ export default function ServicesPage() {
                   >
                     <Typography>Custom Luxury Bathrooms</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>
                       We love helping our clients create the perfect bathroom to
                       suit their needs. Whether you're a single person or a
@@ -135,7 +135,7 @@ export default function ServicesPage() {
                   >
                     <Typography>Plumbing</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>
                       Plumbing mistakes can be costly. Our team has extensive
                       knowledge in the plumbing industry. Whether we're working
@@ -153,7 +153,7 @@ export default function ServicesPage() {
                   >
                     <Typography>HVAC (Heating & Air Conditioning)</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>
                       Anyone living in the Valley of the Sun knows how important
                       it is to have good air conditioning. Nobody wants to be
@@ -173,7 +173,7 @@ export default function ServicesPage() {
                   >
                     <Typography>Framing</Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
                     <Typography>Home Framing</Typography>
                   </AccordionDetails>
                 </Accordion>
