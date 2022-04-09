@@ -74,3 +74,13 @@ that they form a hexagon */
 .hexagonTop:after {
   transform: rotate(-60deg);
 }
+
+/* hides hexagon content for mobile display */
+@media (max-width: 811px) {
+  .hexagonBottom {
+    display: none;
+  }
+  .hexagonTop {
+    display: none;
+  }
+}

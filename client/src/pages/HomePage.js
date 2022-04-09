@@ -127,16 +127,12 @@ export default function HomePage() {
                   <div>
                     <Typography variant="h4">
                       {" "}
-                      Phonix General Contractors
+                      Phoenix General Contractors
                     </Typography>
                   </div>
+
                   <div>
                     <Typography variant="h4" color="success.main">
-                      Beyond Service LLC{" "}
-                    </Typography>
-                  </div>{" "}
-                  <div>
-                    <Typography variant="h4">
                       {" "}
                       Our quality of service is BEYOND comparison!
                     </Typography>
@@ -187,101 +183,105 @@ export default function HomePage() {
                 </CardContent>
               </Card>
             </Box>
-            <Box sx={{ position: "relative" }}>
-              <Card
-                sx={{
-                  borderRadius: "50%",
-                  width: "260px",
-                  height: "260px",
-                  position: "relative",
-                  top: "12rem",
-                  left: "2rem",
-                  border: "5px #801313 solid;",
-                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
-                }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                  alt="pool"
-                  style={{
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <Box sx={{ position: "relative" }}>
+                <Card
+                  sx={{
+                    borderRadius: "50%",
                     width: "260px",
                     height: "260px",
-                    borderRadius: "50%",
+                    position: "relative",
+                    top: "12rem",
+                    left: "2rem",
+                    border: "5px #801313 solid;",
+                    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
                   }}
-                />
-              </Card>
-              <Card
-                sx={{
-                  borderRadius: "50%",
-                  width: "350px",
-                  height: "350px",
-                  position: "relative",
-                  bottom: "15rem",
-                  left: "9rem",
-                  zIndex: -1,
-                  border: "5px orange solid;",
-                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
-                }}
-              >
-                {" "}
-                <img
-                  src="https://images.unsplash.com/flagged/photo-1573168710465-7f7da9a23a15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmVtb2RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
-                  alt="pool"
-                  style={{
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+                    alt="pool"
+                    style={{
+                      width: "260px",
+                      height: "260px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </Card>
+                <Card
+                  sx={{
+                    borderRadius: "50%",
                     width: "350px",
                     height: "350px",
-                    borderRadius: "50%",
+                    position: "relative",
+                    bottom: "15rem",
+                    left: "9rem",
+                    zIndex: -1,
+                    border: "5px orange solid;",
+                    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
                   }}
-                />
-              </Card>
+                >
+                  {" "}
+                  <img
+                    src="https://images.unsplash.com/flagged/photo-1573168710465-7f7da9a23a15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmVtb2RlbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
+                    alt="pool"
+                    style={{
+                      width: "350px",
+                      height: "350px",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </Card>
+              </Box>
             </Box>{" "}
             <div className="hexagonBottom" id="hexagonBottom"></div>
           </Box>
           <Box id="spacer" sx={spacerStyles}>
             {" "}
           </Box>
-          <Box sx={customerReviewContainerStyles}>
-            {" "}
-            <ArrowBackIosIcon />
-            <Box>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box sx={customerReviewContainerStyles}>
               {" "}
-              <Card sx={customerReviewCardStyles}>
+              <ArrowBackIosIcon />
+              <Box>
                 {" "}
-                <CardContent>
-                  <Container
-                    sx={{
-                      margin: "5px auto",
-                    }}
-                  >
-                    {" "}
-                    <img
-                      src="https://images.unsplash.com/photo-1642792735536-b6f7ef18b918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80"
-                      alt="person"
-                      style={{
-                        width: "115px",
-                        height: "110px",
-                        borderRadius: "50%",
-                        boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+                <Card sx={customerReviewCardStyles}>
+                  {" "}
+                  <CardContent>
+                    <Container
+                      sx={{
+                        margin: "5px auto",
                       }}
-                    />
-                  </Container>{" "}
-                  <Typography> John</Typography>
-                  <Typography variant="caption">
-                    {" "}
-                    "Juan and Jonathan did a great job remodeling my home. I
-                    would recommend them to anyone in the valley"
-                  </Typography>
-                  <div>
-                    <ul style={{ display: "inline-flex" }}>
-                      <li style={{ marginRight: 20 }}> </li>
-                      <li style={{ marginRight: 20 }}> </li>
-                      <li> </li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
+                    >
+                      {" "}
+                      <img
+                        src="https://images.unsplash.com/photo-1642792735536-b6f7ef18b918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80"
+                        alt="person"
+                        style={{
+                          width: "115px",
+                          height: "110px",
+                          borderRadius: "50%",
+                          boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+                        }}
+                      />
+                    </Container>{" "}
+                    <Typography> John</Typography>
+                    <Typography variant="caption">
+                      {" "}
+                      "Juan and Jonathan did a great job remodeling my home. I
+                      would recommend them to anyone in the valley"
+                    </Typography>
+                    <div>
+                      <ul style={{ display: "inline-flex" }}>
+                        <li style={{ marginRight: 20 }}> </li>
+                        <li style={{ marginRight: 20 }}> </li>
+                        <li> </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Box>
+              <ArrowForwardIosIcon />
             </Box>
-            <ArrowForwardIosIcon />
           </Box>
         </Box>{" "}
         {/*horizontal image gallery in seperate container on bottom bc it keeps getting pushed to the top */}
@@ -299,7 +299,7 @@ export default function HomePage() {
             }}
           >
             {homepageImgGalleryData.homepageImgGalleryData.map((item) => (
-              <a href="#">
+              <a href="#" key={item.img}>
                 <img
                   src={item.img}
                   alt={item.alt}
