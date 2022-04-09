@@ -158,7 +158,7 @@ export default function ContactForm() {
     <>
       <Card sx={cardStyles}>
         <CardContent sx={formTitleDisplayStyles}>
-          <Typography variant="h4"> Contact Beyond Service </Typography>
+          <Typography variant="h4"> Contact Us </Typography>
         </CardContent>
 
         <Box id="contactFormContainer" sx={{ margin: "1.5rem 0" }}>

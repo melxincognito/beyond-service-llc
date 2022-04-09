@@ -20,7 +20,11 @@ export default function Layout(props) {
   const layoutStyle = {
     marginTop: "6rem",
     marginBottom: "3rem",
+    left: 0,
+    right: 0,
+    display: "grid",
   };
+
   const themeToggleContainerStyles = {
     display: "flex",
     justifyContent: "flex-end",
