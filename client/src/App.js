@@ -8,6 +8,8 @@ import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import DummyProjectGallery from "./pages/DummyProjectGallery";
+import DesktopProjectGallery from "./pages/DesktopProjectGallery";
+import MobileProjectGallery from "./pages/MobileProjectGallery";
 
 export default function App() {
   return (
@@ -16,7 +18,14 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutUs" element={<MeetTeamPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/projectGallery" element={<ProjectGalleryPage />} />
+        <Route
+          path="/projectGalleryDesktop"
+          element={<DesktopProjectGallery />}
+        />
+        <Route
+          path="/projectGalleryMobile"
+          element={<MobileProjectGallery />}
+        />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/dummyProjectGallery" element={<DummyProjectGallery />} />
       </Routes>
