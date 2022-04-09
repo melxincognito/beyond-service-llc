@@ -23,6 +23,7 @@ import {
   RadioGroup,
   FormControlLabel,
   Radio,
+  Box,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 
@@ -159,7 +160,24 @@ export default function ContactForm() {
         <CardContent sx={formTitleDisplayStyles}>
           <Typography variant="h4"> Contact Beyond Service </Typography>
         </CardContent>
-        <CardContent sx={formInputContainerStyles}>
+
+        <Box id="contactFormContainer" sx={{ margin: "1.5rem 0" }}>
+          <Box
+            id="contactFormInstructionsContainer"
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+              justfiyItems: "center",
+            }}
+          >
+            <Typography variant="body1">
+              {" "}
+              Fill out the form below to message Beyond Service.{" "}
+            </Typography>
+          </Box>
+
           <form ref={form} onSubmit={sendEmail}>
             <div id="nameInputField">
               <TextField
@@ -270,7 +288,7 @@ export default function ContactForm() {
               <SendIcon /> Submit
             </Button>
           </form>
-        </CardContent>
+        </Box>
       </Card>
       <Dialog
         open={open}
