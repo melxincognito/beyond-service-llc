@@ -8,47 +8,16 @@ const theme = createTheme({
       main: "#801313", // maroon
     },
     secondary: {
+      dark: "rgba(233, 154, 93, 0.67)", // transparent orange
       main: "#ff8f00", // yellow
       light: "rgba(255, 255, 255, 0.36)", // white and transparent
     },
     success: {
-      main: "#801313", // maroon
+      main: "#660f0f", // maroon
     },
     accordion: {
       main: "rgba(7, 2, 14, 0.11)", // gray low opacity
-    },
-  },
-  typography: {
-    h6: {
-      fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
-    },
-    h5: {
-      fontFamily: ["Lobster Two"], // custom h6 font for nav bar labels
-    },
-    h4: {
-      fontFamily: ["Lobster Two"],
-    },
-    fontFamily: ["Fira Sans"], // global font variable for typography
-  },
-});
-
-export const darkTheme = createTheme({
-  palette: {
-    primary: {
-      // dark is overall paper background color
-      dark: "#212121", // black
-      main: "#23143e", // purple
-    },
-    secondary: {
-      main: "#fafafa", // white
-      light: "rgba(255, 255, 255, 0.60)", // white and transparent
-    },
-
-    success: {
-      main: "rgba(0, 128, 163, 0.77)", // blue
-    },
-    accordion: {
-      main: "rgba(14, 6, 50, 0.17)", // dark purple
+      light: "rgba(255, 255, 255, 0.85)", // white and a little transparent
     },
   },
   typography: {
