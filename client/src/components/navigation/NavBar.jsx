@@ -62,7 +62,7 @@ const NavBar = () => {
   };
 
   const mobileTabContainerStyles = {
-    width: "20rem",
+    width: "23rem",
     height: "100%",
     display: "block",
     float: "left",
@@ -155,7 +155,7 @@ const NavBar = () => {
                 </MenuItem>
                 <MenuItem
                   component={Link}
-                  to="/projectGallery"
+                  to="/projectGalleryMobile"
                   sx={mobileTabStyle}
                 >
                   <Typography textAlign="center">Project Gallery</Typography>
@@ -200,7 +200,7 @@ const NavBar = () => {
                 value={4}
                 label="Project Gallery"
                 component={Link}
-                to="/projectGallery"
+                to="/projectGalleryDesktop"
               />
               <Tab
                 value={5}
