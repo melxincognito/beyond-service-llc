@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Container,
-  Link,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
 // testimonies

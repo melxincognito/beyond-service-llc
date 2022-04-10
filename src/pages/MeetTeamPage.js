@@ -37,7 +37,7 @@ export default function MeetTeamPage() {
     display: "flex",
     flexWrap: "wrap",
     overflowY: "scroll",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     bgcolor: "secondary.light",
     borderRadius: 3.5,
@@ -81,7 +81,13 @@ export default function MeetTeamPage() {
 
             <CardContent sx={{ display: "flex-box" }}>
               <Card sx={teamMemberCardStyles}>
-                <Box sx={{ width: "13rem" }}>
+                <Box
+                  sx={{
+                    width: "17rem",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                  }}
+                >
                   <CardMedia
                     sx={teamMemberImgStyles}
                     component="img"
@@ -135,7 +141,13 @@ export default function MeetTeamPage() {
                 </Box>
               </Card>
               <Card sx={teamMemberCardStyles}>
-                <Box sx={{ width: "13rem" }}>
+                <Box
+                  sx={{
+                    width: "17rem",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                  }}
+                >
                   <CardMedia
                     sx={teamMemberImgStyles}
                     component="img"
