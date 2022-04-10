@@ -56,37 +56,35 @@ export default function MobileRamadaGallery() {
   };
   return (
     <div>
-      <div>
-        <ImageList
-          sx={{ width: 350, height: 450 }}
-          variant="quilted"
-          cols={3}
-          rowHeight={121}
-        >
-          {ramadaProjectData.ramadaProjectData.map((item, index) => (
-            <ImageListItem
-              key={index}
-              cols={item.cols || 1}
-              rows={item.rows || 1}
-            >
-              <img
-                {...srcset(item.img, 121, item.rows, item.cols)}
-                alt={item.tag}
-                loading="lazy"
-                onClick={() => handleClick(item, index)}
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-        {clickedImg && (
-          <Lightbox
-            clickedImg={clickedImg}
-            handleRotationLeft={handleRotationLeft}
-            handleRotationRight={handleRotationRight}
-            setClickedImg={setClickedImg}
-          />
-        )}
-      </div>
+      <ImageList
+        sx={{ width: 265, height: 450 }}
+        variant="quilted"
+        cols={2}
+        rowHeight={121}
+      >
+        {ramadaProjectData.ramadaProjectData.map((item, index) => (
+          <ImageListItem
+            key={index}
+            cols={item.cols || 1}
+            rows={item.rows || 1}
+          >
+            <img
+              {...srcset(item.img, 121, item.rows, item.cols)}
+              alt={item.tag}
+              loading="lazy"
+              onClick={() => handleClick(item, index)}
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+      {clickedImg && (
+        <Lightbox
+          clickedImg={clickedImg}
+          handleRotationLeft={handleRotationLeft}
+          handleRotationRight={handleRotationRight}
+          setClickedImg={setClickedImg}
+        />
+      )}
     </div>
   );
 }

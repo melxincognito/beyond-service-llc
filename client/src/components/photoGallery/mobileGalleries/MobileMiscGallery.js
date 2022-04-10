@@ -58,9 +58,9 @@ export default function MobileMiscGallery() {
     <div>
       <div>
         <ImageList
-          sx={{ width: 350, height: 450 }}
+          sx={{ width: 265, height: 450 }}
           variant="quilted"
-          cols={3}
+          cols={2}
           rowHeight={121}
         >
           {itemData.itemData.map((item, index) => (
