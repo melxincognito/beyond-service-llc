@@ -37,7 +37,8 @@ export default function DesktopProjectGallery() {
   const galleryTitleContainerStyles = {
     display: "flex",
     justifyContent: "center",
-    bgcolor: "secondary.main",
+    bgcolor: "black",
+    color: "white",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     borderRadius: "4px 25px 4px 25px",
     margin: "1rem 0",
