@@ -316,6 +316,7 @@ export default function HomePage() {
           </ul>{" "}
           <Box id="spacer" sx={spacerStyles}>
             {" "}
+            hi{" "}
           </Box>
         </Box>{" "}
       </motion.div>
