@@ -31,6 +31,7 @@ export default class MobileProjectGallery extends Component {
   updateMiscGallery = () => {
     this.setState({ content: <MobileMiscGallery /> });
   };
+
   render() {
     const titleDisplayStyles = {
       display: "flex",
@@ -67,8 +68,7 @@ export default class MobileProjectGallery extends Component {
           <Box
             sx={{
               marginBottom: 2,
-              display: "grid",
-              gridTemplateColumns: "1fr",
+              display: "flex-box",
               justifyContent: "center",
               alignContent: "center",
               alignItems: "center",
