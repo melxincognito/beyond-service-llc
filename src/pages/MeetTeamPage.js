@@ -179,7 +179,6 @@ export default function MeetTeamPage() {
           <Box id="spacer" sx={spacerStyles}>
             {" "}
           </Box>
-          <BottomNavLabel />
         </motion.div>
       </AnimatePresence>
     </div>

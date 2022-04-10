@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import ContactForm from "../components/forms/ContactForm";
 import { Box } from "@mui/material";
-import BottomNavLabel from "../components/navigation/BottomNavLabel";
+
 export default function ContactPage() {
   const spacerStyles = {
     margin: "0 0 -50px 0",

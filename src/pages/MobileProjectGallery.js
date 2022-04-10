@@ -47,7 +47,7 @@ export default class MobileProjectGallery extends Component {
     const mainContainerStyles = {
       display: "grid",
       alignContent: "center",
-      margin: 2,
+
       zIndex: -2,
     };
 
@@ -79,20 +79,19 @@ export default class MobileProjectGallery extends Component {
               <Typography variant="h4"> Project Gallery</Typography>
             </Box>
             <Container sx={mainContainerStyles}>
-              <Container>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    bgcolor: "black",
-                    marginBottom: 3,
-                    boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.54)",
-                    borderRadius: 2,
-                  }}
-                >
-                  <div> {this.state.content}</div>
-                </Box>
-              </Container>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  bgcolor: "black",
+                  marginBottom: 3,
+                  boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.54)",
+                  borderRadius: 2,
+                }}
+              >
+                {this.state.content}
+              </Box>
+
               <Box sx={buttonsContainerStyles}>
                 <Box id="buttonsContainer" sx={{ display: "grid", gap: 1 }}>
                   <Button
@@ -120,7 +119,6 @@ export default class MobileProjectGallery extends Component {
               </Box>
             </Container>
             <hr size="1" width="100%" color="gray" />
-            <BottomNavLabel />
           </Box>
         </motion.div>
       </AnimatePresence>
