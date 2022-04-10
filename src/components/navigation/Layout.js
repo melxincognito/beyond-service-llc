@@ -1,5 +1,5 @@
 import React from "react";
-import BottomNavLabel from "./BottomNavLabel";
+
 import NavBar from "./NavBar";
 import { Container, Paper } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
@@ -42,7 +42,6 @@ export default function Layout(props) {
             </div>
             <div style={{ left: 0 }}>{props.children}</div>
           </Container>
-          <BottomNavLabel />
         </Paper>
       </ThemeProvider>
     </>

@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { AnimatePresence, motion } from "framer-motion";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function ServicesPage() {
   const cardStyles = {
@@ -183,6 +184,7 @@ export default function ServicesPage() {
           <hr size="1" width="100%" color="gray" />
           <Box id="spacer" sx={spacerStyles}>
             {" "}
+            <BottomNavLabel />
           </Box>
         </motion.div>
       </AnimatePresence>

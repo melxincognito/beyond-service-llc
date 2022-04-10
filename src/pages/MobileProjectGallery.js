@@ -6,6 +6,7 @@ import MobileRamadaGallery from "../components/photoGallery/mobileGalleries/Mobi
 import MobileBathroomGallery from "../components/photoGallery/mobileGalleries/MobileBathroomGallery";
 import MobileKitchenGallery from "../components/photoGallery/mobileGalleries/MobileKitchenGallery";
 import MobileMiscGallery from "../components/photoGallery/mobileGalleries/MobileMiscGallery";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default class MobileProjectGallery extends Component {
   constructor(props) {
@@ -119,6 +120,7 @@ export default class MobileProjectGallery extends Component {
               </Box>
             </Container>
             <hr size="1" width="100%" color="gray" />
+            <BottomNavLabel />
           </Box>
         </motion.div>
       </AnimatePresence>

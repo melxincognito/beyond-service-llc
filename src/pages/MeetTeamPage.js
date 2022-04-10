@@ -88,8 +88,22 @@ export default function MeetTeamPage() {
                   />
                 </Box>
 
-                <Box sx={{ width: "70%" }}>
-                  <CardContent>
+                <Box
+                  sx={{
+                    width: "90%",
+                  }}
+                >
+                  <CardContent
+                    sx={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr",
+                      gridGap: "1rem",
+                      justifyContent: "center",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyItems: "center",
+                    }}
+                  >
                     <Typography variant="h5">
                       Jonathan Rodriguez - Director{" "}
                     </Typography>
@@ -128,9 +142,19 @@ export default function MeetTeamPage() {
                   />
                 </Box>
 
-                <Box sx={{ width: "70%" }}>
+                <Box sx={{ width: "90%" }}>
                   {" "}
-                  <CardContent>
+                  <CardContent
+                    sx={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr",
+                      gridGap: "1rem",
+                      justifyContent: "center",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyItems: "center",
+                    }}
+                  >
                     <Typography variant="h5">
                       Juan Rodriguez - Executive Manager{" "}
                     </Typography>
