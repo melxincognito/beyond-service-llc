@@ -1,0 +1,49 @@
+{
+  "kitchenRemodelData": [
+    {
+      "img": "https://live.staticflickr.com/65535/51992455012_077db39e1b_z.jpg",
+      "tag": "Kitchen Remodel",
+      "id": 1
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993729624_2a4978c9ee_z.jpg",
+      "tag": "Kitchen Remodel",
+      "id": 2
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993729474_2f3b89950b_z.jpg",
+      "tag": "Kitchen Remodel",
+      "id": 3
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993512178_fa139978df_z.jpg",
+      "tag": "Kitchen Remodel",
+      "id": 4
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993512118_690452332f_z.jpg",
+      "tag": "Kitchen Remodel",
+      "id": 5
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993729594_2e2cbe8eb3_z.jpg",
+      "tag": "Kitchen Remodel After",
+      "id": 6
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993998795_92f4e05c90_z.jpg",
+      "tag": "Kitchen Remodel After",
+      "id": 7
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993453831_c37ac00209_z.jpg",
+      "tag": "Kitchen Remodel Before",
+      "id": 8
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/51993453776_22b5807deb_z.jpg",
+      "tag": "Kitchen Remodel Before",
+      "id": 9
+    }
+  ]
+}

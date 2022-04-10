@@ -2,8 +2,9 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import bathroomRemodelData from "../../data/bathroomRemodelData.json";
-export default function BathroomGallery() {
+import kitchenRemodelData from "../../data/kitchenRemodelData.json";
+
+export default function KitchenGallery() {
   return (
     <div>
       <Box
@@ -20,7 +21,7 @@ export default function BathroomGallery() {
         }}
       >
         <Slide>
-          {bathroomRemodelData.bathroomRemodelData.map((slideImage, index) => (
+          {kitchenRemodelData.kitchenRemodelData.map((slideImage, index) => (
             <div className="each-slide" key={index}>
               <div
                 style={{
