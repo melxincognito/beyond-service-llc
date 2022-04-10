@@ -7,6 +7,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Jonathan from "../assets/photos/Jonathan.jpg";
 import Juan from "../assets/photos/Juan.jpg";
 import { AnimatePresence, motion } from "framer-motion";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function MeetTeamPage() {
   // styles
@@ -178,6 +179,7 @@ export default function MeetTeamPage() {
           <Box id="spacer" sx={spacerStyles}>
             {" "}
           </Box>
+          <BottomNavLabel />
         </motion.div>
       </AnimatePresence>
     </div>

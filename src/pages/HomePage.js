@@ -1,5 +1,12 @@
 import React from "react";
-import { Card, CardContent, Typography, Box, Container } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Container,
+  Link,
+} from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
 // testimonies
@@ -8,6 +15,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
 import "../App.css";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function HomePage() {
   // center card style
@@ -314,10 +322,8 @@ export default function HomePage() {
               </a>
             ))}{" "}
           </ul>{" "}
-          <Box id="spacer" sx={spacerStyles}>
-            {" "}
-            hi{" "}
-          </Box>
+          <Box id="spacer" sx={spacerStyles}></Box>
+          <BottomNavLabel />
         </Box>{" "}
       </motion.div>
     </AnimatePresence>

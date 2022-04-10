@@ -182,10 +182,8 @@ export default function ServicesPage() {
             </CardContent>
           </Card>
           <hr size="1" width="100%" color="gray" />
-          <Box id="spacer" sx={spacerStyles}>
-            {" "}
-            <BottomNavLabel />
-          </Box>
+          <Box id="spacer" sx={spacerStyles}></Box>
+          <BottomNavLabel />
         </motion.div>
       </AnimatePresence>
     </>

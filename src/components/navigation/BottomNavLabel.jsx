@@ -1,29 +1,34 @@
 import React from "react";
-import { Paper, Typography } from "@mui/material";
+import { Typography, Link, Box } from "@mui/material";
+function Copyright() {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center">
+      {"© "}
+      <Link color="inherit" href="www.google.com">
+        Beyond Service
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 export default function BottomNavLabel() {
   return (
-    <div>
-      <Paper
-        sx={{
-          bgcolor: "secondary.main",
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          color: "white",
-          display: "flex",
-          alignContent: "center",
-          justifyContent: "center",
-        }}
-        elevation={5}
+    <Box sx={{ bgcolor: "primary.dark", p: 6 }} component="footer">
+      <Typography variant="h6" align="center" gutterBottom>
+        Phoenix General Contractors
+      </Typography>
+      <Typography
+        variant="subtitle1"
+        align="center"
+        color="text.secondary"
+        component="p"
       >
-        {" "}
-        <Typography>
-          {" "}
-          © 2022 - Beyond Service LLC | All Rights Reserved
-        </Typography>
-      </Paper>
-    </div>
+        Delivering only the best results to clients in Phoenix, Scottsdale &
+        Paradise Valley
+      </Typography>
+      <Copyright />
+    </Box>
   );
 }

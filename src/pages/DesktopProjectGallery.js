@@ -5,6 +5,7 @@ import BathroomGallery from "../components/photoGallery/BathroomGallery";
 import KitchenGallery from "../components/photoGallery/KitchenGallery";
 import { AnimatePresence, motion } from "framer-motion";
 import MiscGallery from "../components/photoGallery/MiscGallery";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 export default function DesktopProjectGallery() {
   const mainCardStyles = {
     padding: 4,
@@ -83,6 +84,7 @@ export default function DesktopProjectGallery() {
             </div>
           </Box>
         </Card>
+        <BottomNavLabel />
       </motion.div>
     </AnimatePresence>
   );
