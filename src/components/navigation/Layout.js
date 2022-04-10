@@ -1,7 +1,7 @@
 import React from "react";
 
 import NavBar from "./NavBar";
-import { Container, Paper } from "@mui/material";
+import { Container, Paper, Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../assets/theme";
 import ContactInformation from "../information/ContactInformation";
@@ -36,6 +36,16 @@ export default function Layout(props) {
       <ThemeProvider theme={theme}>
         <Paper sx={paperStyle}>
           <NavBar />
+          <Container
+            maxWidth="xl"
+            sx={{
+              p: 2,
+              bgcolor: "primary.dark",
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            {" "}
+          </Container>
           <Container sx={layoutStyle}>
             <div style={themeToggleContainerStyles}>
               <ContactInformation />

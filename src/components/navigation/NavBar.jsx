@@ -98,9 +98,20 @@ const NavBar = () => {
 
   return (
     <AppBar position="fixed" sx={navBarStyles}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          p: 2,
+          bgcolor: "primary.main",
+          display: { xs: "flex", md: "none" },
+        }}
+      >
+        {" "}
+      </Container>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo for not collapsed view */}
+
           <Typography
             variant="h6"
             noWrap

@@ -47,7 +47,6 @@ export default class MobileProjectGallery extends Component {
     const mainContainerStyles = {
       display: "grid",
       alignContent: "center",
-
       zIndex: -2,
     };
 
