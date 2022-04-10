@@ -138,13 +138,6 @@ export default function ContactForm() {
     borderRadius: "4px 25px 4px 25px",
   };
 
-  const formInputContainerStyles = {
-    bgcolor: "secondary.light",
-    marginTop: 3,
-    borderRadius: 4,
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
-  };
-
   const textFieldStyles = {
     margin: "10px 0px",
   };

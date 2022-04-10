@@ -2,9 +2,9 @@ import * as React from "react";
 import { Card, CardContent, Box, Typography, Container } from "@mui/material";
 import RamadaGallery from "../components/photoGallery/RamadaGallery";
 import BathroomGallery from "../components/photoGallery/BathroomGallery";
-
+import KitchenGallery from "../components/photoGallery/KitchenGallery";
 import { AnimatePresence, motion } from "framer-motion";
-
+import MiscGallery from "../components/photoGallery/MiscGallery";
 export default function DesktopProjectGallery() {
   const mainCardStyles = {
     padding: 4,
@@ -58,27 +58,27 @@ export default function DesktopProjectGallery() {
           <Box id="mainContainer" sx={mainContainerStyles}>
             <div id="ramadaGalleryContainer">
               <CardContent sx={galleryTitleContainerStyles}>
-                <Typography> Outdoor Projects</Typography>
+                <Typography> Outdoor Additions</Typography>
               </CardContent>
               <RamadaGallery />
             </div>
             <div id="bathroomGalleryContainer">
               <CardContent sx={galleryTitleContainerStyles}>
-                <Typography> Bathroom Projects</Typography>
+                <Typography> Bathroom Remodels</Typography>
               </CardContent>
               <BathroomGallery />
             </div>
             <div id="ramadaGalleryContainer">
               <CardContent sx={galleryTitleContainerStyles}>
-                <Typography> Outdoor Projects</Typography>
+                <Typography> Kitchen Remodels</Typography>
               </CardContent>
-              <RamadaGallery />
+              <KitchenGallery />
             </div>
             <div id="bathroomGalleryContainer">
               <CardContent sx={galleryTitleContainerStyles}>
-                <Typography> Bathroom Projects</Typography>
+                <Typography> Misc</Typography>
               </CardContent>
-              <BathroomGallery />
+              <MiscGallery />
             </div>
           </Box>
         </Card>

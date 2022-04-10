@@ -14,6 +14,7 @@ export default function HomePage() {
   const cardStyles = {
     borderRadius: "5px 25px 5px 25px",
     display: "grid",
+
     alignContent: "center",
     justifyContent: "center",
     textAlign: "center",
@@ -29,7 +30,9 @@ export default function HomePage() {
     justifyItems: "center",
     alignContent: "center",
     justifyContent: "center",
-    gap: "15px",
+    gridTemplateColumns: "1fr",
+    gridTemplateRows: "repeat(1, 1fr)",
+    gridRowGap: "5px",
   };
 
   const topImageContainerStyles = {
@@ -98,6 +101,7 @@ export default function HomePage() {
     width: "100%",
     bgcolor: "accordion.main",
     left: 0,
+    right: 0,
   };
   const spacerStyles = {
     margin: "0 0 -50px 0",

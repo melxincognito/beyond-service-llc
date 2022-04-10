@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import MobileRamadaGallery from "../components/photoGallery/mobileGalleries/MobileRamadaGallery";
 import MobileBathroomGallery from "../components/photoGallery/mobileGalleries/MobileBathroomGallery";
 import MobileKitchenGallery from "../components/photoGallery/mobileGalleries/MobileKitchenGallery";
+import MobileMiscGallery from "../components/photoGallery/mobileGalleries/MobileMiscGallery";
 
 export default class MobileProjectGallery extends Component {
   constructor(props) {
@@ -24,6 +25,10 @@ export default class MobileProjectGallery extends Component {
 
   updateKitchenGallery = () => {
     this.setState({ content: <MobileKitchenGallery /> });
+  };
+
+  updateMiscGallery = () => {
+    this.setState({ content: <MobileMiscGallery /> });
   };
   render() {
     const mainContainerStyles = {
@@ -73,6 +78,9 @@ export default class MobileProjectGallery extends Component {
                     onClick={this.updateKitchenGallery}
                   >
                     View Kitchen Gallery
+                  </Button>
+                  <Button variant="contained" onClick={this.updateMiscGallery}>
+                    View Misc Gallery
                   </Button>
                 </Box>
               </Box>
