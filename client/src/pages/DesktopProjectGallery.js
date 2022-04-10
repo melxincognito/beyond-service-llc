@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Card, CardContent, Box, Typography, Container } from "@mui/material";
+import { Card, CardContent, Box, Typography } from "@mui/material";
 import RamadaGallery from "../components/photoGallery/RamadaGallery";
 import BathroomGallery from "../components/photoGallery/BathroomGallery";
 import KitchenGallery from "../components/photoGallery/KitchenGallery";
@@ -37,9 +37,9 @@ export default function DesktopProjectGallery() {
   const galleryTitleContainerStyles = {
     display: "flex",
     justifyContent: "center",
-    bgcolor: "black",
+    bgcolor: "secondary.main",
     color: "white",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+    boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.34)",
     borderRadius: "4px 25px 4px 25px",
     margin: "1rem 0",
   };
@@ -83,8 +83,6 @@ export default function DesktopProjectGallery() {
             </div>
           </Box>
         </Card>
-
-        <hr size="1" width="100%" color="gray" />
       </motion.div>
     </AnimatePresence>
   );

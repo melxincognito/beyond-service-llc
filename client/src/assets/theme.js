@@ -9,7 +9,7 @@ const theme = createTheme({
     },
     secondary: {
       dark: "rgba(233, 154, 93, 0.67)", // transparent orange
-      main: "#ff8f00", // yellow
+      main: "#000000", // black
       light: "rgba(255, 255, 255, 0.36)", // white and transparent
     },
     success: {

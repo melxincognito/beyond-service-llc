@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  Container,
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Container, Box, Button, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
 import MobileRamadaGallery from "../components/photoGallery/mobileGalleries/MobileRamadaGallery";
@@ -90,7 +83,6 @@ export default class MobileProjectGallery extends Component {
                   sx={{
                     display: "flex",
                     justifyContent: "center",
-
                     bgcolor: "black",
                     marginBottom: 3,
                     boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.54)",

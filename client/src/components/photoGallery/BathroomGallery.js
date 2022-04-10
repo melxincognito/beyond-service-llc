@@ -10,7 +10,7 @@ export default function BathroomGallery() {
         className="slide-container"
         style={{
           height: "auto",
-          backgroundColor: "black",
+          backgroundColor: "rgba(0, 0, 0, 0.56)",
           color: "white",
           maxWidth: "29rem",
           margin: "auto",

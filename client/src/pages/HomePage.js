@@ -166,7 +166,7 @@ export default function HomePage() {
                     backgroundColor: "rgba(255, 255, 255, 0.53)",
                   }}
                 >
-                  <Typography variant="h4" color="primary.main">
+                  <Typography variant="h4" color="secondary.main">
                     {" "}
                     Who are we?
                   </Typography>
@@ -220,7 +220,7 @@ export default function HomePage() {
                     bottom: "15rem",
                     left: "9rem",
                     zIndex: -1,
-                    border: "5px orange solid;",
+                    border: "5px #000000 solid;",
                     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
                   }}
                 >
