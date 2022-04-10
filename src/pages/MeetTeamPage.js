@@ -108,8 +108,8 @@ export default function MeetTeamPage() {
                     <Typography variant="h5">
                       Jonathan Rodriguez - Director{" "}
                     </Typography>
+                    <hr size="1" width="100%" color="gray" />
 
-                    <br />
                     <Typography>
                       {" "}
                       Jonathan is a Phoenix local who is passionate about
@@ -159,7 +159,7 @@ export default function MeetTeamPage() {
                     <Typography variant="h5">
                       Juan Rodriguez - Executive Manager{" "}
                     </Typography>
-                    <br />
+                    <hr size="1" width="100%" color="gray" />
                     <Typography>
                       {" "}
                       Juan is another Phoenix local with many years of
