@@ -44,6 +44,7 @@ export default class MobileProjectGallery extends Component {
       bgcolor: "secondary.light",
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
       borderRadius: "4px 25px 4px 25px",
+      width: "97%",
       padding: 1,
       marginBottom: 4,
     };
@@ -69,7 +70,17 @@ export default class MobileProjectGallery extends Component {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <Box>
+          <Box
+            sx={{
+              marginBottom: 2,
+              display: "grid",
+              gridTemplateColumns: "1fr",
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+              justifyItems: "center",
+            }}
+          >
             <Box sx={titleDisplayStyles}>
               <Typography variant="h4"> Project Gallery</Typography>
             </Box>
@@ -79,6 +90,7 @@ export default class MobileProjectGallery extends Component {
                   sx={{
                     display: "flex",
                     justifyContent: "center",
+
                     bgcolor: "black",
                     marginBottom: 3,
                     boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.54)",
@@ -114,6 +126,7 @@ export default class MobileProjectGallery extends Component {
                 </Box>
               </Box>
             </Container>
+            <hr size="1" width="100%" color="gray" />
           </Box>
         </motion.div>
       </AnimatePresence>
