@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import { Container, Box, Button, Card } from "@mui/material";
+import {
+  Container,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 
 import MobileRamadaGallery from "../components/photoGallery/mobileGalleries/MobileRamadaGallery";
@@ -31,6 +38,16 @@ export default class MobileProjectGallery extends Component {
     this.setState({ content: <MobileMiscGallery /> });
   };
   render() {
+    const titleDisplayStyles = {
+      display: "flex",
+      justifyContent: "center",
+      bgcolor: "secondary.light",
+      boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+      borderRadius: "4px 25px 4px 25px",
+      padding: 1,
+      marginBottom: 4,
+    };
+
     const mainContainerStyles = {
       display: "grid",
       alignContent: "center",
@@ -52,10 +69,22 @@ export default class MobileProjectGallery extends Component {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <Card>
+          <Box>
+            <Box sx={titleDisplayStyles}>
+              <Typography variant="h4"> Project Gallery</Typography>
+            </Box>
             <Container sx={mainContainerStyles}>
               <Container>
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    bgcolor: "black",
+                    marginBottom: 3,
+                    boxShadow: "0px 5px 15px 8px rgba(0,0,0,0.54)",
+                    borderRadius: 2,
+                  }}
+                >
                   <div> {this.state.content}</div>
                 </Box>
               </Container>
@@ -85,7 +114,7 @@ export default class MobileProjectGallery extends Component {
                 </Box>
               </Box>
             </Container>
-          </Card>
+          </Box>
         </motion.div>
       </AnimatePresence>
     );
