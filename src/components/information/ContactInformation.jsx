@@ -13,7 +13,7 @@ export default function ContactInformation() {
   };
   return (
     <>
-      <a href="tel:[6023211374]" style={{ textDecoration: "none" }}>
+      <a href="tel:6023211374" style={{ textDecoration: "none" }}>
         <Paper id="contactPhone" sx={contactPhonePaperStyles}>
           <Typography variant="overline" fontSize="small">
             <LocalPhoneIcon fontSize="xxsmall" /> Call us at (602) 321-1374
