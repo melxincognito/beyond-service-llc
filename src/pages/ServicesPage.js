@@ -25,14 +25,14 @@ export default function ServicesPage() {
   const headerCardStyles = {
     display: "flex",
     justifyContent: "center",
-    margin: 2,
+    margin: 1,
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     borderRadius: "4px 25px 4px 25px",
     bgcolor: "secondary.light",
   };
   const descriptionCardStyles = {
     bgcolor: "secondary.light",
-    margin: 2,
+    margin: 1,
     borderRadius: "4px 25px 4px 25px",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
     display: "flex",

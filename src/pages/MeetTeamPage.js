@@ -7,13 +7,12 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Jonathan from "../assets/photos/Jonathan.jpg";
 import Juan from "../assets/photos/Juan.jpg";
 import { AnimatePresence, motion } from "framer-motion";
-import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function MeetTeamPage() {
   // styles
 
   const cardStyles = {
-    padding: 2,
+    padding: 1,
     borderRadius: 2,
     bgcolor: "secondary.light",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
