@@ -27,7 +27,6 @@ export default function App() {
           element={<MobileProjectGallery />}
         />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/dummyProjectGallery" element={<DummyProjectGallery />} />
       </Routes>
     </Layout>
   );

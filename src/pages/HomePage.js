@@ -375,6 +375,214 @@ export default function HomePage() {
           <Box id="spacer" sx={spacerStyles}></Box>
           <BottomNavLabel />
         </Box>{" "}
+        {/*MOBILE HOMEPAGE*/}
+        {/*The desktop page isn't working on mobile so here we are. writing more code. ITS NOT DRY BUT IT'LL WORK*/}
+        <Box
+          id="mobileHomepageContainer"
+          sx={{
+            display: { xs: "grid", md: "none" },
+            gridTemplateColumns: "1fr",
+            gridTemplateRows: "auto auto",
+            gap: "3rem",
+          }}
+        >
+          <Box
+            id="mobileHeaderImageContainer"
+            sx={{
+              margin: "-15% -5%",
+              zIndex: -1,
+              position: "relative",
+            }}
+          >
+            <img
+              width="100%"
+              style={{
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+              }}
+              src={HeaderImg}
+              alt="
+        desert landscape"
+            />
+          </Box>
+          <Box
+            id="cardContainer"
+            sx={{
+              position: "absolute",
+            }}
+          >
+            <Card
+              sx={{
+                width: "70%",
+                borderRadius: "5px 25px 5px 25px",
+                display: "grid",
+                alignContent: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+                margin: "auto",
+                backgroundColor: "rgba(255, 255, 255, 0.53)",
+                padding: 2,
+                spacing: 12,
+              }}
+            >
+              <CardContent>
+                <div>
+                  <Typography variant="h6">
+                    {" "}
+                    Phoenix General Contractors
+                  </Typography>
+                </div>
+
+                <div>
+                  <Typography variant="h6" color="success.main">
+                    {" "}
+                    Our quality of service is BEYOND comparison!
+                  </Typography>
+                </div>
+              </CardContent>
+            </Card>
+          </Box>
+          <br />
+          <Box
+            id="imageContainer"
+            sx={{ display: "flex", gap: 2, justifyContent: "space-evenly" }}
+          >
+            <img
+              src="https://live.staticflickr.com/65535/51992455012_077db39e1b_z.jpg"
+              alt="kitchen remodel"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+            <img
+              src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              alt="tub"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+          </Box>
+          <Box id="identityContainer">
+            <Card sx={cardStyles}>
+              <CardContent
+                sx={{
+                  borderRadius: "5px 25px 5px 25px",
+                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.7)",
+                  margin: 1,
+                  backgroundColor: "secondary.main",
+                }}
+              >
+                <Typography variant="h5" color="white">
+                  {" "}
+                  Who are we?
+                </Typography>
+              </CardContent>{" "}
+              <CardContent>
+                {" "}
+                <Typography>
+                  We're a team of Phoenix locals providing only the BEST general
+                  contracting services in the valley. We provide all types of
+                  services to our customers. From home remodels, plumbing to
+                  HVAC. Find out for yourself why we remain as one of Phoenix's
+                  preferred General Contractors. Look around our site to find
+                  out more about what Beyond Services has to offer. Feel free to
+                  use our <a href="/contact">contact form</a> or give us a call
+                  if you want us to help turn your house into the perfect home!
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+          <Box
+            id="imageContainer"
+            sx={{ display: "flex", gap: 2, justifyContent: "space-evenly" }}
+          >
+            {" "}
+            <img
+              src="https://images.unsplash.com/photo-1521783593447-5702b9bfd267?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1804&q=80"
+              alt="bathroom"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+            <img
+              src="https://images.unsplash.com/flagged/photo-1573168710465-7f7da9a23a15?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              alt="kitchen remodel"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+          </Box>
+          <Box id="whyUsContainer">
+            <Card sx={cardStyles}>
+              <CardContent
+                sx={{
+                  borderRadius: "5px 25px 5px 25px",
+                  boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.7)",
+                  margin: 1,
+                  backgroundColor: "secondary.main",
+                }}
+              >
+                <Typography variant="h5" color="white">
+                  {" "}
+                  Why choose us?
+                </Typography>
+              </CardContent>{" "}
+              <CardContent>
+                {" "}
+                <Typography>
+                  Finding the right person to do work on your home is a big
+                  deal. Our team at Beyond Service is dedicated to delivering
+                  high quality results to our customers by placing a high value
+                  on open communication and attention to detail. We do our best
+                  to understand each persons specific needs and provide results
+                  beyond expectations.{" "}
+                  <a href="/projectGalleryMobile"> Click here</a> to check out
+                  past projects in our photo gallery.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+          <Box
+            id="imageContainer"
+            sx={{ display: "flex", gap: 2, justifyContent: "space-evenly" }}
+          >
+            {" "}
+            <img
+              src="https://images.unsplash.com/photo-1541604193435-22287d32c2c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              alt="bathroom"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+            <img
+              src="https://images.unsplash.com/photo-1549407294-0bf7c458df48?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80"
+              alt="kitchen remodel"
+              width="150px"
+              height="150px"
+              style={{
+                borderRadius: "50%",
+                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
+              }}
+            />
+          </Box>
+          <hr size="1" width="100%" color="gray" />
+          <BottomNavLabel />
+        </Box>{" "}
       </motion.div>
     </AnimatePresence>
   );
