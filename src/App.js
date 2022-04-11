@@ -7,7 +7,6 @@ import MeetTeamPage from "./pages/MeetTeamPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
 
-import DummyProjectGallery from "./pages/DummyProjectGallery";
 import DesktopProjectGallery from "./pages/DesktopProjectGallery";
 import MobileProjectGallery from "./pages/MobileProjectGallery";
 
