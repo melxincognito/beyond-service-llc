@@ -81,6 +81,23 @@ export default function ServicesPage() {
                     aria-controls="panel1"
                     id="panel1"
                   >
+                    <Typography>AirBnb Remodels</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
+                    <Typography>
+                      Upgrade an investment property to a more modern style for
+                      AirBnb guests. We can help you with the design and
+                      construction of your AirBnb remodel in order to maximize
+                      your guest's enjoyment.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+                <Accordion sx={accordionColor}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1"
+                    id="panel1"
+                  >
                     <Typography>Home Renovations/Remodels</Typography>
                   </AccordionSummary>
                   <AccordionDetails sx={{ bgcolor: "accordion.light" }}>
