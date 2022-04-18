@@ -340,10 +340,30 @@ export default function HomePage() {
                       </div>{" "}
                     </CardContent>
                   </Card>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "white",
+                    }}
+                  >
+                    <Typography variant="subtitle2">
+                      {" "}
+                      Read more customer testimonials{" "}
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="/customerTestimonials"
+                        target="_blank"
+                      >
+                        {" "}
+                        here{" "}
+                      </a>
+                    </Typography>
+                  </Box>
                 </Box>
                 <ArrowForwardIosIcon onClick={flipReviews} />
               </Box>
-            </Box>
+            </Box>{" "}
           </Box>{" "}
         </Box>
         {/*horizontal image gallery in seperate container on bottom bc it keeps getting pushed to the top */}

@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import MeetTeamPage from "./pages/MeetTeamPage";
 import ServicesPage from "./pages/ServicesPage";
 import ContactPage from "./pages/ContactPage";
-
+import CustomerReviewPage from "./pages/CustomerReviewPage";
 import DesktopProjectGallery from "./pages/DesktopProjectGallery";
 import MobileProjectGallery from "./pages/MobileProjectGallery";
 
@@ -25,6 +25,7 @@ export default function App() {
           path="/projectGalleryMobile"
           element={<MobileProjectGallery />}
         />
+        <Route path="/customerTestimonials" element={<CustomerReviewPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Layout>
