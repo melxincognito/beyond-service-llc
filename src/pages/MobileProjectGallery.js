@@ -6,7 +6,7 @@ import MobileRamadaGallery from "../components/photoGallery/mobileGalleries/Mobi
 import MobileBathroomGallery from "../components/photoGallery/mobileGalleries/MobileBathroomGallery";
 import MobileKitchenGallery from "../components/photoGallery/mobileGalleries/MobileKitchenGallery";
 import MobileMiscGallery from "../components/photoGallery/mobileGalleries/MobileMiscGallery";
-import BottomNavLabel from "../components/navigation/BottomNavLabel";
+import MobileAirbnbGallery from "../components/photoGallery/mobileGalleries/MobileAirbnbGallery";
 
 export default class MobileProjectGallery extends Component {
   constructor(props) {
@@ -16,6 +16,9 @@ export default class MobileProjectGallery extends Component {
     };
   }
 
+  updateAirbnbGallery = () => {
+    this.setState({ content: <MobileAirbnbGallery /> });
+  };
   updateBathroomGallery = () => {
     this.setState({ content: <MobileBathroomGallery /> });
   };
@@ -93,6 +96,12 @@ export default class MobileProjectGallery extends Component {
 
               <Box sx={buttonsContainerStyles}>
                 <Box id="buttonsContainer" sx={{ display: "grid", gap: 1 }}>
+                  <Button
+                    variant="contained"
+                    onClick={this.updateAirbnbGallery}
+                  >
+                    View AirBnb Remodel Gallery
+                  </Button>
                   <Button
                     variant="contained"
                     onClick={this.updateRamadaGallery}

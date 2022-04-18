@@ -3,9 +3,11 @@ import { Card, CardContent, Box, Typography } from "@mui/material";
 import RamadaGallery from "../components/photoGallery/RamadaGallery";
 import BathroomGallery from "../components/photoGallery/BathroomGallery";
 import KitchenGallery from "../components/photoGallery/KitchenGallery";
-import { AnimatePresence, motion } from "framer-motion";
 import MiscGallery from "../components/photoGallery/MiscGallery";
+import AirbnbGallery from "../components/photoGallery/AirBnbGallery";
 import BottomNavLabel from "../components/navigation/BottomNavLabel";
+import { AnimatePresence, motion } from "framer-motion";
+
 export default function DesktopProjectGallery() {
   const mainCardStyles = {
     padding: 4,
@@ -58,6 +60,12 @@ export default function DesktopProjectGallery() {
             <Typography variant="h4"> Project Gallery</Typography>
           </CardContent>
           <Box id="mainContainer" sx={mainContainerStyles}>
+            <div id="airbnbGalleryContainer">
+              <CardContent sx={galleryTitleContainerStyles}>
+                <Typography> AirBnb Remodel </Typography>
+              </CardContent>
+              <AirbnbGallery />
+            </div>
             <div id="ramadaGalleryContainer">
               <CardContent sx={galleryTitleContainerStyles}>
                 <Typography> Outdoor Additions</Typography>
