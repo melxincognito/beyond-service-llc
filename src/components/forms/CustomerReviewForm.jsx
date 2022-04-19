@@ -4,7 +4,6 @@ import {
   CardContent,
   TextField,
   Typography,
-  MenuItem,
   Button,
   Dialog,
   DialogActions,
@@ -12,21 +11,44 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
   Box,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
+import { firestore } from "../../firebase-config";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function CustomerReviewForm() {
+  // states for storing form values and sending to firestore
+
+  const [customerName, setCustomerName] = React.useState("");
+  const [customerEmail, setCustomerEmail] = React.useState("");
+  const [customerReview, setCustomerReview] = React.useState("");
+
+  // set data variable to send object to firestore
+
+  const data = {
+    id: uuidv4(),
+    Name: customerName,
+    Email: customerEmail,
+    Review: customerReview,
+  };
+
+  const sendReview = (e) => {
+    e.preventDefault();
+    setDoc(doc(firestore, "Revista", data.id), {
+      name: data.Name,
+      email: data.Email,
+      review: data.Review,
+    });
+  };
+  // set popup after submit upon
+
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -36,12 +58,14 @@ export default function CustomerReviewForm() {
     setOpen(false);
     routeChange();
   };
-
+  // route change after popup is closed
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/`;
     navigate(path);
   };
+
+  // styles components
   const cardStyles = {
     padding: 3,
     borderRadius: 2,
@@ -90,13 +114,14 @@ export default function CustomerReviewForm() {
             </Typography>
           </Box>
 
-          <form>
+          <form onSubmit={sendReview}>
             <div id="nameInputField">
               <TextField
                 fullWidth
                 label="Name"
                 id="contactName"
                 name="name"
+                onChange={(e) => setCustomerName(e.target.value)}
                 required
               />
             </div>
@@ -108,6 +133,7 @@ export default function CustomerReviewForm() {
                 type="email"
                 id="contactEmail"
                 name="userEmail"
+                onChange={(e) => setCustomerEmail(e.target.value)}
                 required
               />
             </div>{" "}
@@ -120,6 +146,7 @@ export default function CustomerReviewForm() {
                 label="Customer Testimonial"
                 id="fullWidth"
                 name="testimonial"
+                onChange={(e) => setCustomerReview(e.target.value)}
                 required
               />
             </div>
@@ -127,7 +154,6 @@ export default function CustomerReviewForm() {
               variant="contained"
               type="submit"
               sx={submitButtonStyles}
-              onClick={handleClickOpen}
               fullWidth
             >
               <SendIcon /> Submit Testimonial
