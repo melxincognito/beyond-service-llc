@@ -26,9 +26,17 @@ function FirebaseCustomerReviewContent() {
   }
 
   function clientReviewFunc() {
-    setClientReview(reviews[2].review);
-    setClientName(reviews[2].name);
+    setClientReview(reviews[3].review);
+    setClientName(reviews[3].name);
     console.log(clientReview);
+  }
+  function setReviewOrian() {
+    setClientReview(reviews[0].review);
+    setClientName(reviews[0].name);
+  }
+  function setReviewMel() {
+    setClientReview(reviews[1].review);
+    setClientName(reviews[1].name);
   }
 
   return (
@@ -39,14 +47,25 @@ function FirebaseCustomerReviewContent() {
           backgroundColor: "black",
           marginTop: "2rem",
           color: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+          justifyItems: "center",
         }}
       >
-        {<h1 style={{ color: "white" }}> {clientName}</h1>}
-        {<p style={{ color: "white" }}> {clientReview} </p>}
+        {
+          <CustomerReviewCard
+            CustomerName={clientName}
+            CustomerReview={clientReview}
+          />
+        }
       </div>{" "}
       <button onClick={dothis}>Make</button>
       <button onClick={dothat}> Console log array</button>
-      <button onClick={clientReviewFunc}> Set review</button>
+      <button onClick={clientReviewFunc}> Set review Vi</button>
+      <button onClick={setReviewMel}> Set Review Mel</button>
+      <button onClick={setReviewOrian}> Set Review Orian</button>
     </div>
   );
 }
