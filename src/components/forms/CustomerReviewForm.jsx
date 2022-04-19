@@ -12,6 +12,7 @@ import {
   DialogTitle,
   Slide,
   Box,
+  MenuItem,
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
@@ -19,6 +20,13 @@ import { doc, setDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { firestore } from "../../firebase-config";
 
+const servicesOptions = [
+  { value: "Remodel Service", label: "Remodel Service" },
+  { value: "AirBnb Remodel Service", label: "AirBnb Remodel Service" },
+  { value: "Home Addition Service", label: "Home Addition Service" },
+  { value: "Outdoor Addition Service", label: "Outdoor Addition Service" },
+  { value: "Other", label: "Other" },
+];
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -30,6 +38,11 @@ export default function CustomerReviewForm() {
   const [customerEmail, setCustomerEmail] = React.useState("");
   const [customerReview, setCustomerReview] = React.useState("");
 
+  const [serviceReview, setServiceReview] = React.useState("Remodel Service");
+
+  const handleServiceChange = (event) => {
+    setServiceReview(event.target.value);
+  };
   // set data variable to send object to firestore
 
   const data = {
@@ -37,6 +50,7 @@ export default function CustomerReviewForm() {
     Name: customerName,
     Email: customerEmail,
     Review: customerReview,
+    Service: serviceReview,
   };
 
   const sendReview = (e) => {
@@ -45,6 +59,7 @@ export default function CustomerReviewForm() {
       name: data.Name,
       email: data.Email,
       review: data.Review,
+      service: data.Service,
     });
   };
   // set popup after submit upon
@@ -137,13 +152,33 @@ export default function CustomerReviewForm() {
                 required
               />
             </div>{" "}
-            <div id="messageInputField">
+            <div id="projectTypeInputField">
+              <TextField
+                sx={textFieldStyles}
+                id="serviceReviewSelection"
+                fullWidth
+                select
+                label="Service Category"
+                value={serviceReview}
+                onChange={handleServiceChange}
+                name="service"
+                helperText="Select the service category you're reviewing for Beyond Service"
+                required
+              >
+                {servicesOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </div>
+            <div id="reviewInputField">
               <TextField
                 fullWidth
                 multiline
                 sx={textFieldStyles}
                 rows={5}
-                label="Customer Testimonial"
+                label="Write about your experience with Beyond Service here!"
                 id="fullWidth"
                 name="testimonial"
                 onChange={(e) => setCustomerReview(e.target.value)}

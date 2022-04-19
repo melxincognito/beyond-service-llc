@@ -13,8 +13,11 @@ export default function CustomerReviewCard(props) {
         <h1> {props.CustomerName}</h1>
       </div>
       <div>
+        <p>{props.ServiceCategory} </p>
+      </div>
+      <div>
         {" "}
-        <p> {props.CustomerReview} </p>
+        <p style={{ fontStyle: "italic" }}> " {props.CustomerReview} " </p>
       </div>
     </div>
   );
