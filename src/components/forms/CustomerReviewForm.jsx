@@ -190,6 +190,7 @@ export default function CustomerReviewForm() {
               type="submit"
               sx={submitButtonStyles}
               fullWidth
+              onClick={handleClickOpen}
             >
               <SendIcon /> Submit Testimonial
             </Button>
