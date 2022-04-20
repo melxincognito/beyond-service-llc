@@ -52,7 +52,7 @@ function FirebaseCustomerReviewContent() {
   const [clientReview, setClientReview] = React.useState(
     "This was the most amazing experience!"
   );
-  const [clientService, setClientService] = React.useState("Cleaning");
+  const [clientService, setClientService] = React.useState("Home Addition");
 
   function clientReviewVi() {
     setClientReview(reviews[2].review);
