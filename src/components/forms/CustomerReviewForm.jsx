@@ -55,7 +55,7 @@ export default function CustomerReviewForm() {
 
   const sendReview = (e) => {
     e.preventDefault();
-    setDoc(doc(firestore, "Revista", data.id), {
+    setDoc(doc(firestore, "PendingReviews", data.id), {
       name: data.Name,
       email: data.Email,
       review: data.Review,

@@ -2,12 +2,12 @@ import * as React from "react";
 import { Box, Container } from "@mui/material";
 
 import { getDocs } from "firebase/firestore";
-import { collectionRef } from "../firebase-config";
+import { pendingReviewsCollectionRef } from "../firebase-config";
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
 let reviews = [];
 (function dothis() {
-  getDocs(collectionRef).then((snapshot) => {
+  getDocs(pendingReviewsCollectionRef).then((snapshot) => {
     snapshot.docs.forEach((doc) => {
       reviews.push({ ...doc.data(), id: doc.id });
     });
