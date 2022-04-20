@@ -4,19 +4,19 @@ import { doc, setDoc } from "firebase/firestore";
 import { firestore } from "../../firebase-config";
 
 export default function PendingClientReviewCard(props) {
-  const [approvedCustomerName] = React.useState(props.ClientName);
-  const [approvedCustomerEmail] = React.useState(props.ClientEmail);
-  const [approvedCustomerReview] = React.useState(props.ClientReview);
+  const [customerName] = React.useState(props.ClientName);
+  const [customerEmail] = React.useState(props.ClientEmail);
+  const [customerReview] = React.useState(props.ClientReview);
 
-  const [approvedServiceReview] = React.useState(props.ServiceCategory);
+  const [serviceCategory] = React.useState(props.ServiceCategory);
 
   // approved service review
   const data = {
     id: uuidv4(),
-    Name: approvedCustomerName,
-    Email: approvedCustomerEmail,
-    Review: approvedCustomerReview,
-    Service: approvedServiceReview,
+    Name: customerName,
+    Email: customerEmail,
+    Review: customerReview,
+    Service: serviceCategory,
   };
   const sendReview = (e) => {
     e.preventDefault();
@@ -31,27 +31,15 @@ export default function PendingClientReviewCard(props) {
   };
 
   // discard service review and send to rejected database
-  const [discardedCustomerName] = React.useState(props.ClientName);
-  const [discardedCustomerEmail] = React.useState(props.ClientEmail);
-  const [discardedCustomerReview] = React.useState(props.ClientReview);
-  const [discardedServiceReview] = React.useState(props.ServiceCategory);
-
-  const discardedData = {
-    id: uuidv4(),
-    Name: discardedCustomerName,
-    Email: discardedCustomerEmail,
-    Review: discardedCustomerReview,
-    Service: discardedServiceReview,
-  };
 
   const discardReview = (e) => {
     e.preventDefault();
 
     setDoc(doc(firestore, "DiscardedReviews", data.id), {
-      name: discardedData.Name,
-      email: discardedData.Email,
-      review: discardedData.Review,
-      service: discardedData.Service,
+      name: data.Name,
+      email: data.Email,
+      review: data.Review,
+      service: data.Service,
     });
     console.log("successfully discarded");
   };
