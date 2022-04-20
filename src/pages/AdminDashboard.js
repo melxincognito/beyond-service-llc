@@ -1,64 +1,48 @@
-import * as React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import React, { Component } from "react";
+import { Box } from "@mui/material";
+import ApprovedReviewsContent from "../components/reviews/ApprovedReviewsContent";
+import PendingReviewsContent from "../components/reviews/PendingReviewsContent";
+import DiscardedReviewContent from "../components/reviews/DiscardedReviewContent";
 
-import PendingClientReviewCard from "../components/reviews/PendingClientReviewCard";
-import { getDocs } from "firebase/firestore";
-import { collectionRef } from "../firebase-config";
+export default class AdminDashboard extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: <PendingReviewsContent />,
+    };
+  }
 
-let pendingReviews = [];
-
-(function dothis() {
-  getDocs(collectionRef).then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      pendingReviews.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(pendingReviews);
-  });
-})();
-
-export default function AdminDashboard() {
-  const getClientInfo = () => {
-    pendingReviews.map((review) => {
-      console.log(review.name);
-    });
+  updatePendingReviewsContent = () => {
+    this.setState({ content: <PendingReviewsContent /> });
   };
-  return (
-    <>
-      <Box
-        sx={{
-          display: "grid",
-          justifyContent: "center",
-          alignItems: "center",
-          justifyItems: "center",
-          gap: 3,
-        }}
-      >
-        <div>
-          <Typography variant="h4"> Admin Dashboard</Typography>
+
+  updateApprovedReviewsContent = () => {
+    this.setState({ content: <ApprovedReviewsContent /> });
+  };
+  updateDiscardedReviewContent = () => {
+    this.setState({ content: <DiscardedReviewContent /> });
+  };
+  render() {
+    return (
+      <Box sx={{ display: "grid", justifyContent: "center" }}>
+        <div>AdminDashboard</div>
+        <div style={{ display: "flex", gap: 3 }}>
+          <button onClick={this.updatePendingReviewsContent}>
+            {" "}
+            Pending Reviews
+          </button>
+          <button onClick={this.updateApprovedReviewsContent}>
+            {" "}
+            Approved Reviews
+          </button>
+          <button onClick={this.updateDiscardedReviewContent}>
+            {" "}
+            Discarded Reviews
+          </button>
         </div>
-        <div>
-          <button onClick={getClientInfo}> Click me</button>
-        </div>
-        <Card>
-          <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-            <Typography> Pending Reviews: </Typography>
-          </CardContent>
-          <CardContent sx={{ display: "flex", gap: 5 }}>
-            <PendingClientReviewCard
-              ClientName="Melanie"
-              ServiceCategory="beautiful"
-              ClientEmail="melanie@gmail.com"
-              ClientReview="This is going well"
-            />
-            <PendingClientReviewCard
-              ClientName="Vitoria"
-              ServiceCategory="julia wingman"
-              ClientEmail="vippppp@gmail.com"
-              ClientReview="We Are amazing together"
-            />
-          </CardContent>
-        </Card>
+
+        <div>{this.state.content}</div>
       </Box>
-    </>
-  );
+    );
+  }
 }
