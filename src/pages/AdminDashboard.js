@@ -86,10 +86,12 @@ export default class AdminDashboard extends Component {
                 alignContent: "center",
                 width: "90%",
                 height: "100%",
-                bgcolor: "pink",
+                bgcolor: "#424242",
+                color: "white",
                 margin: "2rem auto",
                 padding: "2rem 1rem",
                 boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
+                borderRadius: 2,
               }}
             >
               <div>{this.state.content}</div>

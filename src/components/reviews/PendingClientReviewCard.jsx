@@ -2,6 +2,9 @@ import * as React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { doc, setDoc } from "firebase/firestore";
 import { firestore } from "../../firebase-config";
+import { Box, Button, Paper, Typography } from "@mui/material";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
 export default function PendingClientReviewCard(props) {
   const [customerName] = React.useState(props.ClientName);
@@ -44,31 +47,102 @@ export default function PendingClientReviewCard(props) {
     console.log("successfully discarded");
   };
 
+  // styles variables
+
+  const paperStyles = {
+    padding: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "primary.main",
+    color: "white",
+  };
+
+  const clientInfoPaperStyles = {
+    padding: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "grid",
         justifyContent: "center",
-        justifyItems: "center",
+        justifyItems: "start",
+        alignItems: "center",
+        alignContent: "center",
+        backgroundColor: "white",
+        gap: "1rem",
+        padding: "1rem",
+        borderRadius: 2,
+        boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
       }}
     >
-      <div>
-        <p>Client Name: {props.ClientName} </p>
+      <div id="reviewNamefield" style={{ display: "flex", gap: "1rem" }}>
+        <Paper elevation={3} sx={paperStyles}>
+          <Typography>Client Name: </Typography>
+        </Paper>
+        <Paper elevation={3} sx={clientInfoPaperStyles}>
+          <Typography>{props.ClientName} </Typography>
+        </Paper>
       </div>
-      <div>
-        <p> Service Category: {props.ServiceCategory}</p>
+      <div
+        id="reviewServiceCategoryField"
+        style={{ display: "flex", gap: "1rem" }}
+      >
+        <Paper elevation={3} sx={paperStyles}>
+          <Typography>Service Category: </Typography>
+        </Paper>
+        <Paper elevation={3} sx={clientInfoPaperStyles}>
+          <Typography>{props.ServiceCategory} </Typography>
+        </Paper>
       </div>
-      <div>
-        {" "}
-        <p> Contact Email: {props.ClientEmail} </p>
+      <div id="reviewEmailField" style={{ display: "flex", gap: "1rem" }}>
+        <Paper elevation={3} sx={paperStyles}>
+          <Typography>Email: </Typography>
+        </Paper>
+        <Paper elevation={3} sx={clientInfoPaperStyles}>
+          <Typography>{props.ClientEmail} </Typography>
+        </Paper>
       </div>
-      <div>
-        <p> Review: {props.ClientReview}</p>
+      <hr size="1" width="90%" color="gray" />
+      <div
+        id="clientReviewField"
+        style={{ display: "grid", gap: "1rem", width: "100%" }}
+      >
+        <Box>
+          <Paper elevation={3} sx={paperStyles}>
+            <Typography>Review: </Typography>
+          </Paper>
+        </Box>
+        <Box>
+          <Paper elevation={3} sx={clientInfoPaperStyles}>
+            <Typography>{props.ClientReview}</Typography>
+          </Paper>
+        </Box>
       </div>
-      <div id="buttons ">
-        <button onClick={sendReview}> Approve Review</button>
-        <button onClick={discardReview}> Discard Review</button>
+
+      <div id="buttons " style={{ display: "flex", gap: 1 }}>
+        <Button
+          variant="contained"
+          sx={{ bgcolor: "#388e3c" }}
+          onClick={sendReview}
+        >
+          <CheckCircleOutlineIcon />
+          Approve Review
+        </Button>
+        <Button
+          sx={{ bgcolor: "secondary.main" }}
+          variant="contained"
+          onClick={discardReview}
+        >
+          {" "}
+          <DeleteOutlineIcon />
+          Discard Review
+        </Button>
       </div>
-    </div>
+    </Box>
   );
 }
