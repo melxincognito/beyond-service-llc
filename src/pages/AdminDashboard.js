@@ -4,8 +4,7 @@ import ApprovedReviewsContent from "../components/reviews/adminDashboard/Approve
 import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
-import { importApprovedReviewsFirebase } from "../components/reviews/adminDashboard/ApprovedReviewsContent";
-import { importDiscardedReviewsFirebase } from "../components/reviews/adminDashboard/DiscardedReviewContent";
+
 export default class AdminDashboard extends Component {
   constructor(props) {
     super(props);
@@ -19,11 +18,9 @@ export default class AdminDashboard extends Component {
   };
 
   updateApprovedReviewsContent = () => {
-    importApprovedReviewsFirebase();
     this.setState({ content: <ApprovedReviewsContent /> });
   };
   updateDiscardedReviewContent = () => {
-    importDiscardedReviewsFirebase();
     this.setState({ content: <DiscardedReviewContent /> });
   };
   render() {

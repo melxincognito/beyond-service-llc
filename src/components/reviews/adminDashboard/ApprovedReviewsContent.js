@@ -9,14 +9,14 @@ import { approvedReviewsCollectionRef } from "../../../firebase-config";
 
 let approvedReviews = [];
 
-export function importApprovedReviewsFirebase() {
+(function importApprovedReviewsFirebase() {
   getDocs(approvedReviewsCollectionRef).then((snapshot) => {
     snapshot.docs.forEach((doc) => {
       approvedReviews.push({ ...doc.data(), id: doc.id });
     });
-    console.error(approvedReviews);
+    console.log(approvedReviews);
   });
-}
+})();
 
 // styles variables
 

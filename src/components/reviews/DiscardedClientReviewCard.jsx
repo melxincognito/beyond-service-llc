@@ -21,32 +21,25 @@ export default function PendingClientReviewCard(props) {
     Service: serviceCategory,
   };
 
-  const sendReview = (e) => {
+  //delete doc from database permanently
+
+  const deleteReview = (e) => {
+    e.preventDefault();
+    deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
+    console.log("successfully deleted from the discard folder puta");
+  };
+
+  const reconsiderReview = (e) => {
     e.preventDefault();
 
-    setDoc(doc(firestore, "ApprovedReviews", data.Email), {
+    setDoc(doc(firestore, "PendingReviews", data.Email), {
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
     });
-    console.log("successfully saved");
-  };
-
-  //delete doc
-
-  const deleteReview = (e) => {
-    e.preventDefault();
-    deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
-    console.log("successfully deleted puta");
-  };
-  // discard service review and send to rejected database
-
-  const discardReview = (e) => {
-    e.preventDefault();
-
-    deleteDoc(doc(firestore, "DiscardedReviews", data.id));
-    console.log("successfully discarded");
+    deleteReview(e);
+    console.log("successfully pending");
   };
 
   // styles variables
@@ -138,7 +131,7 @@ export default function PendingClientReviewCard(props) {
         <Button
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
-          onClick={sendReview}
+          onClick={reconsiderReview}
         >
           <CheckCircleOutlineIcon />
           Reconsider Testimonial

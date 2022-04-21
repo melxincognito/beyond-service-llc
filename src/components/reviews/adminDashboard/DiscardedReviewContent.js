@@ -1,21 +1,19 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
-import PendingClientReviewCard from "../PendingClientReviewCard";
 import DiscardedClientReviewCard from "../DiscardedClientReviewCard";
-
 import { getDocs } from "firebase/firestore";
 
 import { discardedReviewsCollectionRef } from "../../../firebase-config";
 
 let discardedReviews = [];
 
-export function importDiscardedReviewsFirebase() {
+(function importDiscardedReviewsFirebase() {
   getDocs(discardedReviewsCollectionRef).then((snapshot) => {
     snapshot.docs.forEach((doc) => {
       discardedReviews.push({ ...doc.data(), id: doc.id });
     });
   });
-}
+})();
 
 // styles variables
 

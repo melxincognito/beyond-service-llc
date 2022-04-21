@@ -17,7 +17,6 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
-import { v4 as uuidv4 } from "uuid";
 import { firestore } from "../../firebase-config";
 
 const servicesOptions = [

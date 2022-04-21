@@ -1,6 +1,6 @@
 import * as React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { doc, setDoc } from "firebase/firestore";
+
+import { doc, setDoc, deleteDoc } from "firebase/firestore";
 import { firestore } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -20,6 +20,12 @@ export default function PendingClientReviewCard(props) {
     Review: customerReview,
     Service: serviceCategory,
   };
+  // remove from pending reviews database
+  const removeFromPendingReviewsDatabase = (e) => {
+    e.preventDefault();
+    deleteDoc(doc(firestore, "PendingReviews", data.Email));
+  };
+
   const sendReview = (e) => {
     e.preventDefault();
 
@@ -29,6 +35,7 @@ export default function PendingClientReviewCard(props) {
       review: data.Review,
       service: data.Service,
     });
+    removeFromPendingReviewsDatabase(e);
     console.log("successfully saved");
   };
 
@@ -43,6 +50,7 @@ export default function PendingClientReviewCard(props) {
       review: data.Review,
       service: data.Service,
     });
+    removeFromPendingReviewsDatabase(e);
     console.log("successfully discarded");
   };
 

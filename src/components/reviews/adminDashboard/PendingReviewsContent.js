@@ -24,6 +24,7 @@ const contentContainerStyles = {
   justifyContent: "center",
   alignItems: "center",
   justifyItems: "center",
+  textAlign: "center",
 };
 
 const headerLabelContainerStyles = {
