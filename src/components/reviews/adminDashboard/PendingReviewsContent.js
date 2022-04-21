@@ -17,12 +17,17 @@ let pendingReviews = [];
   });
 })();
 
+/*     
+<PendingClientReviewCard
+ClientName="Melanie"
+ServiceCategory="beautiful"
+ClientEmail="melanie@gmail.com"
+ClientReview="This is going well"
+/> 
+
+*/
+
 export default function PendingReviewsContent() {
-  const getClientInfo = () => {
-    pendingReviews.map((review) => {
-      console.log(review.name);
-    });
-  };
   return (
     <Box
       sx={{
@@ -40,19 +45,18 @@ export default function PendingReviewsContent() {
           here
         </Typography>
       </div>
-      <Box sx={{ display: "flex", gap: 5 }}>
-        <PendingClientReviewCard
-          ClientName="Melanie"
-          ServiceCategory="beautiful"
-          ClientEmail="melanie@gmail.com"
-          ClientReview="This is going well"
-        />
-        <PendingClientReviewCard
-          ClientName="Vitoria"
-          ServiceCategory="julia wingman"
-          ClientEmail="vippppp@gmail.com"
-          ClientReview="We Are amazing together"
-        />
+      <Box sx={{ display: "grid" }}>
+        {pendingReviews.map((review, index) => (
+          <div>
+            <PendingClientReviewCard
+              key={index}
+              ClientName={review.name}
+              ServiceCategory={review.service}
+              ClientEmail={review.email}
+              ClientReview={review.review}
+            />
+          </div>
+        ))}
       </Box>
     </Box>
   );

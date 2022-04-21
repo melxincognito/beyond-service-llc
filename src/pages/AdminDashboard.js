@@ -24,12 +24,24 @@ export default class AdminDashboard extends Component {
     this.setState({ content: <DiscardedReviewContent /> });
   };
   render() {
-    const cardStyles = {
+    const contentSelectorCardStyles = {
       padding: 3,
       borderRadius: 2,
       bgcolor: "secondary.light",
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+      display: "block",
+      height: "24rem",
+      width: "30%",
     };
+
+    const contentCardStyles = {
+      padding: 3,
+      borderRadius: 2,
+      bgcolor: "secondary.light",
+      boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
+      width: "100%",
+    };
+
     const formTitleDisplayStyles = {
       display: "flex",
       justifyContent: "center",
@@ -37,9 +49,25 @@ export default class AdminDashboard extends Component {
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
       borderRadius: "4px 25px 4px 25px",
     };
+
+    const contentContainerStyles = {
+      display: "flex",
+      justifyContent: "center",
+      justifyItems: "center",
+      alignItems: "center",
+      alignContent: "center",
+      width: "90%",
+      height: "100%",
+      bgcolor: "#424242",
+      color: "white",
+      margin: "2rem auto",
+      padding: "2rem 1rem",
+      boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
+      borderRadius: 2,
+    };
     return (
       <Box sx={{ display: "flex", gap: 10, justifyContent: "center" }}>
-        <Card sx={cardStyles}>
+        <Card sx={contentSelectorCardStyles}>
           <CardContent sx={{ display: "grid", gap: 3 }}>
             <hr size="1" width="90%" color="gray" />
             <Button
@@ -72,27 +100,11 @@ export default class AdminDashboard extends Component {
           </CardContent>
         </Card>
 
-        <Card sx={cardStyles}>
+        <Card sx={contentCardStyles}>
           <CardContent sx={formTitleDisplayStyles}>AdminDashboard</CardContent>
 
           <CardContent>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                justifyItems: "center",
-                alignItems: "center",
-                alignContent: "center",
-                width: "90%",
-                height: "100%",
-                bgcolor: "#424242",
-                color: "white",
-                margin: "2rem auto",
-                padding: "2rem 1rem",
-                boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
-                borderRadius: 2,
-              }}
-            >
+            <Box sx={contentContainerStyles}>
               <div>{this.state.content}</div>
             </Box>
           </CardContent>
