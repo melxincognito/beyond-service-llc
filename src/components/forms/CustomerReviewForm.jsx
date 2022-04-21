@@ -46,7 +46,6 @@ export default function CustomerReviewForm() {
   // set data variable to send object to firestore
 
   const data = {
-    id: uuidv4(),
     Name: customerName,
     Email: customerEmail,
     Review: customerReview,
@@ -55,7 +54,7 @@ export default function CustomerReviewForm() {
 
   const sendReview = (e) => {
     e.preventDefault();
-    setDoc(doc(firestore, "PendingReviews", data.id), {
+    setDoc(doc(firestore, "PendingReviews", data.Email), {
       name: data.Name,
       email: data.Email,
       review: data.Review,

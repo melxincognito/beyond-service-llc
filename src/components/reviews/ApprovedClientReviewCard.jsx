@@ -6,7 +6,7 @@ import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
-export default function PendingClientReviewCard(props) {
+export default function ApprovedClientReviewCard(props) {
   const [customerName] = React.useState(props.ClientName);
   const [customerEmail] = React.useState(props.ClientEmail);
   const [customerReview] = React.useState(props.ClientReview);
@@ -23,7 +23,7 @@ export default function PendingClientReviewCard(props) {
   const sendReview = (e) => {
     e.preventDefault();
 
-    setDoc(doc(firestore, "ApprovedReviews", data.Email), {
+    setDoc(doc(firestore, "ApprovedReviews", data.id), {
       name: data.Name,
       email: data.Email,
       review: data.Review,
@@ -138,7 +138,7 @@ export default function PendingClientReviewCard(props) {
           onClick={sendReview}
         >
           <CheckCircleOutlineIcon />
-          Approve Testimonial
+          Set Testimonial on Webpage
         </Button>
         <Button
           sx={{ bgcolor: "secondary.main" }}

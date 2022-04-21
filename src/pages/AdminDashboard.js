@@ -4,7 +4,8 @@ import ApprovedReviewsContent from "../components/reviews/adminDashboard/Approve
 import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
-
+import { importApprovedReviewsFirebase } from "../components/reviews/adminDashboard/ApprovedReviewsContent";
+import { importDiscardedReviewsFirebase } from "../components/reviews/adminDashboard/DiscardedReviewContent";
 export default class AdminDashboard extends Component {
   constructor(props) {
     super(props);
@@ -18,9 +19,11 @@ export default class AdminDashboard extends Component {
   };
 
   updateApprovedReviewsContent = () => {
+    importApprovedReviewsFirebase();
     this.setState({ content: <ApprovedReviewsContent /> });
   };
   updateDiscardedReviewContent = () => {
+    importDiscardedReviewsFirebase();
     this.setState({ content: <DiscardedReviewContent /> });
   };
   render() {
@@ -40,6 +43,14 @@ export default class AdminDashboard extends Component {
       bgcolor: "secondary.light",
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
       width: "100%",
+      display: "grid",
+      justifyContent: "center",
+      justifyItems: "center",
+      alignContent: "center",
+      alignItems: "center",
+      height: "100%",
+
+      margin: "20",
     };
 
     const formTitleDisplayStyles = {
@@ -51,7 +62,7 @@ export default class AdminDashboard extends Component {
     };
 
     const contentContainerStyles = {
-      display: "flex",
+      display: "grid",
       justifyContent: "center",
       justifyItems: "center",
       alignItems: "center",
@@ -66,49 +77,55 @@ export default class AdminDashboard extends Component {
       borderRadius: 2,
     };
     return (
-      <Box sx={{ display: "flex", gap: 10, justifyContent: "center" }}>
-        <Card sx={contentSelectorCardStyles}>
-          <CardContent sx={{ display: "grid", gap: 3 }}>
-            <hr size="1" width="90%" color="gray" />
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "secondary.main" }}
-              onClick={this.updatePendingReviewsContent}
-            >
-              {" "}
-              Pending Testimonials
-            </Button>
-            <hr size="1" width="90%" color="gray" />
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "secondary.main" }}
-              onClick={this.updateApprovedReviewsContent}
-            >
-              {" "}
-              Approved Testimonials
-            </Button>
-            <hr size="1" width="90%" color="gray" />
-            <Button
-              variant="contained"
-              sx={{ backgroundColor: "secondary.main" }}
-              onClick={this.updateDiscardedReviewContent}
-            >
-              {" "}
-              Discarded Testimonials
-            </Button>
-            <hr size="1" width="90%" color="gray" />
-          </CardContent>
-        </Card>
-
-        <Card sx={contentCardStyles}>
-          <CardContent sx={formTitleDisplayStyles}>AdminDashboard</CardContent>
-
+      <Box sx={{ display: "grid", gap: 5, marginTop: 2 }}>
+        <Card sx={formTitleDisplayStyles}>
           <CardContent>
-            <Box sx={contentContainerStyles}>
-              <div>{this.state.content}</div>
-            </Box>
+            <Typography variant="h4">AdminDashboard </Typography>
           </CardContent>
         </Card>
+
+        <Box sx={{ display: "flex", gap: 7, justifyContent: "center" }}>
+          <Card sx={contentSelectorCardStyles}>
+            <CardContent sx={{ display: "grid", gap: 3 }}>
+              <hr size="1" width="90%" color="gray" />
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "secondary.main" }}
+                onClick={this.updatePendingReviewsContent}
+              >
+                {" "}
+                Pending Testimonials
+              </Button>
+              <hr size="1" width="90%" color="gray" />
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "secondary.main" }}
+                onClick={this.updateApprovedReviewsContent}
+              >
+                {" "}
+                Approved Testimonials
+              </Button>
+              <hr size="1" width="90%" color="gray" />
+              <Button
+                variant="contained"
+                sx={{ backgroundColor: "secondary.main" }}
+                onClick={this.updateDiscardedReviewContent}
+              >
+                {" "}
+                Discarded Testimonials
+              </Button>
+              <hr size="1" width="90%" color="gray" />
+            </CardContent>
+          </Card>
+
+          <Card sx={contentCardStyles}>
+            <CardContent>
+              <Box sx={contentContainerStyles}>
+                <div>{this.state.content}</div>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
       </Box>
     );
   }
