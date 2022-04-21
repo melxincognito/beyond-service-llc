@@ -3,23 +3,22 @@ import { Box, Typography } from "@mui/material";
 
 export default function DashboardIntroContent() {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: "grid",
-        justifyContent: "center",
-        justifyItems: "center",
-        gap: 7,
+        textAlign: "center",
+        gap: 4,
       }}
     >
       <Box>
-        <Typography> Welcome to the admin dashboard. </Typography>
+        <Typography> Welcome to the Admin Dashboard. </Typography>
       </Box>
       <Box>
         <Typography>
           {" "}
-          Manage reviews by clicking on the buttons to the right{" "}
+          Manage customer testimonials by clicking on the buttons to the left{" "}
         </Typography>
       </Box>
-    </div>
+    </Box>
   );
 }

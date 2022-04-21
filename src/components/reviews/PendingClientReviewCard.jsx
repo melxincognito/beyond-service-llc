@@ -114,7 +114,7 @@ export default function PendingClientReviewCard(props) {
       >
         <Box>
           <Paper elevation={3} sx={paperStyles}>
-            <Typography>Review: </Typography>
+            <Typography>Testimonial: </Typography>
           </Paper>
         </Box>
         <Box>
@@ -131,7 +131,7 @@ export default function PendingClientReviewCard(props) {
           onClick={sendReview}
         >
           <CheckCircleOutlineIcon />
-          Approve Review
+          Approve Testimonial
         </Button>
         <Button
           sx={{ bgcolor: "secondary.main" }}
@@ -140,7 +140,7 @@ export default function PendingClientReviewCard(props) {
         >
           {" "}
           <DeleteOutlineIcon />
-          Discard Review
+          Discard Testimonial
         </Button>
       </div>
     </Box>

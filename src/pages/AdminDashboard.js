@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Box, Button, Card, CardContent } from "@mui/material";
+import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import ApprovedReviewsContent from "../components/reviews/adminDashboard/ApprovedReviewsContent";
 import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
@@ -38,44 +38,43 @@ export default class AdminDashboard extends Component {
       borderRadius: "4px 25px 4px 25px",
     };
     return (
-      <Box
-        sx={{
-          display: "grid",
-          justifyContent: "center",
-          justifyItems: "center",
-          alignItems: "center",
-          alignContent: "center",
-        }}
-      >
+      <Box sx={{ display: "flex", gap: 10, justifyContent: "center" }}>
         <Card sx={cardStyles}>
-          <CardContent sx={formTitleDisplayStyles}>AdminDashboard</CardContent>
-          <CardContent sx={{ display: "flex", gap: 3 }}>
+          <CardContent sx={{ display: "grid", gap: 3 }}>
+            <hr size="1" width="90%" color="gray" />
             <Button
               variant="contained"
               sx={{ backgroundColor: "secondary.main" }}
               onClick={this.updatePendingReviewsContent}
             >
               {" "}
-              Pending Reviews
+              Pending Testimonials
             </Button>
+            <hr size="1" width="90%" color="gray" />
             <Button
               variant="contained"
               sx={{ backgroundColor: "secondary.main" }}
               onClick={this.updateApprovedReviewsContent}
             >
               {" "}
-              Approved Reviews
+              Approved Testimonials
             </Button>
+            <hr size="1" width="90%" color="gray" />
             <Button
               variant="contained"
               sx={{ backgroundColor: "secondary.main" }}
               onClick={this.updateDiscardedReviewContent}
             >
               {" "}
-              Discarded Reviews
+              Discarded Testimonials
             </Button>
+            <hr size="1" width="90%" color="gray" />
           </CardContent>
-          <hr size="1" width="90%" color="gray" />{" "}
+        </Card>
+
+        <Card sx={cardStyles}>
+          <CardContent sx={formTitleDisplayStyles}>AdminDashboard</CardContent>
+
           <CardContent>
             <Box
               sx={{

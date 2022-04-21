@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PendingClientReviewCard from "../PendingClientReviewCard";
 
 import { getDocs } from "firebase/firestore";
@@ -33,7 +33,13 @@ export default function PendingReviewsContent() {
         gap: 3,
       }}
     >
-      <button onClick={getClientInfo}> click me puta</button>
+      <div>
+        <Typography>
+          {" "}
+          Select whether you want to approve or discard submitted testimonials
+          here
+        </Typography>
+      </div>
       <Box sx={{ display: "flex", gap: 5 }}>
         <PendingClientReviewCard
           ClientName="Melanie"
