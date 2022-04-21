@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { Box } from "@mui/material";
-import ApprovedReviewsContent from "../components/reviews/ApprovedReviewsContent";
-import PendingReviewsContent from "../components/reviews/PendingReviewsContent";
-import DiscardedReviewContent from "../components/reviews/DiscardedReviewContent";
+import ApprovedReviewsContent from "../components/reviews/adminDashboard/ApprovedReviewsContent";
+import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
+import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
+import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
 
 export default class AdminDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: <PendingReviewsContent />,
+      content: <DashboardIntroContent />,
     };
   }
 
@@ -41,7 +42,21 @@ export default class AdminDashboard extends Component {
           </button>
         </div>
 
-        <div>{this.state.content}</div>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            justifyItems: "center",
+            alignItems: "center",
+            alignContent: "center",
+            width: "110%",
+            height: "120%",
+            bgcolor: "pink",
+            margin: "5rem auto",
+          }}
+        >
+          <div>{this.state.content}</div>
+        </Box>
       </Box>
     );
   }

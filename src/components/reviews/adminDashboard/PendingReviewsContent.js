@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Box } from "@mui/material";
-import PendingClientReviewCard from "./PendingClientReviewCard";
+import PendingClientReviewCard from "../PendingClientReviewCard";
 
 import { getDocs } from "firebase/firestore";
 
-import { pendingReviewsCollectionRef } from "../../firebase-config";
+import { pendingReviewsCollectionRef } from "../../../firebase-config";
 
 let pendingReviews = [];
 

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDCe7SzIqXxQRAt6gD5ob9bonljpAPnkBE",
@@ -18,3 +18,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const firestore = getFirestore(app);
+
+export const pendingReviewsCollectionRef = collection(
+  firestore,
+  "PendingReviews"
+);
+
+export const approvedReviewsCollectionRef = collection(
+  firestore,
+  "ApprovedReviews"
+);
+export const discardedReviewsCollectionRef = collection(
+  firestore,
+  "DiscardedReviews"
+);
