@@ -27,14 +27,7 @@ export default function ApprovedClientReviewCard(props) {
 
   const sendReview = (e) => {
     e.preventDefault();
-
-    setDoc(doc(firestore, "ApprovedReviews", data.id), {
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
-    });
-    console.log("successfully saved");
+    alert("puta");
   };
 
   // discard service review and send to rejected database
