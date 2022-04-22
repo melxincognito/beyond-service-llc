@@ -4,6 +4,7 @@ import { firestore } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import "./TestimonialStyles.css";
 
 export default function ApprovedClientReviewCard(props) {
   const [customerName] = React.useState(props.ClientName);
@@ -132,6 +133,7 @@ export default function ApprovedClientReviewCard(props) {
 
       <div id="buttons " style={{ display: "flex", gap: 1 }}>
         <Button
+          id="setOnWebpage"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
           onClick={sendReview}
@@ -140,6 +142,7 @@ export default function ApprovedClientReviewCard(props) {
           Set Testimonial on Webpage
         </Button>
         <Button
+          id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
           onClick={discardReview}

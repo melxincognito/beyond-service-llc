@@ -5,6 +5,11 @@ import PendingReviewsContent from "../components/reviews/adminDashboard/PendingR
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
 import { auth } from "../firebase-config";
+import HomeIcon from "@mui/icons-material/Home";
+import ChairIcon from "@mui/icons-material/Chair";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import "./AdminDashboard.css";
+
 export default class AdminDashboard extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +28,7 @@ export default class AdminDashboard extends Component {
   updateDiscardedReviewContent = () => {
     this.setState({ content: <DiscardedReviewContent /> });
   };
+
   render() {
     const contentSelectorCardStyles = {
       padding: 3,
@@ -70,12 +76,72 @@ export default class AdminDashboard extends Component {
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
       borderRadius: 2,
     };
+
     return (
       <Box sx={{ display: "grid", gap: 5, margin: "2rem 0 6rem 0 " }}>
         <Card sx={formTitleDisplayStyles}>
-          <CardContent>
-            <Typography variant="h4">AdminDashboard </Typography>
-          </CardContent>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              justifyContent: "center",
+              alignItems: "center",
+              justifyItems: "center",
+              alignContent: "center",
+              margin: 0,
+              height: "7rem",
+              width: "100%",
+            }}
+          >
+            <div
+              style={{
+                display: "inline-block",
+                width: "33.3%",
+                verticalAlign: "top",
+                marginRight: "6rem",
+              }}
+            >
+              <div
+                style={{
+                  display: "grid",
+                  gap: 3,
+                }}
+              >
+                <Button id="adminbtn" variant="contained" color="secondary">
+                  {" "}
+                  Logout{" "}
+                </Button>
+
+                <Button id="settingsbtn" variant="outlined" color="secondary">
+                  {" "}
+                  Settings
+                </Button>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "inline-block",
+                width: "33.3%",
+                verticalAlign: "top",
+                marginRight: "7rem",
+              }}
+            >
+              <Typography variant="h4">AdminDashboard </Typography>
+            </div>
+
+            <div
+              style={{
+                display: "inline-block",
+                width: "33.3%",
+                verticalAlign: "top",
+                marginLeft: "11rem",
+              }}
+            >
+              <HomeIcon id="icon" />
+              <ChairIcon id="iconCenter" />
+              <KitchenIcon id="icon" />
+            </div>
+          </Box>
         </Card>
 
         <Box sx={{ display: "flex", gap: 7 }}>
@@ -83,6 +149,7 @@ export default class AdminDashboard extends Component {
             <CardContent sx={{ display: "grid", gap: 3 }}>
               <hr size="1" width="90%" color="gray" />
               <Button
+                id="adminbtn"
                 variant="contained"
                 sx={{ backgroundColor: "secondary.main" }}
                 onClick={this.updatePendingReviewsContent}
@@ -92,6 +159,7 @@ export default class AdminDashboard extends Component {
               </Button>
               <hr size="1" width="90%" color="gray" />
               <Button
+                id="adminbtn"
                 variant="contained"
                 sx={{ backgroundColor: "secondary.main" }}
                 onClick={this.updateApprovedReviewsContent}
@@ -101,6 +169,7 @@ export default class AdminDashboard extends Component {
               </Button>
               <hr size="1" width="90%" color="gray" />
               <Button
+                id="adminbtn"
                 variant="contained"
                 sx={{ backgroundColor: "secondary.main" }}
                 onClick={this.updateDiscardedReviewContent}

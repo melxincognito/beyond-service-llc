@@ -1,0 +1,16 @@
+#adminbtn:hover {
+  background-color: #ff9800;
+  color: black;
+}
+
+#settingsbtn:hover {
+  background-color: #932020;
+  color: white;
+}
+
+#icon:hover {
+  color: #932020;
+}
+#iconCenter:hover {
+  color: #ff9800;
+}
