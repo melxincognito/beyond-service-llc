@@ -48,6 +48,7 @@ export default function LoginPage() {
       y.type = "password";
     }
   };
+
   const showPasswordLogin = () => {
     var x = document.getElementById("loginPasswordInput");
     if (x.type === "password") {
