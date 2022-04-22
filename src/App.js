@@ -11,6 +11,7 @@ import DesktopProjectGallery from "./pages/DesktopProjectGallery";
 import MobileProjectGallery from "./pages/MobileProjectGallery";
 import AdminDashboard from "./pages/AdminDashboard";
 import LoginPage from "./pages/LoginPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
       </Routes>
     </Layout>
   );

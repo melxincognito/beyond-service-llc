@@ -115,6 +115,7 @@ export default function LoginPage() {
               setLoginPassword(e.target.value);
             }}
           />
+
           <div style={{ display: "inline-block" }}>
             <input type="checkbox" onClick={showPasswordLogin} />{" "}
             <label>Show password</label>
@@ -124,6 +125,13 @@ export default function LoginPage() {
             {" "}
             Log in
           </Button>
+          <label>
+            {" "}
+            Forgot password?{" "}
+            <a href="/forgotPassword" target="_blank">
+              Click here{" "}
+            </a>
+          </label>
         </CardContent>
       </Card>
 
