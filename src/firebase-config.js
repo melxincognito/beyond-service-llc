@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDCe7SzIqXxQRAt6gD5ob9bonljpAPnkBE",
@@ -32,3 +33,5 @@ export const discardedReviewsCollectionRef = collection(
   firestore,
   "DiscardedReviews"
 );
+
+export const auth = getAuth(app);

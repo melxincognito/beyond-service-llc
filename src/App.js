@@ -10,6 +10,8 @@ import CustomerReviewPage from "./pages/CustomerReviewPage";
 import DesktopProjectGallery from "./pages/DesktopProjectGallery";
 import MobileProjectGallery from "./pages/MobileProjectGallery";
 import AdminDashboard from "./pages/AdminDashboard";
+import LoginPage from "./pages/LoginPage";
+
 export default function App() {
   return (
     <Layout>
@@ -28,6 +30,7 @@ export default function App() {
         <Route path="/customerTestimonials" element={<CustomerReviewPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Layout>
   );

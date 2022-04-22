@@ -1,10 +1,11 @@
 import React from "react";
 
 import NavBar from "./NavBar";
-import { Container, Paper, Box } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../assets/theme";
 import ContactInformation from "../information/ContactInformation";
+import LoginButton from "../userlogin/LoginButton";
 
 export default function Layout(props) {
   // styles variables
@@ -48,6 +49,7 @@ export default function Layout(props) {
           </Container>
           <Container sx={layoutStyle}>
             <div style={themeToggleContainerStyles}>
+              <LoginButton />
               <ContactInformation />
             </div>
             <div style={{ left: 0 }}>{props.children}</div>

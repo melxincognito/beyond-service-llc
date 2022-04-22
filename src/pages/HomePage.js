@@ -2,13 +2,13 @@ import * as React from "react";
 import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 // testimonies
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
 import "../App.css";
-import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function HomePage() {
   const John = {
