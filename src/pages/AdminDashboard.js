@@ -4,7 +4,7 @@ import ApprovedReviewsContent from "../components/reviews/adminDashboard/Approve
 import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
-
+import { auth } from "../firebase-config";
 export default class AdminDashboard extends Component {
   constructor(props) {
     super(props);

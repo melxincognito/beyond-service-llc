@@ -1,5 +1,10 @@
 import * as React from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import { auth } from "../firebase-config";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +14,11 @@ export default function LoginPage() {
   const [registerPassword, setRegisterPassword] = React.useState("");
   const [loginEmail, setLoginEmail] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
+  const [user, setUser] = React.useState({});
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+  });
 
   let navigate = useNavigate();
   const login = () => {
@@ -34,7 +44,7 @@ export default function LoginPage() {
   };
   const registerUser = async () => {
     try {
-      const user = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         registerEmail,
         registerPassword
@@ -43,12 +53,17 @@ export default function LoginPage() {
       console.log(error.message);
     }
   };
-  const loginUser = async () => {};
-  const logoutUser = async () => {};
-
-  const log = () => {
-    alert("puta");
+  const loginUser = async () => {
+    try {
+      await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+    } catch (error) {
+      alert(error.message);
+    }
   };
+  const logoutUser = async () => {
+    await signOut(auth);
+  };
+
   return (
     <div style={{ display: "grid", justifyContent: "center", gap: "5rem" }}>
       <div style={{ display: "grid", justifyContent: "center", gap: "1rem" }}>
@@ -74,7 +89,7 @@ export default function LoginPage() {
           <input type="checkbox" onClick={showPasswordLogin} />{" "}
           <label>Show password</label>
         </div>
-        <button onClick={login}> Login</button>
+        <button onClick={loginUser}> Login</button>
       </div>
       <div style={{ display: "grid", justifyContent: "center", gap: "1rem" }}>
         <Typography variant="h6"> Sign Up </Typography>
@@ -102,7 +117,11 @@ export default function LoginPage() {
 
         <button onClick={registerUser}> Sign up</button>
       </div>
-      <button> Sign out</button>
+      <div>
+        <h4> user logged in: </h4>
+        <p> {user?.email}</p>
+      </div>
+      <button onClick={logoutUser}> Sign out</button>
     </div>
   );
 }
