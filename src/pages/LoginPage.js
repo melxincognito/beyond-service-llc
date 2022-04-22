@@ -18,6 +18,8 @@ import { useNavigate } from "react-router-dom";
 export default function LoginPage() {
   const [registerEmail, setRegisterEmail] = React.useState("");
   const [registerPassword, setRegisterPassword] = React.useState("");
+  const [registerConfirmPassword, setRegisterConfirmPassword] =
+    React.useState("");
   const [loginEmail, setLoginEmail] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
   const [user, setUser] = React.useState({});
@@ -34,10 +36,16 @@ export default function LoginPage() {
 
   const showPasswordSignUp = () => {
     var x = document.getElementById("signupPasswordInput");
+    var y = document.getElementById("signupConfirmPasswordInput");
     if (x.type === "password") {
       x.type = "text";
     } else {
       x.type = "password";
+    }
+    if (y.type === "password") {
+      y.type = "text";
+    } else {
+      y.type = "password";
     }
   };
   const showPasswordLogin = () => {
@@ -70,6 +78,16 @@ export default function LoginPage() {
     await signOut(auth);
   };
 
+  const validatePassword = () => {
+    let isValid = true;
+    if (registerPassword !== "" && registerConfirmPassword !== "") {
+      if (registerPassword !== registerConfirmPassword) {
+        isValid = false;
+        alert("Passwords does not match");
+      }
+    }
+    return isValid;
+  };
   // styles variables
 
   const cardStyles = {
@@ -164,6 +182,15 @@ export default function LoginPage() {
             type="password"
             onChange={(e) => {
               setRegisterPassword(e.target.value);
+            }}
+          />
+          <TextField
+            variant="outlined"
+            id="signupConfirmPasswordInput"
+            label="Confirm Password"
+            type="password"
+            onChange={(e) => {
+              setRegisterConfirmPassword(e.target.value);
             }}
           />
           <div style={{ display: "inline-block" }}>

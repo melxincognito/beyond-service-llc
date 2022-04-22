@@ -40,7 +40,6 @@ export default function ForgotPasswordPage() {
     display: "grid",
     justifyContent: "center",
     justifyItems: "center",
-
     textAlign: "center",
     width: "38%",
     gap: "1rem",
