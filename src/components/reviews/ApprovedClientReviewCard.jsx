@@ -49,6 +49,7 @@ export default function ApprovedClientReviewCard(props) {
       service: data.Service,
     });
     removeFromPendingReviewsDatabase(e);
+    alert("Testimonial Successfully Discarded");
   };
 
   // styles variables

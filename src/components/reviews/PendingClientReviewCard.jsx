@@ -36,7 +36,7 @@ export default function PendingClientReviewCard(props) {
       service: data.Service,
     });
     removeFromPendingReviewsDatabase(e);
-    console.log("successfully saved");
+    alert("Testimonial Successfully Approved");
   };
 
   // discard service review and send to rejected database
@@ -51,7 +51,7 @@ export default function PendingClientReviewCard(props) {
       service: data.Service,
     });
     removeFromPendingReviewsDatabase(e);
-    console.log("successfully discarded");
+    alert("Testimonial Successfully Discarded");
   };
 
   // styles variables

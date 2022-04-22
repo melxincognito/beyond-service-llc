@@ -26,7 +26,12 @@ export default function PendingClientReviewCard(props) {
   const deleteReview = (e) => {
     e.preventDefault();
     deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
-    console.log("successfully deleted from the discard folder puta");
+  };
+
+  const deleteReviewFirebase = (e) => {
+    e.preventDefault();
+    deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
+    alert("Testimonial Permanently Discarded");
   };
 
   const reconsiderReview = (e) => {
@@ -39,7 +44,7 @@ export default function PendingClientReviewCard(props) {
       service: data.Service,
     });
     deleteReview(e);
-    console.log("successfully pending");
+    alert("Testimonial Succesfully returned to 'Pending Testimonials'");
   };
 
   // styles variables
@@ -139,7 +144,7 @@ export default function PendingClientReviewCard(props) {
         <Button
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={deleteReview}
+          onClick={deleteReviewFirebase}
         >
           {" "}
           <DeleteOutlineIcon />
