@@ -3,17 +3,17 @@ import { getFirestore, collection } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCe7SzIqXxQRAt6gD5ob9bonljpAPnkBE",
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
 
-  authDomain: "beyond-service-llc.firebaseapp.com",
+  authDomain: `${process.env.REACT_APP_FIREBASE_AUTH_DOMAIN}`,
 
-  projectId: "beyond-service-llc",
+  projectId: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}`,
 
-  storageBucket: "beyond-service-llc.appspot.com",
+  storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
 
-  messagingSenderId: "585088843386",
+  messagingSenderId: `${process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID}`,
 
-  appId: "1:585088843386:web:928ffe90a9c48ef79485c3",
+  appId: `${process.env.REACT_APP_FIREBASE_APP_ID}`,
 };
 
 const app = initializeApp(firebaseConfig);
