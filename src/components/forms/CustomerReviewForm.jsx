@@ -17,6 +17,8 @@ import {
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
+import { set, ref } from "firebase/database";
+import { db } from "../../firebase-config";
 import { firestore } from "../../firebase-config";
 
 const servicesOptions = [
@@ -39,6 +41,8 @@ export default function CustomerReviewForm() {
 
   const [serviceReview, setServiceReview] = React.useState("Remodel Service");
 
+  let userId = 0;
+
   const handleServiceChange = (event) => {
     setServiceReview(event.target.value);
   };
@@ -51,7 +55,7 @@ export default function CustomerReviewForm() {
     Service: serviceReview,
   };
 
-  const sendReview = (e) => {
+  const sendReviewii = (e) => {
     e.preventDefault();
     setDoc(doc(firestore, "PendingReviews", data.Email), {
       name: data.Name,
@@ -60,6 +64,21 @@ export default function CustomerReviewForm() {
       service: data.Service,
     });
   };
+
+  const sendReview = (e) => {
+    e.preventDefault();
+    set(ref(db, "PendingReviews/" + userId), {
+      id: userId,
+      name: data.Name,
+      email: data.Email,
+      review: data.Review,
+      service: data.Service,
+    });
+    userId++;
+    console.log("sent");
+    return userId;
+  };
+
   // set popup after submit upon
 
   const [open, setOpen] = React.useState(false);
