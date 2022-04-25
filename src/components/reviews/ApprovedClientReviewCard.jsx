@@ -8,22 +8,6 @@ import { set, ref, remove } from "firebase/database";
 import "./TestimonialStyles.css";
 
 export default function ApprovedClientReviewCard(props) {
-  const [customerName] = React.useState(props.ClientName);
-  const [customerEmail] = React.useState(props.ClientEmail);
-  const [customerReview] = React.useState(props.ClientReview);
-
-  const [serviceCategory] = React.useState(props.ServiceCategory);
-  const [customerId] = React.useState(props.ClientId);
-
-  // approved service review
-  const data = {
-    Name: customerName,
-    Email: customerEmail,
-    Review: customerReview,
-    Service: serviceCategory,
-    Id: customerId,
-  };
-
   // discards review from pending review database regardless of approval status
   const discardReview = () => {
     remove(ref(db, "ApprovedReviews/" + props.ClientId));
@@ -34,10 +18,10 @@ export default function ApprovedClientReviewCard(props) {
     discardReview();
     set(ref(db, "DiscardedReviews/" + props.ClientId), {
       id: props.ClientId,
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
+      name: props.ClientName,
+      email: props.ClientEmail,
+      review: props.ClientReview,
+      service: props.ServiceCategory,
       imgUrl: props.ClientImgUrl,
     });
 
@@ -49,10 +33,10 @@ export default function ApprovedClientReviewCard(props) {
     discardReview();
     set(ref(db, "LiveReviews/" + props.ClientId), {
       id: props.ClientId,
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
+      name: props.ClientName,
+      email: props.ClientEmail,
+      review: props.ClientReview,
+      service: props.ServiceCategory,
       imgUrl: props.ClientImgUrl,
     });
 
@@ -168,7 +152,7 @@ export default function ApprovedClientReviewCard(props) {
       <div>
         <Typography>
           {" "}
-          <a href={`${props.ClientImgUrl}`} target="_blank">
+          <a href={`${props.ClientImgUrl}`} target="_blank" rel="noreferrer">
             {" "}
             Client photo{" "}
           </a>

@@ -7,21 +7,6 @@ import { set, ref, remove } from "firebase/database";
 import "./TestimonialStyles.css";
 
 export default function PendingClientReviewCard(props) {
-  const [customerName] = React.useState(props.ClientName);
-  const [customerEmail] = React.useState(props.ClientEmail);
-  const [customerReview] = React.useState(props.ClientReview);
-
-  const [serviceCategory] = React.useState(props.ServiceCategory);
-  const [customerId] = React.useState(props.ClientId);
-
-  // approved service review
-  const data = {
-    Name: customerName,
-    Email: customerEmail,
-    Review: customerReview,
-    Service: serviceCategory,
-    Id: customerId,
-  };
   // discards review permanently from all databases
   const discardReview = () => {
     remove(ref(db, "DiscardedReviews/" + props.ClientId));
@@ -32,10 +17,10 @@ export default function PendingClientReviewCard(props) {
     discardReview();
     set(ref(db, "PendingReviews/" + props.ClientId), {
       id: props.ClientId,
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
+      name: props.ClientName,
+      email: props.ClientEmail,
+      review: props.ClientReview,
+      service: props.ServiceCategory,
       imgUrl: props.ClientImgUrl,
     });
 

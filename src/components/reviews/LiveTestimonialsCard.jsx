@@ -8,23 +8,6 @@ import { db } from "../../firebase-config";
 import "./TestimonialStyles.css";
 
 export default function LiveReviewCard(props) {
-  const [customerName] = React.useState(props.ClientName);
-  const [customerEmail] = React.useState(props.ClientEmail);
-  const [customerReview] = React.useState(props.ClientReview);
-  const [customerImgUrl] = React.useState(props.ClientImgUrl);
-  const [serviceCategory] = React.useState(props.ServiceCategory);
-  const [customerId] = React.useState(props.ClientId);
-
-  // approved service review data
-  const data = {
-    Name: customerName,
-    Email: customerEmail,
-    Review: customerReview,
-    Service: serviceCategory,
-    Id: customerId,
-    ImgUrl: customerImgUrl,
-  };
-
   // discards review from pending review database regardless of approval status
   const discardReview = () => {
     remove(ref(db, "LiveReviews/" + props.ClientId));
@@ -36,11 +19,11 @@ export default function LiveReviewCard(props) {
 
     set(ref(db, "DiscardedReviews/" + props.ClientId), {
       id: props.ClientId,
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
-      imgUrl: data.ImgUrl,
+      name: props.ClientName,
+      email: props.ClientEmail,
+      review: props.ClientReview,
+      service: props.ServiceCategory,
+      imgUrl: props.ClientImgUrl,
     });
 
     console.log("sent to discarded reviews");
@@ -51,11 +34,11 @@ export default function LiveReviewCard(props) {
     discardReview();
     set(ref(db, "ApprovedReviews/" + props.ClientId), {
       id: props.ClientId,
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
-      imgUrl: data.ImgUrl,
+      name: props.ClientName,
+      email: props.ClientEmail,
+      review: props.ClientReview,
+      service: props.ServiceCategory,
+      imgUrl: props.ClientImgUrl,
     });
     console.log("sent to approved database");
   };
@@ -169,7 +152,7 @@ export default function LiveReviewCard(props) {
       <div>
         <Typography>
           {" "}
-          <a href={`${props.ClientImgUrl}`} target="_blank">
+          <a href={`${props.ClientImgUrl}`} target="_blank" rel="noreferrer">
             {" "}
             Client photo{" "}
           </a>

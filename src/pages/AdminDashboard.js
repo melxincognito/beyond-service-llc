@@ -11,7 +11,11 @@ import HomeIcon from "@mui/icons-material/Home";
 import ChairIcon from "@mui/icons-material/Chair";
 import KitchenIcon from "@mui/icons-material/Kitchen";
 import CurrentUserHeader from "../components/reviews/adminDashboard/CurrentUserHeader";
-
+import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+import HourglassBottomOutlinedIcon from "@mui/icons-material/HourglassBottomOutlined";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import "./AdminDashboard.css";
 import { useNavigate } from "react-router-dom";
 
@@ -69,9 +73,8 @@ export default class AdminDashboard extends Component {
       bgcolor: "secondary.light",
       boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
       display: "block",
-      height: "24rem",
+      height: "fit-content",
       width: "30%",
-      height: "90%",
     };
 
     const formTitleDisplayStyles = {
@@ -186,7 +189,7 @@ export default class AdminDashboard extends Component {
                   sx={{ backgroundColor: "secondary.main" }}
                   onClick={this.updatePendingReviewsContent}
                 >
-                  {" "}
+                  <HourglassBottomOutlinedIcon />
                   Pending Testimonials
                 </Button>
                 <hr size="1" width="90%" color="gray" />
@@ -196,7 +199,7 @@ export default class AdminDashboard extends Component {
                   sx={{ backgroundColor: "secondary.main" }}
                   onClick={this.updateApprovedReviewsContent}
                 >
-                  {" "}
+                  <CheckCircleOutlineOutlinedIcon />
                   Approved Testimonials
                 </Button>
 
@@ -204,21 +207,42 @@ export default class AdminDashboard extends Component {
                 <Button
                   id="adminbtn"
                   variant="contained"
-                  sx={{ backgroundColor: "secondary.main" }}
+                  sx={{
+                    backgroundColor: "secondary.main",
+                    display: "flex",
+                    gap: 1,
+                  }}
                   onClick={this.updateLiveTestimonialsContent}
                 >
-                  {" "}
-                  Live Testimonials
+                  <ImportantDevicesIcon /> Live Testimonials
+                </Button>
+                <hr size="1" width="90%" color="gray" />
+                <Button
+                  id="adminbtn"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "secondary.main",
+                  }}
+                  onClick={this.updateDiscardedReviewContent}
+                >
+                  <DeleteOutlineOutlinedIcon />
+                  Discarded Testimonials
                 </Button>
                 <hr size="1" width="90%" color="gray" />
                 <Button
                   id="adminbtn"
                   variant="contained"
                   sx={{ backgroundColor: "secondary.main" }}
-                  onClick={this.updateDiscardedReviewContent}
                 >
                   {" "}
-                  Discarded Testimonials
+                  <LanguageOutlinedIcon />
+                  <a
+                    style={{ textDecoration: "none", color: "white" }}
+                    href="/customerTestimonials"
+                    target="_blank"
+                  >
+                    Check Testimonials Page
+                  </a>
                 </Button>
                 <hr size="1" width="90%" color="gray" />
               </CardContent>

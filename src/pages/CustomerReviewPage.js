@@ -33,7 +33,8 @@ function CustomerReviewSelectionDesign(props) {
             boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
           }}
         />
-        {props.CustomerName}
+        {props.CustomerName.charAt(0).toUpperCase() +
+          props.CustomerName.slice(1)}
       </Container>{" "}
     </div>
   );
@@ -61,8 +62,9 @@ function FirebaseCustomerReviewContent() {
 
   // styles variables
   const reviewContentContainerStyles = {
-    height: "240px",
-    backgroundColor: "primary.main",
+    padding: "1.5rem",
+
+    backgroundColor: "#242424",
     marginTop: "2rem",
     color: "white",
     display: "flex",
