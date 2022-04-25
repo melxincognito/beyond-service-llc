@@ -1,10 +1,9 @@
 import * as React from "react";
-import { v4 as uuidv4 } from "uuid";
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
-import { firestore } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { db } from "../../firebase-config";
+import { set, ref, remove } from "firebase/database";
 import "./TestimonialStyles.css";
 
 export default function PendingClientReviewCard(props) {
@@ -13,6 +12,7 @@ export default function PendingClientReviewCard(props) {
   const [customerReview] = React.useState(props.ClientReview);
 
   const [serviceCategory] = React.useState(props.ServiceCategory);
+  const [customerId] = React.useState(props.ClientId);
 
   // approved service review
   const data = {
@@ -20,32 +20,25 @@ export default function PendingClientReviewCard(props) {
     Email: customerEmail,
     Review: customerReview,
     Service: serviceCategory,
+    Id: customerId,
   };
-
-  //delete doc from database permanently
-
-  const deleteReview = (e) => {
-    e.preventDefault();
-    deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
+  // discards review permanently from all databases
+  const discardReview = () => {
+    remove(ref(db, "DiscardedReviews/" + props.ClientId));
   };
-
-  const deleteReviewFirebase = (e) => {
+  // reconsider a review function
+  const sendReviewToPendingDatabase = (e) => {
     e.preventDefault();
-    deleteDoc(doc(firestore, "DiscardedReviews", data.Email));
-    alert("Testimonial Permanently Discarded");
-  };
-
-  const reconsiderReview = (e) => {
-    e.preventDefault();
-
-    setDoc(doc(firestore, "PendingReviews", data.Email), {
+    discardReview();
+    set(ref(db, "PendingReviews/" + props.ClientId), {
+      id: props.ClientId,
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
     });
-    deleteReview(e);
-    alert("Testimonial Succesfully returned to 'Pending Testimonials'");
+
+    console.log("sent to pending database");
   };
 
   // styles variables
@@ -138,7 +131,7 @@ export default function PendingClientReviewCard(props) {
           id="approve"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
-          onClick={reconsiderReview}
+          onClick={sendReviewToPendingDatabase}
         >
           <CheckCircleOutlineIcon />
           Reconsider Testimonial
@@ -147,7 +140,7 @@ export default function PendingClientReviewCard(props) {
           id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={deleteReviewFirebase}
+          onClick={discardReview}
         >
           {" "}
           <DeleteOutlineIcon />

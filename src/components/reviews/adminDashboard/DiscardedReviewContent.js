@@ -57,6 +57,7 @@ export default function DiscardedReviewContent() {
                 ServiceCategory={review.service}
                 ClientEmail={review.email}
                 ClientReview={review.review}
+                ClientId={review.id}
               />
             </div>
           ))}
