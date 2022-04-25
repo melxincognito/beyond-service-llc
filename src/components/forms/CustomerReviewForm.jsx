@@ -16,10 +16,9 @@ import {
 } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { useNavigate } from "react-router-dom";
-import { doc, setDoc } from "firebase/firestore";
 import { set, ref } from "firebase/database";
 import { db } from "../../firebase-config";
-import { firestore } from "../../firebase-config";
+import { v4 as uuidv4 } from "uuid";
 
 const servicesOptions = [
   { value: "Remodel Service", label: "Remodel Service" },
@@ -38,10 +37,9 @@ export default function CustomerReviewForm() {
   const [customerName, setCustomerName] = React.useState("");
   const [customerEmail, setCustomerEmail] = React.useState("");
   const [customerReview, setCustomerReview] = React.useState("");
-
   const [serviceReview, setServiceReview] = React.useState("Remodel Service");
 
-  let userId = 0;
+  let userId = uuidv4();
 
   const handleServiceChange = (event) => {
     setServiceReview(event.target.value);
@@ -54,16 +52,7 @@ export default function CustomerReviewForm() {
     Review: customerReview,
     Service: serviceReview,
   };
-
-  const sendReviewii = (e) => {
-    e.preventDefault();
-    setDoc(doc(firestore, "PendingReviews", data.Email), {
-      name: data.Name,
-      email: data.Email,
-      review: data.Review,
-      service: data.Service,
-    });
-  };
+  // send data to realtime database
 
   const sendReview = (e) => {
     e.preventDefault();
@@ -74,9 +63,8 @@ export default function CustomerReviewForm() {
       review: data.Review,
       service: data.Service,
     });
-    userId++;
+
     console.log("sent");
-    return userId;
   };
 
   // set popup after submit upon
