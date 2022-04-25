@@ -74,18 +74,22 @@ function FirebaseCustomerReviewContent() {
     boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.66)",
   };
 
+  const changeReview = (name, service, review) => {
+    setClientName(name);
+    setClientService(service);
+    setClientReview(review);
+  };
+
   return (
     <div>
       <Box sx={reviewContentContainerStyles}>
-        {reviews.map((review, index) => (
-          <div key={index}>
-            <CustomerReviewCard
-              CustomerName={review.name}
-              CustomerReview={review.review}
-              ServiceCategory={review.service}
-            />
-          </div>
-        ))}
+        <div>
+          <CustomerReviewCard
+            CustomerName={clientName}
+            CustomerReview={clientReview}
+            ServiceCategory={clientService}
+          />
+        </div>
       </Box>{" "}
       <hr size="1" width="100%" color="gray" style={{ margin: "2rem 0" }} />
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -117,7 +121,7 @@ function FirebaseCustomerReviewContent() {
                 ImgLink={review.imgUrl}
                 CustomerName={review.name}
                 onHandleClick={() => {
-                  console.log("hello");
+                  changeReview(review.name, review.service, review.review);
                 }}
               />
             </div>

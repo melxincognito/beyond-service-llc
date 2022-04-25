@@ -27,7 +27,7 @@ export default function LiveReviewCard(props) {
 
   // discards review from pending review database regardless of approval status
   const discardReview = () => {
-    remove(ref(db, "PendingReviews/" + props.ClientId));
+    remove(ref(db, "LiveReviews/" + props.ClientId));
   };
 
   const sendReviewToDiscardedDatabase = (e) => {
@@ -153,7 +153,7 @@ export default function LiveReviewCard(props) {
           onClick={sendReviewToApprovedDatabase}
         >
           <CheckCircleOutlineIcon />
-          Approve Testimonial
+          Remove Testimonial from Webpage
         </Button>
         <Button
           id="reject"

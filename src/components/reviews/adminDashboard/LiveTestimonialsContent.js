@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
-import ApprovedClientReviewCard from "../ApprovedClientReviewCard";
+import LiveTestimonialsCard from "../LiveTestimonialsCard";
 import { db } from "../../../firebase-config";
 import { ref, onValue } from "firebase/database";
 
@@ -42,7 +42,7 @@ export default function LiveTestimonials() {
   return (
     <Box sx={contentContainerStyles}>
       <Box id="headerLabel" sx={headerLabelContainerStyles}>
-        <Typography variant="h6"> Approved Testimonials </Typography>
+        <Typography variant="h6"> Live Testimonials </Typography>
       </Box>
 
       <Box
@@ -51,7 +51,7 @@ export default function LiveTestimonials() {
       >
         {liveTestimonials.map((review, index) => (
           <div key={index}>
-            <ApprovedClientReviewCard
+            <LiveTestimonialsCard
               ClientName={review.name}
               ServiceCategory={review.service}
               ClientEmail={review.email}

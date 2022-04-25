@@ -4,12 +4,14 @@ import ApprovedReviewsContent from "../components/reviews/adminDashboard/Approve
 import PendingReviewsContent from "../components/reviews/adminDashboard/PendingReviewsContent";
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
+import LiveTestimonialsContent from "../components/reviews/adminDashboard/LiveTestimonialsContent";
 import { auth } from "../firebase-config";
 import { signOut } from "firebase/auth";
 import HomeIcon from "@mui/icons-material/Home";
 import ChairIcon from "@mui/icons-material/Chair";
 import KitchenIcon from "@mui/icons-material/Kitchen";
 import CurrentUserHeader from "../components/reviews/adminDashboard/CurrentUserHeader";
+
 import "./AdminDashboard.css";
 import { useNavigate } from "react-router-dom";
 
@@ -56,6 +58,10 @@ export default class AdminDashboard extends Component {
     this.setState({ content: <DiscardedReviewContent /> });
   };
 
+  updateLiveTestimonialsContent = () => {
+    this.setState({ content: <LiveTestimonialsContent /> });
+  };
+
   render() {
     const contentSelectorCardStyles = {
       padding: 3,
@@ -65,6 +71,7 @@ export default class AdminDashboard extends Component {
       display: "block",
       height: "24rem",
       width: "30%",
+      height: "90%",
     };
 
     const formTitleDisplayStyles = {
@@ -191,6 +198,17 @@ export default class AdminDashboard extends Component {
                 >
                   {" "}
                   Approved Testimonials
+                </Button>
+
+                <hr size="1" width="90%" color="gray" />
+                <Button
+                  id="adminbtn"
+                  variant="contained"
+                  sx={{ backgroundColor: "secondary.main" }}
+                  onClick={this.updateLiveTestimonialsContent}
+                >
+                  {" "}
+                  Live Testimonials
                 </Button>
                 <hr size="1" width="90%" color="gray" />
                 <Button
