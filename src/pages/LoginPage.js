@@ -16,10 +16,6 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
-  const [registerEmail, setRegisterEmail] = React.useState("");
-  const [registerPassword, setRegisterPassword] = React.useState("");
-  const [registerConfirmPassword, setRegisterConfirmPassword] =
-    React.useState("");
   const [loginEmail, setLoginEmail] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
   const [user, setUser] = React.useState({});
@@ -30,23 +26,8 @@ export default function LoginPage() {
 
   let navigate = useNavigate();
   const login = () => {
-    let path = `/adminDashboard`;
+    let path = `/beyond-service-admin-dashboard`;
     navigate(path);
-  };
-
-  const showPasswordSignUp = () => {
-    var x = document.getElementById("signupPasswordInput");
-    var y = document.getElementById("signupConfirmPasswordInput");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
-    if (y.type === "password") {
-      y.type = "text";
-    } else {
-      y.type = "password";
-    }
   };
 
   const showPasswordLogin = () => {
@@ -57,20 +38,11 @@ export default function LoginPage() {
       x.type = "password";
     }
   };
-  const registerUser = async () => {
-    try {
-      await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+
   const loginUser = async () => {
     try {
       await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      await login();
     } catch (error) {
       alert(error.message);
     }
@@ -79,20 +51,10 @@ export default function LoginPage() {
     await signOut(auth);
   };
 
-  const validatePassword = () => {
-    let isValid = true;
-    if (registerPassword !== "" && registerConfirmPassword !== "") {
-      if (registerPassword !== registerConfirmPassword) {
-        isValid = false;
-        alert("Passwords does not match");
-      }
-    }
-    return isValid;
-  };
   // styles variables
 
   const cardStyles = {
-    padding: 3,
+    padding: 5,
     borderRadius: 2,
     bgcolor: "secondary.light",
     boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
@@ -151,58 +113,6 @@ export default function LoginPage() {
               Click here{" "}
             </a>
           </label>
-        </CardContent>
-      </Card>
-
-      <Card id="signUpCard" sx={cardStyles}>
-        <CardContent
-          sx={{
-            display: "grid",
-            justifyContent: "center",
-            gap: "1rem",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Typography variant="h5"> Sign Up </Typography>
-          </div>
-
-          <hr size="1" width="100%" color="gray" />
-
-          <TextField
-            variant="outlined"
-            label="Email"
-            onChange={(e) => {
-              setRegisterEmail(e.target.value);
-            }}
-          />
-
-          <TextField
-            variant="outlined"
-            id="signupPasswordInput"
-            label="Password"
-            type="password"
-            onChange={(e) => {
-              setRegisterPassword(e.target.value);
-            }}
-          />
-          <TextField
-            variant="outlined"
-            id="signupConfirmPasswordInput"
-            label="Confirm Password"
-            type="password"
-            onChange={(e) => {
-              setRegisterConfirmPassword(e.target.value);
-            }}
-          />
-          <div style={{ display: "inline-block" }}>
-            <input type="checkbox" onClick={showPasswordSignUp} />{" "}
-            <label>Show password</label>
-          </div>
-
-          <Button variant="contained" onClick={registerUser}>
-            {" "}
-            Sign Up
-          </Button>
         </CardContent>
       </Card>
 

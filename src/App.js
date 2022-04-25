@@ -30,8 +30,14 @@ export default function App() {
         />
         <Route path="/customerTestimonials" element={<CustomerReviewPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/adminDashboard" element={<AdminDashboard />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/beyond-service-admin-dashboard"
+          element={<AdminDashboard />}
+        />
+        <Route
+          path="/login-beyond-service-admin-dashboard"
+          element={<LoginPage />}
+        />
         <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
       </Routes>
     </Layout>
