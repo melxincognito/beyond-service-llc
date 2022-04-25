@@ -1,10 +1,10 @@
 import * as React from "react";
-
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
-import { firestore } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { set, ref, remove } from "firebase/database";
+import { db } from "../../firebase-config";
+
 import "./TestimonialStyles.css";
 
 export default function PendingClientReviewCard(props) {
@@ -13,46 +13,48 @@ export default function PendingClientReviewCard(props) {
   const [customerReview] = React.useState(props.ClientReview);
 
   const [serviceCategory] = React.useState(props.ServiceCategory);
+  const [customerId] = React.useState(props.ClientId);
 
-  // approved service review
+  // approved service review data
   const data = {
     Name: customerName,
     Email: customerEmail,
     Review: customerReview,
     Service: serviceCategory,
-  };
-  // remove from pending reviews database
-  const removeFromPendingReviewsDatabase = (e) => {
-    e.preventDefault();
-    deleteDoc(doc(firestore, "PendingReviews", data.Email));
+    Id: customerId,
   };
 
-  const sendReview = (e) => {
-    e.preventDefault();
+  // discards review from pending review database regardless of approval status
+  const discardReview = () => {
+    remove(ref(db, "PendingReviews/" + props.ClientId));
+  };
 
-    setDoc(doc(firestore, "ApprovedReviews", data.Email), {
+  const sendReviewToDiscardedDatabase = (e) => {
+    e.preventDefault();
+    discardReview();
+
+    set(ref(db, "DiscardedReviews/" + props.ClientId), {
+      id: props.ClientId,
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
     });
-    removeFromPendingReviewsDatabase(e);
-    alert("Testimonial Successfully Approved");
+
+    console.log("sent");
   };
 
-  // discard service review and send to rejected database
-
-  const discardReview = (e) => {
+  const sendReviewToApprovedDatabase = (e) => {
     e.preventDefault();
-
-    setDoc(doc(firestore, "DiscardedReviews", data.Email), {
+    discardReview();
+    set(ref(db, "ApprovedReviews/" + props.ClientId), {
+      id: props.ClientId,
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
     });
-    removeFromPendingReviewsDatabase(e);
-    alert("Testimonial Successfully Discarded");
+    console.log("sent to approved database");
   };
 
   // styles variables
@@ -145,7 +147,7 @@ export default function PendingClientReviewCard(props) {
           id="approve"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
-          onClick={sendReview}
+          onClick={sendReviewToApprovedDatabase}
         >
           <CheckCircleOutlineIcon />
           Approve Testimonial
@@ -154,7 +156,7 @@ export default function PendingClientReviewCard(props) {
           id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={discardReview}
+          onClick={sendReviewToDiscardedDatabase}
         >
           {" "}
           <DeleteOutlineIcon />

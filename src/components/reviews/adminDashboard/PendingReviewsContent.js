@@ -1,27 +1,13 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
 import PendingClientReviewCard from "../PendingClientReviewCard";
-import { set, ref, onValue, remove, update } from "firebase/database";
+import { ref, onValue } from "firebase/database";
 import { db } from "../../../firebase-config";
-import { getDocs } from "firebase/firestore";
-
-import { pendingReviewsCollectionRef } from "../../../firebase-config";
-
-//let pendingReviews = [];
-
-/*(function importPendingReviewsFirebase() {
-  getDocs(pendingReviewsCollectionRef).then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      pendingReviews.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(pendingReviews);
-  });
-})();
-*/
 
 export default function PendingReviewsContent() {
   const [pendingReviews, setPendingReviews] = React.useState([]);
 
+  // importing the database to get the pending reviews
   React.useEffect(() => {
     onValue(ref(db, "PendingReviews/"), (snapshot) => {
       setPendingReviews([]);
@@ -29,6 +15,7 @@ export default function PendingReviewsContent() {
       if (data !== null) {
         Object.values(data).map((review) => {
           setPendingReviews((oldArray) => [...oldArray, review]);
+          return review;
         });
       }
     });
@@ -77,6 +64,7 @@ export default function PendingReviewsContent() {
               ServiceCategory={review.service}
               ClientEmail={review.email}
               ClientReview={review.review}
+              ClientId={review.id}
             />
           </div>
         ))}

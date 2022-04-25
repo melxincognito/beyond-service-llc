@@ -353,7 +353,6 @@ export default function HomePage() {
                       <a
                         style={{ textDecoration: "none" }}
                         href="/customerTestimonials"
-                        target="_blank"
                       >
                         {" "}
                         here{" "}

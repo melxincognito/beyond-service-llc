@@ -1,9 +1,10 @@
 import * as React from "react";
-import { doc, setDoc, deleteDoc } from "firebase/firestore";
-import { firestore } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+import { db } from "../../firebase-config";
+import { set, ref, remove } from "firebase/database";
+
 import "./TestimonialStyles.css";
 
 export default function ApprovedClientReviewCard(props) {
@@ -12,6 +13,7 @@ export default function ApprovedClientReviewCard(props) {
   const [customerReview] = React.useState(props.ClientReview);
 
   const [serviceCategory] = React.useState(props.ServiceCategory);
+  const [customerId] = React.useState(props.ClientId);
 
   // approved service review
   const data = {
@@ -19,31 +21,26 @@ export default function ApprovedClientReviewCard(props) {
     Email: customerEmail,
     Review: customerReview,
     Service: serviceCategory,
+    Id: customerId,
   };
 
-  const removeFromPendingReviewsDatabase = (e) => {
-    e.preventDefault();
-    deleteDoc(doc(firestore, "ApprovedReviews", data.Email));
+  // discards review from pending review database regardless of approval status
+  const discardReview = () => {
+    remove(ref(db, "ApprovedReviews/" + props.ClientId));
   };
 
-  const sendReview = (e) => {
+  const sendReviewToDiscardedDatabase = (e) => {
     e.preventDefault();
-    alert("puta");
-  };
-
-  // discard service review and send to rejected database
-
-  const discardReview = (e) => {
-    e.preventDefault();
-
-    setDoc(doc(firestore, "DiscardedReviews", data.Email), {
+    discardReview();
+    set(ref(db, "DiscardedReviews/" + props.ClientId), {
+      id: props.ClientId,
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
     });
-    removeFromPendingReviewsDatabase(e);
-    alert("Testimonial Successfully Discarded");
+
+    console.log("sent to discarded database");
   };
 
   // styles variables
@@ -136,7 +133,6 @@ export default function ApprovedClientReviewCard(props) {
           id="setOnWebpage"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
-          onClick={sendReview}
         >
           <CheckCircleOutlineIcon />
           Set Testimonial on Webpage
@@ -145,7 +141,7 @@ export default function ApprovedClientReviewCard(props) {
           id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={discardReview}
+          onClick={sendReviewToDiscardedDatabase}
         >
           {" "}
           <DeleteOutlineIcon />
