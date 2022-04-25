@@ -11,7 +11,7 @@ export default function PendingClientReviewCard(props) {
   const [customerName] = React.useState(props.ClientName);
   const [customerEmail] = React.useState(props.ClientEmail);
   const [customerReview] = React.useState(props.ClientReview);
-
+  const [customerImgUrl] = React.useState(props.ClientImgUrl);
   const [serviceCategory] = React.useState(props.ServiceCategory);
   const [customerId] = React.useState(props.ClientId);
 
@@ -22,6 +22,7 @@ export default function PendingClientReviewCard(props) {
     Review: customerReview,
     Service: serviceCategory,
     Id: customerId,
+    ImgUrl: customerImgUrl,
   };
 
   // discards review from pending review database regardless of approval status
@@ -39,9 +40,10 @@ export default function PendingClientReviewCard(props) {
       email: data.Email,
       review: data.Review,
       service: data.Service,
+      imgUrl: data.ImgUrl,
     });
 
-    console.log("sent");
+    console.log("sent to discarded reviews");
   };
 
   const sendReviewToApprovedDatabase = (e) => {
@@ -53,6 +55,7 @@ export default function PendingClientReviewCard(props) {
       email: data.Email,
       review: data.Review,
       service: data.Service,
+      imgUrl: data.ImgUrl,
     });
     console.log("sent to approved database");
   };
@@ -162,6 +165,15 @@ export default function PendingClientReviewCard(props) {
           <DeleteOutlineIcon />
           Discard Testimonial
         </Button>
+      </div>
+      <div>
+        <Typography>
+          {" "}
+          <a href={`${props.ClientImgUrl}`} target="_blank">
+            {" "}
+            Client photo{" "}
+          </a>
+        </Typography>
       </div>
     </Box>
   );

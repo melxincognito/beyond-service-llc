@@ -2,44 +2,62 @@ import * as React from "react";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { db } from "../../firebase-config";
 import { set, ref, remove } from "firebase/database";
+import { db } from "../../firebase-config";
+
 import "./TestimonialStyles.css";
 
-export default function PendingClientReviewCard(props) {
+export default function LiveReviewCard(props) {
   const [customerName] = React.useState(props.ClientName);
   const [customerEmail] = React.useState(props.ClientEmail);
   const [customerReview] = React.useState(props.ClientReview);
-
+  const [customerImgUrl] = React.useState(props.ClientImgUrl);
   const [serviceCategory] = React.useState(props.ServiceCategory);
   const [customerId] = React.useState(props.ClientId);
 
-  // approved service review
+  // approved service review data
   const data = {
     Name: customerName,
     Email: customerEmail,
     Review: customerReview,
     Service: serviceCategory,
     Id: customerId,
+    ImgUrl: customerImgUrl,
   };
-  // discards review permanently from all databases
+
+  // discards review from pending review database regardless of approval status
   const discardReview = () => {
-    remove(ref(db, "DiscardedReviews/" + props.ClientId));
+    remove(ref(db, "PendingReviews/" + props.ClientId));
   };
-  // reconsider a review function
-  const sendReviewToPendingDatabase = (e) => {
+
+  const sendReviewToDiscardedDatabase = (e) => {
     e.preventDefault();
     discardReview();
-    set(ref(db, "PendingReviews/" + props.ClientId), {
+
+    set(ref(db, "DiscardedReviews/" + props.ClientId), {
       id: props.ClientId,
       name: data.Name,
       email: data.Email,
       review: data.Review,
       service: data.Service,
-      imgUrl: props.ClientImgUrl,
+      imgUrl: data.ImgUrl,
     });
 
-    console.log("sent to pending database");
+    console.log("sent to discarded reviews");
+  };
+
+  const sendReviewToApprovedDatabase = (e) => {
+    e.preventDefault();
+    discardReview();
+    set(ref(db, "ApprovedReviews/" + props.ClientId), {
+      id: props.ClientId,
+      name: data.Name,
+      email: data.Email,
+      review: data.Review,
+      service: data.Service,
+      imgUrl: data.ImgUrl,
+    });
+    console.log("sent to approved database");
   };
 
   // styles variables
@@ -132,26 +150,26 @@ export default function PendingClientReviewCard(props) {
           id="approve"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
-          onClick={sendReviewToPendingDatabase}
+          onClick={sendReviewToApprovedDatabase}
         >
           <CheckCircleOutlineIcon />
-          Reconsider Testimonial
+          Approve Testimonial
         </Button>
         <Button
           id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={discardReview}
+          onClick={sendReviewToDiscardedDatabase}
         >
           {" "}
           <DeleteOutlineIcon />
-          Permanently Discard Testimonial
+          Discard Testimonial
         </Button>
       </div>
       <div>
         <Typography>
           {" "}
-          <a href={`${props.ClientImgUrl}`} rel="noreferrer" target="_blank">
+          <a href={`${props.ClientImgUrl}`} target="_blank">
             {" "}
             Client photo{" "}
           </a>

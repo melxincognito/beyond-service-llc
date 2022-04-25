@@ -58,6 +58,7 @@ export default function DiscardedReviewContent() {
                 ClientEmail={review.email}
                 ClientReview={review.review}
                 ClientId={review.id}
+                ClientImgUrl={review.imgUrl}
               />
             </div>
           ))}

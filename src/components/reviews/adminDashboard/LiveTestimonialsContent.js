@@ -4,17 +4,17 @@ import ApprovedClientReviewCard from "../ApprovedClientReviewCard";
 import { db } from "../../../firebase-config";
 import { ref, onValue } from "firebase/database";
 
-export default function ApprovedReviewsContent() {
-  const [approvedReviews, setApprovedReviews] = React.useState([]);
+export default function LiveTestimonials() {
+  const [liveTestimonials, setLiveTestimonials] = React.useState([]);
 
   // importing the database to get the approved reviews
   React.useEffect(() => {
-    onValue(ref(db, "ApprovedReviews/"), (snapshot) => {
-      setApprovedReviews([]);
+    onValue(ref(db, "LiveReviews/"), (snapshot) => {
+      setLiveTestimonials([]);
       const data = snapshot.val();
       if (data !== null) {
         Object.values(data).map((review) => {
-          setApprovedReviews((oldArray) => [...oldArray, review]);
+          setLiveTestimonials((oldArray) => [...oldArray, review]);
           return review;
         });
       }
@@ -49,7 +49,7 @@ export default function ApprovedReviewsContent() {
         id="reviewContentContainer"
         sx={{ display: "grid", gap: 5, padding: 6 }}
       >
-        {approvedReviews.map((review, index) => (
+        {liveTestimonials.map((review, index) => (
           <div key={index}>
             <ApprovedClientReviewCard
               ClientName={review.name}

@@ -1,19 +1,11 @@
 import * as React from "react";
 import { Box, Container } from "@mui/material";
 
-import { getDocs } from "firebase/firestore";
-import { pendingReviewsCollectionRef } from "../firebase-config";
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
-let reviews = [];
-(function dothis() {
-  getDocs(pendingReviewsCollectionRef).then((snapshot) => {
-    snapshot.docs.forEach((doc) => {
-      reviews.push({ ...doc.data(), id: doc.id });
-    });
-    console.log(reviews);
-  });
-})();
+
+import { db } from "../firebase-config";
+import { ref, onValue } from "firebase/database";
 
 function CustomerReviewSelectionDesign(props) {
   return (
@@ -48,34 +40,25 @@ function CustomerReviewSelectionDesign(props) {
 }
 
 function FirebaseCustomerReviewContent() {
-  const [clientName, setClientName] = React.useState("Julio");
-  const [clientReview, setClientReview] = React.useState(
-    "This was the most amazing experience!"
-  );
-  const [clientService, setClientService] = React.useState("Home Addition");
+  const [clientName, setClientName] = React.useState("John");
+  const [clientService, setClientService] = React.useState("jo@gmail.com");
+  const [clientReview, setClientReview] = React.useState("ghello");
 
-  function clientReviewVi() {
-    setClientReview(reviews[2].review);
-    setClientName(reviews[2].name);
-    setClientService(reviews[2].service);
-    console.log(clientReview);
-    console.log(clientName);
-  }
+  const [reviews, setReviews] = React.useState([]);
 
-  function setReviewOrian() {
-    setClientReview(reviews[0].review);
-    setClientName(reviews[0].name);
-    setClientService(reviews[0].service);
-    console.log(clientReview);
-    console.log(clientName);
-  }
-  function setReviewMel() {
-    setClientReview(reviews[1].review);
-    setClientName(reviews[1].name);
-    setClientService(reviews[1].service);
-    console.log(clientReview);
-    console.log(clientName);
-  }
+  React.useEffect(() => {
+    onValue(ref(db, "LiveReviews/"), (snapshot) => {
+      setReviews([]);
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((review) => {
+          setReviews((oldArray) => [...oldArray, review]);
+          return review;
+        });
+      }
+    });
+  }, []);
+
   // styles variables
   const reviewContentContainerStyles = {
     height: "240px",
@@ -94,13 +77,15 @@ function FirebaseCustomerReviewContent() {
   return (
     <div>
       <Box sx={reviewContentContainerStyles}>
-        {
-          <CustomerReviewCard
-            CustomerName={clientName}
-            CustomerReview={clientReview}
-            ServiceCategory={clientService}
-          />
-        }
+        {reviews.map((review, index) => (
+          <div key={index}>
+            <CustomerReviewCard
+              CustomerName={review.name}
+              CustomerReview={review.review}
+              ServiceCategory={review.service}
+            />
+          </div>
+        ))}
       </Box>{" "}
       <hr size="1" width="100%" color="gray" style={{ margin: "2rem 0" }} />
       <div style={{ display: "flex", justifyContent: "center" }}>
@@ -126,36 +111,17 @@ function FirebaseCustomerReviewContent() {
             margin: 10,
           }}
         >
-          <CustomerReviewSelectionDesign
-            onHandleClick={setReviewOrian}
-            ImgLink="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
-            CustomerName="Vi"
-          />
-          <CustomerReviewSelectionDesign
-            onHandleClick={setReviewMel}
-            ImgLink="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
-            CustomerName="Mel"
-          />
-          <CustomerReviewSelectionDesign
-            onHandleClick={clientReviewVi}
-            ImgLink="https://images.unsplash.com/photo-1606335192038-f5a05f761b3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"
-            CustomerName="Orian"
-          />
-          <CustomerReviewSelectionDesign
-            onHandleClick={setReviewOrian}
-            ImgLink="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80"
-            CustomerName="Vi"
-          />
-          <CustomerReviewSelectionDesign
-            onHandleClick={setReviewMel}
-            ImgLink="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1288&q=80"
-            CustomerName="Mel"
-          />
-          <CustomerReviewSelectionDesign
-            onHandleClick={clientReviewVi}
-            ImgLink="https://images.unsplash.com/photo-1606335192038-f5a05f761b3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"
-            CustomerName="Orian"
-          />
+          {reviews.map((review, index) => (
+            <div key={index}>
+              <CustomerReviewSelectionDesign
+                ImgLink={review.imgUrl}
+                CustomerName={review.name}
+                onHandleClick={() => {
+                  console.log("hello");
+                }}
+              />
+            </div>
+          ))}
         </div>
       </Box>
     </div>

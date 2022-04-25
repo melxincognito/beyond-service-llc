@@ -37,6 +37,7 @@ export default function CustomerReviewForm() {
   const [customerName, setCustomerName] = React.useState("");
   const [customerEmail, setCustomerEmail] = React.useState("");
   const [customerReview, setCustomerReview] = React.useState("");
+  const [customerImgUrl, setCustomerImgUrl] = React.useState("");
   const [serviceReview, setServiceReview] = React.useState("Remodel Service");
 
   let userId = uuidv4();
@@ -44,13 +45,14 @@ export default function CustomerReviewForm() {
   const handleServiceChange = (event) => {
     setServiceReview(event.target.value);
   };
-  // set data variable to send object to firestore
+  // set data variable to send object to database
 
   const data = {
     Name: customerName,
     Email: customerEmail,
     Review: customerReview,
     Service: serviceReview,
+    ImgUrl: customerImgUrl,
   };
   // send data to realtime database
 
@@ -62,9 +64,10 @@ export default function CustomerReviewForm() {
       email: data.Email,
       review: data.Review,
       service: data.Service,
+      imgUrl: data.ImgUrl,
     });
 
-    console.log("sent");
+    console.log("sent to pending reviews");
   };
 
   // set popup after submit upon
@@ -154,6 +157,19 @@ export default function CustomerReviewForm() {
                 id="contactEmail"
                 name="userEmail"
                 onChange={(e) => setCustomerEmail(e.target.value)}
+                required
+              />
+            </div>{" "}
+            <div id="imgUrlInputField">
+              <TextField
+                fullWidth
+                sx={textFieldStyles}
+                label="Image URL"
+                type="url"
+                id="imageUrl"
+                name="imageUrl"
+                placeholder="https://flickr.com/photos.jpg"
+                onChange={(e) => setCustomerImgUrl(e.target.value)}
                 required
               />
             </div>{" "}

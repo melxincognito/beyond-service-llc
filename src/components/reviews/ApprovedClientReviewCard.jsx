@@ -38,9 +38,25 @@ export default function ApprovedClientReviewCard(props) {
       email: data.Email,
       review: data.Review,
       service: data.Service,
+      imgUrl: props.ClientImgUrl,
     });
 
     console.log("sent to discarded database");
+  };
+
+  const sendReviewToLiveDatabase = (e) => {
+    e.preventDefault();
+    discardReview();
+    set(ref(db, "LiveReviews/" + props.ClientId), {
+      id: props.ClientId,
+      name: data.Name,
+      email: data.Email,
+      review: data.Review,
+      service: data.Service,
+      imgUrl: props.ClientImgUrl,
+    });
+
+    console.log("sent to live reviews database");
   };
 
   // styles variables
@@ -133,6 +149,7 @@ export default function ApprovedClientReviewCard(props) {
           id="setOnWebpage"
           variant="contained"
           sx={{ bgcolor: "#388e3c" }}
+          onClick={sendReviewToLiveDatabase}
         >
           <CheckCircleOutlineIcon />
           Set Testimonial on Webpage
@@ -147,6 +164,15 @@ export default function ApprovedClientReviewCard(props) {
           <DeleteOutlineIcon />
           Discard Testimonial
         </Button>
+      </div>
+      <div>
+        <Typography>
+          {" "}
+          <a href={`${props.ClientImgUrl}`} target="_blank">
+            {" "}
+            Client photo{" "}
+          </a>
+        </Typography>
       </div>
     </Box>
   );
