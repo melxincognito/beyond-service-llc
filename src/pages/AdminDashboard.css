@@ -1,10 +1,22 @@
 #adminbtn:hover {
-  background-color: #ff9800;
-  color: black;
+  background: rgb(84, 0, 0);
+  background: rgb(84, 0, 0);
+  background: linear-gradient(
+    238deg,
+    rgba(84, 0, 0, 1) 0%,
+    rgba(133, 2, 2, 1) 35%,
+    rgba(255, 142, 1, 1) 100%
+  );
 }
 
 #settingsbtn:hover {
-  background-color: #932020;
+  background: rgb(1, 0, 0);
+  background: linear-gradient(
+    238deg,
+    rgba(1, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8771708512506565) 35%,
+    rgba(0, 0, 0, 0.4962184702982756) 100%
+  );
   color: white;
 }
 

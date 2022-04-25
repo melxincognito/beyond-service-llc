@@ -1,10 +1,5 @@
 import * as React from "react";
-import {
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import {
   Card,
@@ -18,11 +13,6 @@ import { useNavigate } from "react-router-dom";
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
-  const [user, setUser] = React.useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
 
   let navigate = useNavigate();
   const login = () => {
@@ -46,9 +36,6 @@ export default function LoginPage() {
     } catch (error) {
       alert(error.message);
     }
-  };
-  const logoutUser = async () => {
-    await signOut(auth);
   };
 
   // styles variables
@@ -115,12 +102,6 @@ export default function LoginPage() {
           </label>
         </CardContent>
       </Card>
-
-      <div>
-        <h4> user logged in: </h4>
-        <p> {user?.email}</p>
-      </div>
-      <button onClick={logoutUser}> Sign out</button>
     </div>
   );
 }

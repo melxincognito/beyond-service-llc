@@ -12,3 +12,7 @@
   background-color: #1976d2;
   color: white;
 }
+
+#currentUser:hover {
+  background-color: rgba(242, 134, 0, 1);
+}
