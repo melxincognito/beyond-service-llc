@@ -5,13 +5,23 @@ import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 
 const useAuth = () => {
-  let user = { loggedIn: true };
+  const [usario, setUsario] = React.useState(null);
+
+  let user = { loggedIn: false };
 
   onAuthStateChanged(auth, (currentUser) => {
-    return user && user.loggedIn;
+    setUsario(currentUser);
+
+    return usario;
   });
 
-  console.warn(user.loggedIn);
+  if (usario === null) {
+    user.loggedIn = false;
+  } else {
+    user.loggedIn = true;
+  }
+
+  console.log("User Logged in? " + user.loggedIn);
   return user && user.loggedIn;
 };
 
