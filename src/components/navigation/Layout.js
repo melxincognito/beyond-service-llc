@@ -1,7 +1,7 @@
 import React from "react";
 
 import NavBar from "./NavBar";
-import { Container, Paper, Box } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import { ThemeProvider } from "@mui/material";
 import theme from "../../assets/theme";
 import ContactInformation from "../information/ContactInformation";
