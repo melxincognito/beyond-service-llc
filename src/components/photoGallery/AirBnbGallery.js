@@ -22,12 +22,6 @@ export default function AirbnbGallery() {
     });
   }, []);
 
-  photos.map((subarray) => {
-    subarray.map((image) => {
-      console.log(image.id);
-    });
-  });
-
   return (
     <div>
       <Box
