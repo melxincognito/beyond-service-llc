@@ -2,9 +2,32 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import airbnbRemodelData from "../../data/airbnbRemodelData.json";
+import { ref, onValue } from "firebase/database";
+import { db } from "../../firebase-config";
 
 export default function AirbnbGallery() {
+  const [photos, setPhotos] = React.useState([]);
+
+  // importing the database to get the approved reviews
+  React.useEffect(() => {
+    onValue(ref(db, "ImageGalleries", +"/AirBnbImageGalleries"), (snapshot) => {
+      setPhotos([]);
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((image) => {
+          setPhotos((oldArray) => [...oldArray, image]);
+          return image;
+        });
+      }
+    });
+  }, []);
+
+  photos.map((subarray) => {
+    subarray.map((image) => {
+      console.log(image.id);
+    });
+  });
+
   return (
     <div>
       <Box
@@ -21,22 +44,24 @@ export default function AirbnbGallery() {
         }}
       >
         <Slide>
-          {airbnbRemodelData.airbnbRemodelData.map((slideImage, index) => (
-            <div className="each-slide" key={index}>
-              <div
-                style={{
-                  backgroundImage: `url(${slideImage.img})`,
-                  height: "29rem",
-                  backgroundSize: "cover",
-                  borderRadius: "5px 5px 0px 0px",
-                }}
-              ></div>
+          {photos.map((subarray) =>
+            subarray.map((image) => (
+              <div className="each-slide" key={image.id}>
+                <div
+                  style={{
+                    backgroundImage: `url(${image.img}})`,
+                    height: "29rem",
+                    backgroundSize: "cover",
+                    borderRadius: "5px 5px 0px 0px",
+                  }}
+                ></div>
 
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <span>{slideImage.tag}</span>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <span>{image.tag}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </Slide>
       </Box>
     </div>
