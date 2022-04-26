@@ -11,7 +11,6 @@ const useAuth = () => {
 
   onAuthStateChanged(auth, (currentUser) => {
     setUsario(currentUser);
-
     return usario;
   });
 
