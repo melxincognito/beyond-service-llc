@@ -3,6 +3,8 @@ import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import itemData from "../../data/photogalleryimgs.json";
+import { ref, onValue, set } from "firebase/database";
+import { db } from "../../firebase-config";
 
 export default function MiscGallery() {
   return (

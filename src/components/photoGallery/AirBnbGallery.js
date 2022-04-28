@@ -2,8 +2,9 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import { ref, onValue } from "firebase/database";
+import { ref, onValue, set } from "firebase/database";
 import { db } from "../../firebase-config";
+import airbnbRemodelData from "../../data/airbnbRemodelData.json";
 
 export default function AirbnbGallery() {
   const [photos, setPhotos] = React.useState([]);
@@ -21,6 +22,27 @@ export default function AirbnbGallery() {
       }
     });
   }, []);
+
+  const data = [];
+
+  const todatabase = () => {
+    airbnbRemodelData.airbnbRemodelData.map((image) => {
+      data.push(image);
+      return data;
+    });
+    console.log(data);
+  };
+
+  const toStorage = (e) => {
+    e.preventDefault();
+    data.map((image, index) =>
+      set(ref(db, "ImageGalleries/" + "AirBnbImageGalleries/" + index), {
+        img: image.img,
+        tag: image.tag,
+        id: image.id,
+      })
+    );
+  };
 
   return (
     <div>
@@ -57,6 +79,8 @@ export default function AirbnbGallery() {
             ))
           )}
         </Slide>
+        <button onClick={todatabase}> click me</button>
+        <button onClick={toStorage}> Send to storage</button>
       </Box>
     </div>
   );

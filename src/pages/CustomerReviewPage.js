@@ -41,12 +41,10 @@ function CustomerReviewSelectionDesign(props) {
 }
 
 function FirebaseCustomerReviewContent() {
-  const [clientName, setClientName] = React.useState("John");
-  const [clientService, setClientService] = React.useState("jo@gmail.com");
-  const [clientReview, setClientReview] = React.useState("ghello");
-
   const [reviews, setReviews] = React.useState([]);
-
+  const [clientName, setClientName] = React.useState(" ");
+  const [clientService, setClientService] = React.useState("jo@gmail.com");
+  const [clientReview, setClientReview] = React.useState("");
   React.useEffect(() => {
     onValue(ref(db, "LiveReviews/"), (snapshot) => {
       setReviews([]);
@@ -54,11 +52,19 @@ function FirebaseCustomerReviewContent() {
       if (data !== null) {
         Object.values(data).map((review) => {
           setReviews((oldArray) => [...oldArray, review]);
+
           return review;
         });
       }
     });
   }, []);
+
+  (function dothis() {
+    const data = [];
+    const thisThis = reviews.shift();
+    data.push(thisThis);
+    data.map((item) => console.log(item));
+  })();
 
   // styles variables
   const reviewContentContainerStyles = {

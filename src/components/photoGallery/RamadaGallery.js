@@ -5,7 +5,31 @@ import "react-slideshow-image/dist/styles.css";
 
 import ramadaProjectData from "../../data/ramadaProjectData.json";
 
+import { ref, onValue, set } from "firebase/database";
+import { db } from "../../firebase-config";
+
 export default function RamadaGallery() {
+  const data = [];
+
+  const todatabase = () => {
+    ramadaProjectData.ramadaProjectData.map((image) => {
+      data.push(image);
+      return data;
+    });
+    console.log(data);
+  };
+
+  const toStorage = (e) => {
+    e.preventDefault();
+    data.map((image, index) =>
+      set(ref(db, "ImageGalleries/" + "RamadaProjectGalleries/" + index), {
+        img: image.img,
+        tag: image.tag,
+        id: image.id,
+      })
+    );
+    console.log("data sent");
+  };
   return (
     <div>
       <Box
@@ -39,6 +63,8 @@ export default function RamadaGallery() {
             </div>
           ))}
         </Slide>
+        <button onClick={todatabase}> click me</button>
+        <button onClick={toStorage}> Send to storage</button>
       </Box>
     </div>
   );

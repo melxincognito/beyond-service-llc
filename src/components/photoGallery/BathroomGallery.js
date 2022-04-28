@@ -3,7 +3,30 @@ import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import bathroomRemodelData from "../../data/bathroomRemodelData.json";
+import { ref, onValue, set } from "firebase/database";
+import { db } from "../../firebase-config";
+
 export default function BathroomGallery() {
+  let data = [];
+
+  const todatabase = () => {
+    bathroomRemodelData.bathroomRemodelData.map((image) => {
+      data.push(image);
+      return data;
+    });
+    console.log(data);
+  };
+
+  const toStorage = (e) => {
+    e.preventDefault();
+    data.map((image, index) =>
+      set(ref(db, "ImageGalleries/" + "BathroomGallery/" + index), {
+        img: image.img,
+        tag: image.tag,
+        id: image.id,
+      })
+    );
+  };
   return (
     <div>
       <Box
@@ -38,6 +61,8 @@ export default function BathroomGallery() {
           ))}
         </Slide>
       </Box>
+      <button onClick={todatabase}> click me</button>
+      <button onClick={toStorage}> Send to storage</button>
     </div>
   );
 }
