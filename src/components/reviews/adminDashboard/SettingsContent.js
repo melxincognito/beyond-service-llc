@@ -69,7 +69,7 @@ export default function SettingsContent() {
         keepMounted
         onClose={handleClose}
       >
-        <DialogTitle>{"Password reset link set"}</DialogTitle>
+        <DialogTitle>{"Password reset link sent"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Check your inbox at {user?.email} to reset your password.

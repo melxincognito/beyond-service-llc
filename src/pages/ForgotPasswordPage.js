@@ -12,12 +12,21 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function ForgotPasswordPage() {
+  let navigate = useNavigate();
+  const routeLoginPage = () => {
+    let path = `/login-beyond-service-admin-dashboard`;
+    navigate(path);
+  };
+
   // popup modal state
   const [open, setOpen] = React.useState(false);
   // email input state
@@ -30,6 +39,16 @@ export default function ForgotPasswordPage() {
 
   const closePopupModal = () => {
     setOpen(false);
+    routeLoginPage();
+  };
+
+  const sendResetEmail = async () => {
+    try {
+      await sendPasswordResetEmail(auth, forgotPasswordEmail);
+      await openPopupModal();
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const cardStyles = {
@@ -70,7 +89,7 @@ export default function ForgotPasswordPage() {
               onChange={(e) => setForgotPasswordEmail(e.target.value)}
               fullWidth
             />
-            <Button variant="contained" onClick={openPopupModal} fullWidth>
+            <Button variant="contained" onClick={sendResetEmail} fullWidth>
               {" "}
               Reset Password
             </Button>
