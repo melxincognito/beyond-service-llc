@@ -102,10 +102,11 @@ export default function ForgotPasswordPage() {
         keepMounted
         onClose={closePopupModal}
       >
-        <DialogTitle>{"Password reset link set"}</DialogTitle>
+        <DialogTitle>{"Password reset link sent"}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Check your inbox for a password reset link.
+            Check your inbox at {forgotPasswordEmail} for a link to reset your
+            password
           </DialogContentText>
         </DialogContent>
         <DialogActions>
