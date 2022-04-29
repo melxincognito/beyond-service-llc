@@ -10,6 +10,8 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
+import SignUpForm from "../SignUpForm";
+
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = React.useState("");
   const [loginPassword, setLoginPassword] = React.useState("");
@@ -102,6 +104,7 @@ export default function LoginPage() {
           </label>
         </CardContent>
       </Card>
+      <SignUpForm />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import PendingReviewsContent from "../components/reviews/adminDashboard/PendingR
 import DiscardedReviewContent from "../components/reviews/adminDashboard/DiscardedReviewContent";
 import DashboardIntroContent from "../components/reviews/adminDashboard/DashboardIntroContent";
 import LiveTestimonialsContent from "../components/reviews/adminDashboard/LiveTestimonialsContent";
+import SettingsContent from "../components/reviews/adminDashboard/SettingsContent";
 import { auth } from "../firebase-config";
 import { signOut } from "firebase/auth";
 import HomeIcon from "@mui/icons-material/Home";
@@ -64,6 +65,10 @@ export default class AdminDashboard extends Component {
 
   updateLiveTestimonialsContent = () => {
     this.setState({ content: <LiveTestimonialsContent /> });
+  };
+
+  updateSettingsContent = () => {
+    this.setState({ content: <SettingsContent /> });
   };
 
   render() {
@@ -148,7 +153,12 @@ export default class AdminDashboard extends Component {
                 >
                   <LogoutButton />
 
-                  <Button id="settingsbtn" variant="outlined" color="secondary">
+                  <Button
+                    id="settingsbtn"
+                    variant="outlined"
+                    color="secondary"
+                    onClick={this.updateSettingsContent}
+                  >
                     {" "}
                     Settings
                   </Button>
