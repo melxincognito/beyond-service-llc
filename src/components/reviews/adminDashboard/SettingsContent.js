@@ -9,8 +9,13 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
+  TextField,
 } from "@mui/material";
-import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
+import {
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  updateProfile,
+} from "firebase/auth";
 
 import { auth } from "../../../firebase-config";
 
@@ -23,6 +28,7 @@ export default function SettingsContent() {
 
   const [open, setOpen] = React.useState(false);
 
+  // password reset popup modal
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -30,6 +36,8 @@ export default function SettingsContent() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  // grabbing current user info
 
   onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -55,7 +63,17 @@ export default function SettingsContent() {
     >
       <Typography variant="h4">Settings</Typography>
       <Card sx={{ padding: 3, display: "grid", gap: "1rem" }}>
-        <Typography> Registered Email: {user?.email} </Typography>
+        <div>
+          <Typography variant="h6"> Registered Email: </Typography>{" "}
+          <Typography> {user?.email}</Typography>
+          <Button> Update Email Address</Button>
+        </div>
+        <hr size="1" width="90%" color="gray" />
+        <div>
+          <Typography variant="h6">Name: </Typography>{" "}
+          <Typography>{user?.displayName} </Typography>
+        </div>
+        <hr size="1" width="90%" color="gray" />
         <div sx={{ display: "flex" }}>
           <Button variant="contained" onClick={updatePassword}>
             {" "}

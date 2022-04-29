@@ -21,6 +21,8 @@ export default function LiveTestimonials() {
     });
   }, []);
 
+  console.log(liveTestimonials);
+
   // styles variables
 
   const contentContainerStyles = {

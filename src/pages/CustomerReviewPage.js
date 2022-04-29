@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Container } from "@mui/material";
+import { Box, Card, Container, Typography } from "@mui/material";
 
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
@@ -59,12 +59,11 @@ function FirebaseCustomerReviewContent() {
     });
   }, []);
 
-  (function dothis() {
-    const data = [];
-    const thisThis = reviews.shift();
-    data.push(thisThis);
-    data.map((item) => console.log(item));
-  })();
+  const changeReview = (name, service, review) => {
+    setClientName(name);
+    setClientService(service);
+    setClientReview(review);
+  };
 
   // styles variables
   const reviewContentContainerStyles = {
@@ -82,14 +81,21 @@ function FirebaseCustomerReviewContent() {
     boxShadow: "0px 0px 15px 5px rgba(0,0,0,0.66)",
   };
 
-  const changeReview = (name, service, review) => {
-    setClientName(name);
-    setClientService(service);
-    setClientReview(review);
+  const headerStyles = {
+    display: "flex",
+    justifyContent: "center",
+    margin: 1,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+    borderRadius: "4px 25px 4px 25px",
+    bgcolor: "secondary.light",
+    padding: 2,
   };
 
   return (
-    <div>
+    <div style={{ display: "grid" }}>
+      <Box sx={headerStyles}>
+        <Typography variant="h4"> Customer Testimonials</Typography>
+      </Box>
       <Box sx={reviewContentContainerStyles}>
         <div>
           <CustomerReviewCard

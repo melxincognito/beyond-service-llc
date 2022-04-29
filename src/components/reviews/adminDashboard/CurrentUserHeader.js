@@ -29,7 +29,7 @@ export default function CurrentUserHeader() {
         boxShadow: "5px 5px 15px 5px rgba(0,0,0,0.33)",
       }}
     >
-      <Typography> Hello {user?.email}</Typography>
+      <Typography> Hello, {user?.displayName}!</Typography>
     </Paper>
   );
 }
