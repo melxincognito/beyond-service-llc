@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";

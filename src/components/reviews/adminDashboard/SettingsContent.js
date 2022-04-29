@@ -9,13 +9,8 @@ import {
   DialogContentText,
   DialogTitle,
   Slide,
-  TextField,
 } from "@mui/material";
-import {
-  onAuthStateChanged,
-  sendPasswordResetEmail,
-  updateProfile,
-} from "firebase/auth";
+import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 
 import { auth } from "../../../firebase-config";
 
