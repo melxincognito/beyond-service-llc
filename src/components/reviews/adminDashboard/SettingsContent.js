@@ -79,7 +79,23 @@ export default function SettingsContent() {
               gap: "0.3rem",
             }}
           >
-            <Typography variant="h6"> Registered Email: </Typography>{" "}
+            <Typography variant="h6" color="primary.light">
+              Name:{" "}
+            </Typography>{" "}
+            <Typography>{user?.displayName} </Typography>
+          </div>
+          <hr size="1" width="90%" color="gray" />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.3rem",
+            }}
+          >
+            <Typography variant="h6" color="primary.light">
+              {" "}
+              Registered Email:{" "}
+            </Typography>{" "}
             <Typography> {user?.email}</Typography>
           </div>
           <hr size="1" width="90%" color="gray" />
@@ -90,19 +106,15 @@ export default function SettingsContent() {
               gap: "0.3rem",
             }}
           >
-            <Typography variant="h6">Name: </Typography>{" "}
-            <Typography>{user?.displayName} </Typography>
-          </div>
-          <hr size="1" width="90%" color="gray" />
-          <div
-            style={{
-              display: "grid",
-              justifyItems: "center",
-              gap: "0.3rem",
-            }}
-          >
-            <Typography variant="h6">Reset Password: </Typography>
-            <Button variant="contained" onClick={updatePassword}>
+            <Typography variant="h6" color="primary.light">
+              Reset Password:{" "}
+            </Typography>
+            <Button
+              id="settingsbtn"
+              color="secondary"
+              variant="outlined"
+              onClick={updatePassword}
+            >
               {" "}
               Send Password Reset Link{" "}
             </Button>
