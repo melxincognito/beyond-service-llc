@@ -4,6 +4,7 @@ import { Box, Container, Typography } from "@mui/material";
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
 
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { db } from "../firebase-config";
 import { ref, onValue } from "firebase/database";
 
@@ -42,8 +43,10 @@ function CustomerReviewSelectionDesign(props) {
 
 function FirebaseCustomerReviewContent() {
   const [reviews, setReviews] = React.useState([]);
-  const [clientName, setClientName] = React.useState(" ");
-  const [clientService, setClientService] = React.useState("jo@gmail.com");
+  const [clientName, setClientName] = React.useState("");
+  const [clientService, setClientService] = React.useState(
+    "Click on the photo icons below to read though Beyond Service's customer testimonials"
+  );
   const [clientReview, setClientReview] = React.useState("");
   React.useEffect(() => {
     onValue(ref(db, "LiveReviews/"), (snapshot) => {

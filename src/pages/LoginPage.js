@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import SignUpForm from "../SignUpForm";
 
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = React.useState("");
@@ -111,7 +110,6 @@ export default function LoginPage() {
             </label>
           </CardContent>
         </Card>
-        <SignUpForm />
       </motion.div>
     </AnimatePresence>
   );
