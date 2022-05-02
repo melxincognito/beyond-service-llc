@@ -15,6 +15,7 @@ import {
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -64,55 +65,61 @@ export default function ForgotPasswordPage() {
     gap: "1rem",
   };
   return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}
-    >
-      <Card sx={cardStyles}>
-        <CardContent>
-          <Typography variant="h4"> Forgot password</Typography>
-        </CardContent>
-        <hr size="1" width="90%" color="gray" />
-        <CardContent>
-          <label>
-            {" "}
-            Enter your account email and we'll send you a link to reset your
-            password
-          </label>
-        </CardContent>
-        <hr size="1" width="90%" color="gray" />
-
-        <CardContent>
-          <form style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-            <TextField
-              label="Email"
-              placeholder="user@gmail.com"
-              onChange={(e) => setForgotPasswordEmail(e.target.value)}
-              fullWidth
-            />
-            <Button variant="contained" onClick={sendResetEmail} fullWidth>
-              {" "}
-              Reset Password
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-      <Dialog
-        open={open}
-        TransitionComponent={Transition}
-        keepMounted
-        onClose={closePopupModal}
+    <AnimatePresence>
+      <motion.div
+        transition={{ delay: 0.17 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}
       >
-        <DialogTitle>{"Password reset link sent"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Check your inbox at {forgotPasswordEmail} for a link to reset your
-            password
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={closePopupModal}>Close</Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+        <Card sx={cardStyles}>
+          <CardContent>
+            <Typography variant="h4"> Forgot password</Typography>
+          </CardContent>
+          <hr size="1" width="90%" color="gray" />
+          <CardContent>
+            <label>
+              {" "}
+              Enter your account email and we'll send you a link to reset your
+              password
+            </label>
+          </CardContent>
+          <hr size="1" width="90%" color="gray" />
+
+          <CardContent>
+            <form style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              <TextField
+                label="Email"
+                placeholder="user@gmail.com"
+                onChange={(e) => setForgotPasswordEmail(e.target.value)}
+                fullWidth
+              />
+              <Button variant="contained" onClick={sendResetEmail} fullWidth>
+                {" "}
+                Reset Password
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+        <Dialog
+          open={open}
+          TransitionComponent={Transition}
+          keepMounted
+          onClose={closePopupModal}
+        >
+          <DialogTitle>{"Password reset link sent"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Check your inbox at {forgotPasswordEmail} for a link to reset your
+              password
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={closePopupModal}>Close</Button>
+          </DialogActions>
+        </Dialog>
+      </motion.div>
+    </AnimatePresence>
   );
 }

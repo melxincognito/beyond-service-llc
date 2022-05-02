@@ -3,6 +3,7 @@ import { Box, Typography } from "@mui/material";
 import LiveTestimonialsCard from "../LiveTestimonialsCard";
 import { db } from "../../../firebase-config";
 import { ref, onValue } from "firebase/database";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function LiveTestimonials() {
   const [liveTestimonials, setLiveTestimonials] = React.useState([]);
@@ -42,28 +43,42 @@ export default function LiveTestimonials() {
   };
 
   return (
-    <Box sx={contentContainerStyles}>
-      <Box id="headerLabel" sx={headerLabelContainerStyles}>
-        <Typography variant="h6"> Live Testimonials </Typography>
-      </Box>
-
-      <Box
-        id="reviewContentContainer"
-        sx={{ display: "grid", gap: 5, padding: 6 }}
+    <AnimatePresence>
+      <motion.div
+        transition={{ delay: 0.17 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
-        {liveTestimonials.map((review, index) => (
-          <div key={index}>
-            <LiveTestimonialsCard
-              ClientName={review.name}
-              ServiceCategory={review.service}
-              ClientEmail={review.email}
-              ClientReview={review.review}
-              ClientId={review.id}
-              ClientImgUrl={review.imgUrl}
-            />
-          </div>
-        ))}
-      </Box>
-    </Box>
+        <Box sx={contentContainerStyles}>
+          <Box id="headerLabel" sx={headerLabelContainerStyles}>
+            <Typography variant="h6"> Live Testimonials </Typography>
+          </Box>
+          <Box id="headerContentContainer">
+            <Typography>
+              {" "}
+              Manage testimonials currently displayed on your live website here
+            </Typography>
+          </Box>
+          <Box
+            id="reviewContentContainer"
+            sx={{ display: "grid", gap: 5, padding: 6 }}
+          >
+            {liveTestimonials.map((review, index) => (
+              <div key={index}>
+                <LiveTestimonialsCard
+                  ClientName={review.name}
+                  ServiceCategory={review.service}
+                  ClientEmail={review.email}
+                  ClientReview={review.review}
+                  ClientId={review.id}
+                  ClientImgUrl={review.imgUrl}
+                />
+              </div>
+            ))}
+          </Box>
+        </Box>
+      </motion.div>
+    </AnimatePresence>
   );
 }

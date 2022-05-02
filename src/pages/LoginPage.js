@@ -9,7 +9,7 @@ import {
   Button,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { AnimatePresence, motion } from "framer-motion";
 import SignUpForm from "../SignUpForm";
 
 export default function LoginPage() {
@@ -50,61 +50,69 @@ export default function LoginPage() {
   };
 
   return (
-    <div style={{ display: "grid", justifyContent: "center", gap: "5rem" }}>
-      <Card id="loginCard" sx={cardStyles}>
-        <CardContent
-          sx={{
-            display: "grid",
-            justifyContent: "center",
-            gap: "1rem",
-          }}
-        >
-          <div
-            id="header"
-            style={{ display: "flex", justifyContent: "center" }}
+    <AnimatePresence>
+      <motion.div
+        transition={{ delay: 0.17 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        style={{ display: "grid", justifyContent: "center", gap: "5rem" }}
+      >
+        <Card id="loginCard" sx={cardStyles}>
+          <CardContent
+            sx={{
+              display: "grid",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
           >
-            <Typography variant="h5"> Login </Typography>
-          </div>
+            <div
+              id="header"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              <Typography variant="h5"> Login </Typography>
+            </div>
 
-          <hr size="1" width="100%" color="gray" />
+            <hr size="1" width="100%" color="gray" />
 
-          <TextField
-            variant="outlined"
-            label="Email"
-            onChange={(e) => {
-              setLoginEmail(e.target.value);
-            }}
-          />
+            <TextField
+              variant="outlined"
+              label="Email"
+              onChange={(e) => {
+                setLoginEmail(e.target.value);
+              }}
+            />
 
-          <TextField
-            id="loginPasswordInput"
-            variant="outlined"
-            label="Password"
-            type="password"
-            onChange={(e) => {
-              setLoginPassword(e.target.value);
-            }}
-          />
+            <TextField
+              id="loginPasswordInput"
+              variant="outlined"
+              label="Password"
+              type="password"
+              onChange={(e) => {
+                setLoginPassword(e.target.value);
+              }}
+            />
 
-          <div style={{ display: "inline-block" }}>
-            <input type="checkbox" onClick={showPasswordLogin} />{" "}
-            <label>Show password</label>
-          </div>
+            <div style={{ display: "inline-block" }}>
+              <input type="checkbox" onClick={showPasswordLogin} />{" "}
+              <label>Show password</label>
+            </div>
 
-          <Button variant="contained" onClick={loginUser}>
-            {" "}
-            Log in
-          </Button>
-          <label>
-            {" "}
-            Forgot password?{" "}
-            <a href="/forgotPassword" target="_blank">
-              Click here{" "}
-            </a>
-          </label>
-        </CardContent>
-      </Card>
-      <SignUpForm />
-    </div>
+            <Button variant="contained" onClick={loginUser}>
+              {" "}
+              Log in
+            </Button>
+            <label>
+              {" "}
+              Forgot password?{" "}
+              <a href="/forgotPassword" target="_blank">
+                Click here{" "}
+              </a>
+            </label>
+          </CardContent>
+        </Card>
+        <SignUpForm />
+      </motion.div>
+    </AnimatePresence>
   );
 }
