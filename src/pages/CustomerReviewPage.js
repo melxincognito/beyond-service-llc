@@ -146,7 +146,7 @@ function FirebaseCustomerReviewContent() {
 
 export default function CustomerReviewPage() {
   return (
-    <div>
+    <div style={{ marginBottom: "4rem" }}>
       <div>
         <FirebaseCustomerReviewContent />
       </div>{" "}
