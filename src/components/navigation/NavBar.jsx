@@ -39,6 +39,24 @@ const NavBar = () => {
     setValue(newValue);
   };
 
+  const mobileTabsItems = [
+    { label: "Home", link: "/", id: 0 },
+    { label: "About Us", link: "/aboutUs", id: 1 },
+    { label: "Services", link: "/services", id: 2 },
+    { label: "Project Gallery", link: "/projectGalleryMobile", id: 3 },
+    { label: "Testimonials", link: "/customerTestimonials", id: 4 },
+    { label: "Contact Us", link: "/contact", id: 5 },
+  ];
+  // desktop tabs have a different project gallery and numbering for the tab indicator
+  const desktopTabsItems = [
+    { label: "Home", link: "/", id: 1 },
+    { label: "About Us", link: "/aboutUs", id: 2 },
+    { label: "Services", link: "/services", id: 3 },
+    { label: "Project Gallery", link: "/projectGalleryDesktop", id: 4 },
+    { label: "Testimonials", link: "/customerTestimonials", id: 5 },
+    { label: "Contact Us", link: "/contact", id: 6 },
+  ];
+
   // styles variables
   const navBarStyles = {
     bgcolor: "primary",
@@ -155,25 +173,16 @@ const NavBar = () => {
               sx={{}}
             >
               <Container sx={mobileTabContainerStyles}>
-                <MenuItem component={Link} to="/" sx={mobileTabStyle}>
-                  <Typography textAlign="center">Home</Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/aboutUs" sx={mobileTabStyle}>
-                  <Typography textAlign="center">About Us</Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/services" sx={mobileTabStyle}>
-                  <Typography textAlign="center">Services</Typography>
-                </MenuItem>
-                <MenuItem
-                  component={Link}
-                  to="/projectGalleryMobile"
-                  sx={mobileTabStyle}
-                >
-                  <Typography textAlign="center">Project Gallery</Typography>
-                </MenuItem>
-                <MenuItem component={Link} to="/contact" sx={mobileTabStyle}>
-                  <Typography textAlign="center">Contact Us</Typography>
-                </MenuItem>
+                {mobileTabsItems.map((item) => (
+                  <MenuItem
+                    key={item.id}
+                    component={Link}
+                    to={item.link}
+                    sx={mobileTabStyle}
+                  >
+                    <Typography textAlign="center"> {item.label}</Typography>
+                  </MenuItem>
+                ))}
               </Container>
             </Menu>
           </Box>
@@ -199,26 +208,15 @@ const NavBar = () => {
               allowScrollButtonsMobile
               scrollButtons
             >
-              <Tab value={1} label="Home" component={Link} to="/" />
-              <Tab value={2} label="About Us" component={Link} to="/aboutUs" />
-              <Tab
-                value={3}
-                label="Our Services"
-                component={Link}
-                to="/services"
-              />
-              <Tab
-                value={4}
-                label="Project Gallery"
-                component={Link}
-                to="/projectGalleryDesktop"
-              />
-              <Tab
-                value={5}
-                label="Contact Us"
-                component={Link}
-                to="/contact"
-              />
+              {desktopTabsItems.map((item) => (
+                <Tab
+                  key={item.id}
+                  value={item.id}
+                  label={item.label}
+                  component={Link}
+                  to={item.link}
+                />
+              ))}
             </Tabs>
           </Box>
           {/* social links and contact phone */}
