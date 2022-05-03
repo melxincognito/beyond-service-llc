@@ -4,7 +4,6 @@ import { Box, Container, Typography } from "@mui/material";
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
 
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { db } from "../firebase-config";
 import { ref, onValue } from "firebase/database";
 
@@ -34,8 +33,10 @@ function CustomerReviewSelectionDesign(props) {
             boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
           }}
         />
-        {props.CustomerName.charAt(0).toUpperCase() +
-          props.CustomerName.slice(1)}
+        <Typography>
+          {props.CustomerName.charAt(0).toUpperCase() +
+            props.CustomerName.slice(1)}
+        </Typography>
       </Container>{" "}
     </div>
   );
@@ -109,13 +110,6 @@ function FirebaseCustomerReviewContent() {
         </div>
       </Box>{" "}
       <hr size="1" width="100%" color="gray" style={{ margin: "2rem 0" }} />
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <p>
-          {" "}
-          Click on the photo icons below to read though Beyond Service's
-          customer testimonials
-        </p>
-      </div>
       <Box
         id="testimonialIconContainer"
         sx={{ display: "flex", justifyContent: "center" }}
@@ -127,7 +121,8 @@ function FirebaseCustomerReviewContent() {
             flexWrap: "wrap",
             overflowX: "scroll",
             justifyContent: "center",
-            width: "70%",
+
+            width: "100%",
             gap: 10,
             margin: 10,
           }}

@@ -566,9 +566,11 @@ export default function HomePage() {
                   high quality results to our customers by placing a high value
                   on open communication and attention to detail. We do our best
                   to understand each persons specific needs and provide results
-                  beyond expectations.{" "}
-                  <a href="/projectGalleryMobile"> Click here</a> to check out
-                  past projects in our photo gallery.
+                  beyond expectations. Check out past projects in our{" "}
+                  <a href="projectGalleryMobile">photo gallery</a> and read
+                  through some of our{" "}
+                  <a href="/customerTestimonials"> customer testimonials</a> to
+                  find what Beyond Service can offer you.
                 </Typography>
               </CardContent>
             </Card>

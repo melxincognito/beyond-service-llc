@@ -13,6 +13,7 @@ export default function CustomerReviewCard(props) {
           display: "grid",
           justifyContent: "center",
           justifyItems: "center",
+          textAlign: "center",
         }}
       >
         <div>
