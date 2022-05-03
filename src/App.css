@@ -84,3 +84,7 @@ that they form a hexagon */
     display: none;
   }
 }
+
+.hexagonBottom {
+  box-shadow: rgba(0, 0, 0, 0.066);
+}

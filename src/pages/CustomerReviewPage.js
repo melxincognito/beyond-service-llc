@@ -3,6 +3,7 @@ import { Box, Container, Typography } from "@mui/material";
 
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
 import CustomerReviewCard from "../components/information/CustomerReviewCard";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 import { db } from "../firebase-config";
 import { ref, onValue } from "firebase/database";
@@ -151,14 +152,17 @@ function FirebaseCustomerReviewContent() {
 
 export default function CustomerReviewPage() {
   return (
-    <div style={{ marginBottom: "4rem" }}>
-      <div>
-        <FirebaseCustomerReviewContent />
-      </div>{" "}
-      <hr size="1" width="100%" color="gray" />
-      <div style={{ marginTop: "2rem" }}>
-        <CustomerReviewForm />
+    <div>
+      <div style={{ marginBottom: "2rem" }}>
+        <div>
+          <FirebaseCustomerReviewContent />
+        </div>{" "}
+        <hr size="1" width="100%" color="gray" />
+        <div style={{ marginTop: "2rem" }}>
+          <CustomerReviewForm />
+        </div>
       </div>
+      <BottomNavLabel />
     </div>
   );
 }
