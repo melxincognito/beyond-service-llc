@@ -13,12 +13,17 @@ function CustomerReviewSelectionDesign(props) {
       <Container
         sx={{
           margin: "5px auto",
+          padding: 1,
           minWidth: "100%",
           display: "grid",
           justifyContent: "center",
           justifyItems: "center",
           gap: 1,
           cursor: "pointer",
+          borderRadius: 10,
+          ":hover": {
+            backgroundColor: "rgba(0, 0, 0, 0.066)",
+          },
         }}
         onClick={props.onHandleClick}
       >

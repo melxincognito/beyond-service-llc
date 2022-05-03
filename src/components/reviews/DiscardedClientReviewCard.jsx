@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, Button, Paper, Typography } from "@mui/material";
+import { Box, Button, Paper, Typography, Modal } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import { db } from "../../firebase-config";
@@ -7,9 +7,15 @@ import { set, ref, remove } from "firebase/database";
 import "./TestimonialStyles.css";
 
 export default function PendingClientReviewCard(props) {
+  // modal to confirm permanent discard of item from database
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   // discards review permanently from all databases
   const discardReview = () => {
     remove(ref(db, "DiscardedReviews/" + props.ClientId));
+    handleClose();
   };
   // reconsider a review function
   const sendReviewToPendingDatabase = (e) => {
@@ -52,6 +58,19 @@ export default function PendingClientReviewCard(props) {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  };
+
+  const modalStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+    textAlign: "center",
   };
 
   return (
@@ -126,7 +145,7 @@ export default function PendingClientReviewCard(props) {
           id="reject"
           sx={{ bgcolor: "secondary.main" }}
           variant="contained"
-          onClick={discardReview}
+          onClick={handleOpen}
         >
           {" "}
           <DeleteOutlineIcon />
@@ -142,6 +161,21 @@ export default function PendingClientReviewCard(props) {
           </a>
         </Typography>
       </div>
+      <Modal keepMounted open={open} onClose={handleClose}>
+        <Box sx={modalStyle}>
+          <Typography variant="h6" component="h2">
+            Are you sure you want to permanently discard this testimonial?
+          </Typography>
+          <Button variant="outlined" onClick={discardReview}>
+            {" "}
+            Yes{" "}
+          </Button>{" "}
+          <Button variant="outlined" onClick={handleClose}>
+            {" "}
+            No{" "}
+          </Button>
+        </Box>
+      </Modal>
     </Box>
   );
 }

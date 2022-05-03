@@ -26,7 +26,7 @@ export default function PendingClientReviewCard(props) {
       imgUrl: props.ClientImgUrl,
     });
 
-    alert("Discarded Testimonial");
+    console.log("sent to discarded database");
   };
 
   const sendReviewToApprovedDatabase = (e) => {
