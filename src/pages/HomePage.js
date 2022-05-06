@@ -2,13 +2,13 @@ import * as React from "react";
 import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 // testimonies
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
 import "../App.css";
-import BottomNavLabel from "../components/navigation/BottomNavLabel";
 
 export default function HomePage() {
   const John = {
@@ -340,10 +340,29 @@ export default function HomePage() {
                       </div>{" "}
                     </CardContent>
                   </Card>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      color: "white",
+                    }}
+                  >
+                    <Typography variant="subtitle2">
+                      {" "}
+                      Read more customer testimonials{" "}
+                      <a
+                        style={{ textDecoration: "none" }}
+                        href="/customerTestimonials"
+                      >
+                        {" "}
+                        here{" "}
+                      </a>
+                    </Typography>
+                  </Box>
                 </Box>
                 <ArrowForwardIosIcon onClick={flipReviews} />
               </Box>
-            </Box>
+            </Box>{" "}
           </Box>{" "}
         </Box>
         {/*horizontal image gallery in seperate container on bottom bc it keeps getting pushed to the top */}
@@ -384,6 +403,7 @@ export default function HomePage() {
             gridTemplateColumns: "1fr",
             gridTemplateRows: "auto auto",
             gap: "3rem",
+            width: "98.9%",
           }}
         >
           <Box
@@ -408,6 +428,7 @@ export default function HomePage() {
             id="cardContainer"
             sx={{
               position: "absolute",
+              margin: 2,
             }}
           >
             <Card
@@ -417,6 +438,7 @@ export default function HomePage() {
                 display: "grid",
                 alignContent: "center",
                 justifyContent: "center",
+
                 textAlign: "center",
                 boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
                 margin: "auto",
@@ -547,9 +569,11 @@ export default function HomePage() {
                   high quality results to our customers by placing a high value
                   on open communication and attention to detail. We do our best
                   to understand each persons specific needs and provide results
-                  beyond expectations.{" "}
-                  <a href="/projectGalleryMobile"> Click here</a> to check out
-                  past projects in our photo gallery.
+                  beyond expectations. Check out past projects in our{" "}
+                  <a href="projectGalleryMobile">photo gallery</a> and read
+                  through some of our{" "}
+                  <a href="/customerTestimonials"> customer testimonials</a> to
+                  find what Beyond Service can offer you.
                 </Typography>
               </CardContent>
             </Card>

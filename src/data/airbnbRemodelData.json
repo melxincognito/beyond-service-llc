@@ -3,7 +3,7 @@
     {
       "img": "https://live.staticflickr.com/65535/52013689759_d51ae0487e_z.jpg",
       "tag": "foyer",
-      "id": 30
+      "id": 0
     },
     {
       "img": "https://live.staticflickr.com/65535/52013959900_09d94e2ca5_z.jpg",
@@ -23,17 +23,17 @@
     {
       "img": "https://live.staticflickr.com/65535/52013440236_977726cd72_z.jpg",
       "tag": "kitchen remodel",
-      "id": 6
+      "id": 4
     },
     {
       "img": "https://live.staticflickr.com/65535/52013961715_2246d64aa2_z.jpg",
       "tag": "kitchen remodel",
-      "id": 29
+      "id": 5
     },
     {
       "img": "https://live.staticflickr.com/65535/52013497893_175e7d0439_z.jpg",
       "tag": "kitchen counters",
-      "id": 11
+      "id": 6
     },
 
     {
@@ -49,109 +49,109 @@
     {
       "img": "https://live.staticflickr.com/65535/52012412997_6eb1a07a15_z.jpg",
       "tag": "enclosed balcony",
-      "id": 10
+      "id": 9
     },
     {
       "img": "https://live.staticflickr.com/65535/52013688784_efee1488ec_z.jpg",
       "tag": "enclosed balcony",
-      "id": 12
+      "id": 10
     },
     {
       "img": "https://live.staticflickr.com/65535/52012413597_124fb8f482_z.jpg",
       "tag": "dining room",
-      "id": 18
+      "id": 11
     },
     {
       "img": "https://live.staticflickr.com/65535/52012413632_d9b8ff444c_z.jpg",
       "tag": "dining room",
-      "id": 19
+      "id": 12
     },
     {
       "img": "https://live.staticflickr.com/65535/52013441306_508c679af8_z.jpg",
       "tag": "dining area",
-      "id": 21
+      "id": 13
     },
     {
       "img": "https://live.staticflickr.com/65535/52012414007_8cdd15c41c_z.jpg",
       "tag": "dining room",
-      "id": 27
+      "id": 14
     },
 
     {
       "img": "https://live.staticflickr.com/65535/52013497458_1d2b2b9ddf_z.jpg",
       "tag": "bathroom",
-      "id": 4
+      "id": 15
     },
     {
       "img": "https://live.staticflickr.com/65535/52013497478_03399bed18_z.jpg",
-      "tag": "bedroom",
-      "id": 5
-    },
-
-    {
-      "img": "https://live.staticflickr.com/65535/52013440476_b7b0c4cde1_z.jpg",
-      "tag": "bedroom",
-      "id": 9
-    },
-
-    {
-      "img": "https://live.staticflickr.com/65535/52013688809_658c21dc06_z.jpg",
-      "tag": "master bath",
-      "id": 13
-    },
-    {
-      "img": "https://live.staticflickr.com/65535/52012413367_eb68d6a20a_z.jpg",
-      "tag": "living room",
-      "id": 14
-    },
-
-    {
-      "img": "https://live.staticflickr.com/65535/52012413492_4f0b096ee1_z.jpg",
       "tag": "bedroom",
       "id": 16
     },
 
     {
+      "img": "https://live.staticflickr.com/65535/52013440476_b7b0c4cde1_z.jpg",
+      "tag": "bedroom",
+      "id": 17
+    },
+
+    {
+      "img": "https://live.staticflickr.com/65535/52013688809_658c21dc06_z.jpg",
+      "tag": "master bath",
+      "id": 18
+    },
+    {
+      "img": "https://live.staticflickr.com/65535/52012413367_eb68d6a20a_z.jpg",
+      "tag": "living room",
+      "id": 19
+    },
+
+    {
+      "img": "https://live.staticflickr.com/65535/52012413492_4f0b096ee1_z.jpg",
+      "tag": "bedroom",
+      "id": 20
+    },
+
+    {
       "img": "https://live.staticflickr.com/65535/52013961335_38895d80c0_z.jpg",
       "tag": "living room",
-      "id": 20
+      "id": 21
     },
 
     {
       "img": "https://live.staticflickr.com/65535/52013498613_63ddd4aaa5_z.jpg",
       "tag": "bedroom",
-      "id": 23
+      "id": 22
     },
     {
       "img": "https://live.staticflickr.com/65535/52013689424_5bc7e7498d_z.jpg",
       "tag": "living room",
-      "id": 24
+      "id": 23
     },
     {
       "img": "https://live.staticflickr.com/65535/52013441446_95e81e61a5_z.jpg",
       "tag": "bedroom",
-      "id": 25
+      "id": 24
     },
     {
       "img": "https://live.staticflickr.com/65535/52013689589_09227db43b_z.jpg",
       "tag": "separate work space",
-      "id": 26
+      "id": 25
     },
     {
       "img": "https://live.staticflickr.com/65535/52013441166_86cd35053a_z.jpg",
       "tag": "separate work space",
-      "id": 17
+      "id": 26
     },
     {
       "img": "https://live.staticflickr.com/65535/52012413452_1ea9eee4d7_z.jpg",
       "tag": "separate work space",
-      "id": 15
+      "id": 27
     },
 
     {
       "img": "https://live.staticflickr.com/65535/52013961400_f4460a3569_z.jpg",
       "tag": "separate work space",
-      "id": 22
+      "id": 28
     }
   ]
 }

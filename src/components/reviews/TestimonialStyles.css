@@ -1,0 +1,18 @@
+#approve:hover {
+  background-color: #ffc107;
+  color: black;
+}
+
+#reject:hover {
+  background-color: #ff1744;
+  color: white;
+}
+
+#setOnWebpage:hover {
+  background-color: #1976d2;
+  color: white;
+}
+
+#currentUser:hover {
+  background-color: rgba(242, 134, 0, 1);
+}

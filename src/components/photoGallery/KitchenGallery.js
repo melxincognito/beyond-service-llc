@@ -2,9 +2,46 @@ import { Box } from "@mui/material";
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import { ref, onValue, set } from "firebase/database";
+import { db } from "../../firebase-config";
 import kitchenRemodelData from "../../data/kitchenRemodelData.json";
 
 export default function KitchenGallery() {
+  const [kitchenPhotos, setKitchenPhotos] = React.useState([]);
+
+  React.useEffect(() => {
+    onValue(ref(db, "KitchenGalleries", +"/Zero"), (snapshot) => {
+      setKitchenPhotos([]);
+      const data = snapshot.val();
+      if (data !== null) {
+        Object.values(data).map((img) => {
+          setKitchenPhotos((oldArray) => [...oldArray, img]);
+          return img;
+        });
+      }
+    });
+  }, []);
+
+  let data = [];
+
+  const todatabase = () => {
+    kitchenRemodelData.kitchenRemodelData.map((image) => {
+      data.push(image);
+      return data;
+    });
+    console.log(data);
+  };
+
+  const toStorage = (e) => {
+    e.preventDefault();
+    data.map((image, index) =>
+      set(ref(db, "KitchenGalleries/" + "Zero/" + index), {
+        img: image.img,
+        tag: image.tag,
+        id: image.id,
+      })
+    );
+  };
   return (
     <div>
       <Box
@@ -21,24 +58,28 @@ export default function KitchenGallery() {
         }}
       >
         <Slide>
-          {kitchenRemodelData.kitchenRemodelData.map((slideImage, index) => (
-            <div className="each-slide" key={index}>
-              <div
-                style={{
-                  backgroundImage: `url(${slideImage.img})`,
-                  height: "39rem",
-                  backgroundSize: "cover",
-                  borderRadius: "5px 5px 0px 0px",
-                }}
-              ></div>
+          {kitchenPhotos.map((subarray) =>
+            subarray.map((image) => (
+              <div className="each-slide" key={image.id}>
+                <div
+                  style={{
+                    backgroundImage: `url(${image.img}})`,
+                    height: "29rem",
+                    backgroundSize: "cover",
+                    borderRadius: "5px 5px 0px 0px",
+                  }}
+                ></div>
 
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                <span>{slideImage.tag}</span>
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <span>{image.tag}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </Slide>
       </Box>
+      <button onClick={todatabase}> click me</button>
+      <button onClick={toStorage}> Send to storage</button>
     </div>
   );
 }

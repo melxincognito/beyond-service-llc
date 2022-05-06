@@ -6,6 +6,7 @@ const theme = createTheme({
       // dark is overall paper background color
       dark: "#fafafa", // white
       main: "#801313", // maroon
+      light: "#d66000", // orange
     },
     secondary: {
       dark: "rgba(233, 154, 93, 0.67)", // transparent orange

@@ -4,7 +4,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"© "}
-      <Link color="inherit" href="www.google.com">
+      <Link color="inherit" href="/login-beyond-service-admin-dashboard">
         Beyond Service
       </Link>{" "}
       {new Date().getFullYear()}

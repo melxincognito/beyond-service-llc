@@ -78,6 +78,7 @@ export default function MobileKitchenGallery() {
             </ImageListItem>
           ))}
         </ImageList>
+
         {clickedImg && (
           <Lightbox
             clickedImg={clickedImg}
