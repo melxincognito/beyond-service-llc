@@ -403,7 +403,7 @@ export default function HomePage() {
             gridTemplateColumns: "1fr",
             gridTemplateRows: "auto auto",
             gap: "3rem",
-            width: "98.9%",
+            width: "99.5%",
           }}
         >
           <Box
