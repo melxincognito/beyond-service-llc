@@ -50,6 +50,7 @@ function CustomerReviewSelectionDesign(props) {
 
 function FirebaseCustomerReviewContent() {
   const [reviews, setReviews] = React.useState([]);
+
   const [clientName, setClientName] = React.useState("");
   const [clientService, setClientService] = React.useState(
     "Click on the photo icons below to read though Beyond Service's customer testimonials"
