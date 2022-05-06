@@ -403,6 +403,7 @@ export default function HomePage() {
             gridTemplateColumns: "1fr",
             gridTemplateRows: "auto auto",
             gap: "3rem",
+            width: "98.9%",
           }}
         >
           <Box
@@ -427,6 +428,7 @@ export default function HomePage() {
             id="cardContainer"
             sx={{
               position: "absolute",
+              margin: 2,
             }}
           >
             <Card
@@ -436,6 +438,7 @@ export default function HomePage() {
                 display: "grid",
                 alignContent: "center",
                 justifyContent: "center",
+
                 textAlign: "center",
                 boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
                 margin: "auto",
