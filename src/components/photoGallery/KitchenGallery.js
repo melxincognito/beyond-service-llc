@@ -78,8 +78,6 @@ export default function KitchenGallery() {
           )}
         </Slide>
       </Box>
-      <button onClick={todatabase}> click me</button>
-      <button onClick={toStorage}> Send to storage</button>
     </div>
   );
 }
