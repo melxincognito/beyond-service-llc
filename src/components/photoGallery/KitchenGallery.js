@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Box } from "@mui/material";
-import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ref, onValue, set } from "firebase/database";
@@ -7,7 +7,7 @@ import { db } from "../../firebase-config";
 import kitchenRemodelData from "../../data/kitchenRemodelData.json";
 
 export default function KitchenGallery() {
-  const [kitchenPhotos, setKitchenPhotos] = React.useState([]);
+  const [kitchenPhotos, setKitchenPhotos] = useState([]);
 
   React.useEffect(() => {
     onValue(ref(db, "KitchenGalleries", +"/Zero"), (snapshot) => {

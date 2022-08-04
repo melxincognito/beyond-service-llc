@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, Typography, Box, Container } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
@@ -32,9 +32,9 @@ export default function HomePage() {
     img: "https://live.staticflickr.com/65535/51995387404_bd22ae445c_z.jpg",
   };
 
-  const [name, setName] = React.useState(John.name);
-  const [review, setReview] = React.useState(John.review);
-  const [custImg, setCustImg] = React.useState(John.img);
+  const [name, setName] = useState(John.name);
+  const [review, setReview] = useState(John.review);
+  const [custImg, setCustImg] = useState(John.img);
 
   const flipReviews = () => {
     if (name === "Stacy") {

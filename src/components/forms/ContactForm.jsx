@@ -1,7 +1,5 @@
-import * as React from "react";
+import React, { useRef, useState, forwardRef } from "react";
 
-// contact form forward imports
-import { useRef } from "react";
 import emailjs from "emailjs-com";
 import { useNavigate } from "react-router-dom";
 // form styling imports MUI
@@ -34,31 +32,20 @@ const servicesOptions = [
   { value: "Electrical", label: "Electrical" },
 ];
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 function formatPhoneNumber(value) {
-  // if input value is falsy eg if the user deletes the input, then just return
   if (!value) return value;
-
-  // clean the input for any non-digit values.
   const phoneNumber = value.replace(/[^\d]/g, "");
-
-  // phoneNumberLength is used to know when to apply our formatting for the phone number
   const phoneNumberLength = phoneNumber.length;
 
-  // we need to return the value with no formatting if its less then four digits
-  // this is to avoid weird behavior that occurs if you  format the area code to early
   if (phoneNumberLength < 4) return phoneNumber;
 
-  // if phoneNumberLength is greater than 4 and less the 7 we start to return
-  // the formatted number
   if (phoneNumberLength < 7) {
     return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
   }
 
-  // finally, if the phoneNumberLength is greater then seven, we add the last
-  // bit of formatting and return it.
   return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
     3,
     6
@@ -66,15 +53,12 @@ function formatPhoneNumber(value) {
 }
 
 export default function ContactForm() {
-  // form functionality variables
+  const [open, setOpen] = useState(false);
 
-  // state to set tthe popup box once form is submitted to open or close
-  const [open, setOpen] = React.useState(false);
-
-  const [serviceInquiry, setServiceInquiry] = React.useState("Construction");
+  const [serviceInquiry, setServiceInquiry] = useState("Construction");
 
   // state for formatting phone number input value
-  const [inputValue, setInputValue] = React.useState("");
+  const [inputValue, setInputValue] = useState("");
 
   const handleServiceChange = (event) => {
     setServiceInquiry(event.target.value);
@@ -91,9 +75,7 @@ export default function ContactForm() {
   };
   // handling phone number input to format the number for better visibility
   const handleInput = (e) => {
-    // this is where we'll call the phoneNumberFormatter function
     const formattedPhoneNumber = formatPhoneNumber(e.target.value);
-    // we'll set the input value using our setInputValue
     setInputValue(formattedPhoneNumber);
   };
 
@@ -105,10 +87,10 @@ export default function ContactForm() {
 
     emailjs
       .sendForm(
-        "service_fa6qhtn",
-        "template_etcs82f",
+        `${process.env.REACT_APP_EMAIL_JS_SERVICE_ID}`,
+        `${process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID}`,
         form.current,
-        "user_wKGjgdwvgNqEiJyejXWHN"
+        `${process.env.REACT_APP_EMAIL_JS_USER_ID}`
       )
       .then((res) => {
         console.log(res);
@@ -116,7 +98,6 @@ export default function ContactForm() {
       .catch((err) => console.log(err));
   };
 
-  // navigate back to homepage after form forwards to email
   let navigate = useNavigate();
   const routeChange = () => {
     let path = `/`;

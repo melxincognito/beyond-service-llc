@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, forwardRef } from "react";
 import {
   Card,
   CardContent,
@@ -27,18 +27,18 @@ const servicesOptions = [
   { value: "Outdoor Addition Service", label: "Outdoor Addition Service" },
   { value: "Other", label: "Other" },
 ];
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function CustomerReviewForm() {
   // states for storing form values and sending to firestore
 
-  const [customerName, setCustomerName] = React.useState("");
-  const [customerEmail, setCustomerEmail] = React.useState("");
-  const [customerReview, setCustomerReview] = React.useState("");
-  const [customerImgUrl, setCustomerImgUrl] = React.useState("");
-  const [serviceReview, setServiceReview] = React.useState("Remodel Service");
+  const [customerName, setCustomerName] = useState("");
+  const [customerEmail, setCustomerEmail] = useState("");
+  const [customerReview, setCustomerReview] = useState("");
+  const [customerImgUrl, setCustomerImgUrl] = useState("");
+  const [serviceReview, setServiceReview] = useState("Remodel Service");
 
   let userId = uuidv4();
 

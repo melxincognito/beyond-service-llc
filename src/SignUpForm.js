@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { auth } from "./firebase-config";
 
 import {
@@ -7,8 +7,8 @@ import {
 } from "firebase/auth";
 
 export default function SignUpForm() {
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const signUpUser = async () => {
     try {

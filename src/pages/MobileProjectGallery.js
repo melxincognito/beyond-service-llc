@@ -7,7 +7,7 @@ import MobileBathroomGallery from "../components/photoGallery/mobileGalleries/Mo
 import MobileKitchenGallery from "../components/photoGallery/mobileGalleries/MobileKitchenGallery";
 import MobileMiscGallery from "../components/photoGallery/mobileGalleries/MobileMiscGallery";
 import MobileAirbnbGallery from "../components/photoGallery/mobileGalleries/MobileAirbnbGallery";
-
+import BottomNavLabel from "../components/navigation/BottomNavLabel";
 export default class MobileProjectGallery extends Component {
   constructor(props) {
     super(props);
@@ -51,6 +51,7 @@ export default class MobileProjectGallery extends Component {
       display: "grid",
       alignContent: "center",
       zIndex: -2,
+      marginBottom: 4,
     };
 
     const buttonsContainerStyles = {
@@ -127,6 +128,7 @@ export default class MobileProjectGallery extends Component {
               </Box>
             </Container>
             <hr size="1" width="100%" color="gray" />
+            <BottomNavLabel />
           </Box>
         </motion.div>
       </AnimatePresence>

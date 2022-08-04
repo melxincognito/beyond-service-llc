@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Card,
@@ -29,9 +29,9 @@ export default function ForgotPasswordPage() {
   };
 
   // popup modal state
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   // email input state
-  const [forgotPasswordEmail, setForgotPasswordEmail] = React.useState("");
+  const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
 
   const openPopupModal = () => {
     setOpen(true);
