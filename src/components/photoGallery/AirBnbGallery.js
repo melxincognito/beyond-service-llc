@@ -1,12 +1,12 @@
+import React, { useState } from "react";
 import { Box } from "@mui/material";
-import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase-config";
 
 export default function AirbnbGallery() {
-  const [photos, setPhotos] = React.useState([]);
+  const [photos, setPhotos] = useState([]);
 
   React.useEffect(() => {
     onValue(ref(db, "AirBnbGalleries", +"/Zero"), (snapshot) => {

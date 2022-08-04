@@ -1,5 +1,4 @@
-// page functionality imports
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 // MUI imports
@@ -23,9 +22,9 @@ import { Twitter, LinkedIn, Instagram } from "@mui/icons-material";
 
 const NavBar = () => {
   // variables for NavBar functionality
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
 
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = useState(1);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -196,7 +195,7 @@ const NavBar = () => {
           >
             Beyond Service LLC
           </Typography>
-          {/* tabs for computer screen size without a collapsed view </p> */}
+          {/* tabs for computer screen size without a collapsed view */}
           <Box sx={tabsContainerStyles}>
             <Tabs
               sx={tabsStyles}
@@ -219,7 +218,7 @@ const NavBar = () => {
               ))}
             </Tabs>
           </Box>
-          {/* social links and contact phone */}
+          {/* social links */}
 
           <Box display="grid" sx={{ flexGrow: 0 }}>
             <Box display="flex">

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import { Box } from "@mui/material";
 import "react-slideshow-image/dist/styles.css";
@@ -6,7 +6,7 @@ import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase-config";
 
 export default function RamadaGallery() {
-  const [ramadaPhotos, setRamadaPhotos] = React.useState([]);
+  const [ramadaPhotos, setRamadaPhotos] = useState([]);
 
   React.useEffect(() => {
     onValue(ref(db, "OutdoorProjectGalleries", +"/Zero"), (snapshot) => {

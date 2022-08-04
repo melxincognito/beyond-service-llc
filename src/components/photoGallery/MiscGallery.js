@@ -1,5 +1,5 @@
+import React, { useState } from "react";
 import { Box } from "@mui/material";
-import * as React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -7,7 +7,7 @@ import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase-config";
 
 export default function MiscGallery() {
-  const [miscPhotos, setMiscPhotos] = React.useState([]);
+  const [miscPhotos, setMiscPhotos] = useState([]);
 
   React.useEffect(() => {
     onValue(ref(db, "MiscGalleries", +"/Zero"), (snapshot) => {

@@ -1,13 +1,12 @@
+import React, { useState } from "react";
 import { Box } from "@mui/material";
-import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-
 import { ref, onValue } from "firebase/database";
 import { db } from "../../firebase-config";
 
 export default function BathroomGallery() {
-  const [bathroomPhotos, setBathroomPhotos] = React.useState([]);
+  const [bathroomPhotos, setBathroomPhotos] = useState([]);
 
   React.useEffect(() => {
     onValue(ref(db, "BathroomGalleries", +"/Zero"), (snapshot) => {
