@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 import CustomerReviewForm from "../components/forms/CustomerReviewForm";
@@ -49,13 +49,13 @@ function CustomerReviewSelectionDesign(props) {
 }
 
 function FirebaseCustomerReviewContent() {
-  const [reviews, setReviews] = React.useState([]);
+  const [reviews, setReviews] = useState([]);
 
-  const [clientName, setClientName] = React.useState("");
-  const [clientService, setClientService] = React.useState(
+  const [clientName, setClientName] = useState("");
+  const [clientService, setClientService] = useState(
     "Click on the photo icons below to read though Beyond Service's customer testimonials"
   );
-  const [clientReview, setClientReview] = React.useState("");
+  const [clientReview, setClientReview] = useState("");
   React.useEffect(() => {
     onValue(ref(db, "LiveReviews/"), (snapshot) => {
       setReviews([]);
