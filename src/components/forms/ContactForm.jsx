@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, forwardRef } from "react";
 
 import emailjs from "emailjs-com";
 import { useNavigate } from "react-router-dom";
@@ -32,14 +32,12 @@ const servicesOptions = [
   { value: "Electrical", label: "Electrical" },
 ];
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 function formatPhoneNumber(value) {
   if (!value) return value;
-
   const phoneNumber = value.replace(/[^\d]/g, "");
-
   const phoneNumberLength = phoneNumber.length;
 
   if (phoneNumberLength < 4) return phoneNumber;
@@ -77,9 +75,7 @@ export default function ContactForm() {
   };
   // handling phone number input to format the number for better visibility
   const handleInput = (e) => {
-    // this is where we'll call the phoneNumberFormatter function
     const formattedPhoneNumber = formatPhoneNumber(e.target.value);
-    // we'll set the input value using our setInputValue
     setInputValue(formattedPhoneNumber);
   };
 
