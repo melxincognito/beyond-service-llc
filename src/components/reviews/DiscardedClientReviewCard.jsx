@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
+import { db } from "../../firebase-config";
+import { set, ref, remove } from "firebase/database";
 import { Box, Button, Paper, Typography, Modal } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { db } from "../../firebase-config";
-import { set, ref, remove } from "firebase/database";
 import "./TestimonialStyles.css";
 
 export default function PendingClientReviewCard(props) {
@@ -34,6 +34,18 @@ export default function PendingClientReviewCard(props) {
   };
 
   // styles variables
+
+  const discardedReviewCardStyles = {
+    display: "grid",
+    justifyContent: "center",
+    justifyItems: "start",
+    width: "100%",
+    backgroundColor: "white",
+    gap: "1rem",
+    padding: "1rem",
+    borderRadius: 2,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+  };
 
   const paperStyles = {
     padding: 1,
@@ -74,19 +86,7 @@ export default function PendingClientReviewCard(props) {
   };
 
   return (
-    <Box
-      sx={{
-        display: "grid",
-        justifyContent: "center",
-        justifyItems: "start",
-        width: "100%",
-        backgroundColor: "white",
-        gap: "1rem",
-        padding: "1rem",
-        borderRadius: 2,
-        boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
-      }}
-    >
+    <Box sx={discardedReviewCardStyles}>
       <div id="reviewNamefield" style={{ display: "flex", gap: "1rem" }}>
         <Paper elevation={3} sx={paperStyles}>
           <Typography>Client Name: </Typography>

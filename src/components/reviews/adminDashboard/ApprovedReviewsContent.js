@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Box, Typography } from "@mui/material";
-import ApprovedClientReviewCard from "../ApprovedClientReviewCard";
+import React, { useState, useEffect } from "react";
 import { db } from "../../../firebase-config";
 import { ref, onValue } from "firebase/database";
+import { Box, Typography } from "@mui/material";
+import ApprovedClientReviewCard from "../ApprovedClientReviewCard";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function ApprovedReviewsContent() {
-  const [approvedReviews, setApprovedReviews] = React.useState([]);
+  const [approvedReviews, setApprovedReviews] = useState([]);
 
   // importing the database to get the approved reviews
-  React.useEffect(() => {
+  useEffect(() => {
     onValue(ref(db, "ApprovedReviews/"), (snapshot) => {
       setApprovedReviews([]);
       const data = snapshot.val();

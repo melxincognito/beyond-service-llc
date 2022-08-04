@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import { Outlet } from "react-router-dom";
 import { auth } from "./firebase-config";
 import { onAuthStateChanged } from "firebase/auth";
 
 const useAuth = () => {
-  const [usario, setUsario] = React.useState(null);
+  const [usario, setUsario] = useState(null);
 
   let user = { loggedIn: false };
 

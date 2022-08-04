@@ -1,14 +1,14 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Typography } from "@mui/material";
 import PendingClientReviewCard from "../PendingClientReviewCard";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../../firebase-config";
 import { AnimatePresence, motion } from "framer-motion";
 export default function PendingReviewsContent() {
-  const [pendingReviews, setPendingReviews] = React.useState([]);
+  const [pendingReviews, setPendingReviews] = useState([]);
 
   // importing the database to get the pending reviews
-  React.useEffect(() => {
+  useEffect(() => {
     onValue(ref(db, "PendingReviews/"), (snapshot) => {
       setPendingReviews([]);
       const data = snapshot.val();

@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Box, Typography } from "@mui/material";
-import DiscardedClientReviewCard from "../DiscardedClientReviewCard";
+import React, { useState, useEffect } from "react";
 import { ref, onValue } from "firebase/database";
 import { db } from "../../../firebase-config";
+import { Box, Typography } from "@mui/material";
+import DiscardedClientReviewCard from "../DiscardedClientReviewCard";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function DiscardedReviewContent() {
-  const [discardedReviews, setDiscardedReviews] = React.useState([]);
+  const [discardedReviews, setDiscardedReviews] = useState([]);
 
   // importing the database to get the discarded reviews
-  React.useEffect(() => {
+  useEffect(() => {
     onValue(ref(db, "DiscardedReviews/"), (snapshot) => {
       setDiscardedReviews([]);
       const data = snapshot.val();

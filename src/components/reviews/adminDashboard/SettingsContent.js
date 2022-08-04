@@ -1,4 +1,6 @@
-import * as React from "react";
+import React, { useState, forwardRef } from "react";
+import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../../firebase-config";
 import {
   Card,
   Typography,
@@ -10,18 +12,16 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
-import { onAuthStateChanged, sendPasswordResetEmail } from "firebase/auth";
 import { AnimatePresence, motion } from "framer-motion";
-import { auth } from "../../../firebase-config";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 export default function SettingsContent() {
-  const [user, setUser] = React.useState({});
+  const [user, setUser] = useState({});
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   // password reset popup modal
   const handleClickOpen = () => {

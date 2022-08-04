@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Box, Typography } from "@mui/material";
-import LiveTestimonialsCard from "../LiveTestimonialsCard";
+import React, { useState, useEffect } from "react";
 import { db } from "../../../firebase-config";
 import { ref, onValue } from "firebase/database";
+import { Box, Typography } from "@mui/material";
+import LiveTestimonialsCard from "../LiveTestimonialsCard";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function LiveTestimonials() {
-  const [liveTestimonials, setLiveTestimonials] = React.useState([]);
+  const [liveTestimonials, setLiveTestimonials] = useState([]);
 
   // importing the database to get the approved reviews
-  React.useEffect(() => {
+  useEffect(() => {
     onValue(ref(db, "LiveReviews/"), (snapshot) => {
       setLiveTestimonials([]);
       const data = snapshot.val();

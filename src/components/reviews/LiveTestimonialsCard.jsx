@@ -1,10 +1,9 @@
-import * as React from "react";
+import React from "react";
+import { set, ref, remove } from "firebase/database";
+import { db } from "../../firebase-config";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
-import { set, ref, remove } from "firebase/database";
-import { db } from "../../firebase-config";
-
 import "./TestimonialStyles.css";
 
 export default function LiveReviewCard(props) {
@@ -45,6 +44,17 @@ export default function LiveReviewCard(props) {
 
   // styles variables
 
+  const liveReviewCardStyles = {
+    display: "grid",
+    justifyContent: "center",
+    justifyItems: "start",
+    width: "100%",
+    backgroundColor: "white",
+    gap: "1rem",
+    padding: "1rem",
+    borderRadius: 2,
+    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
+  };
   const paperStyles = {
     padding: 1,
     display: "flex",
@@ -71,19 +81,7 @@ export default function LiveReviewCard(props) {
   };
 
   return (
-    <Box
-      sx={{
-        display: "grid",
-        justifyContent: "center",
-        justifyItems: "start",
-        width: "100%",
-        backgroundColor: "white",
-        gap: "1rem",
-        padding: "1rem",
-        borderRadius: 2,
-        boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.3)",
-      }}
-    >
+    <Box sx={liveReviewCardStyles}>
       <div id="reviewNamefield" style={{ display: "flex", gap: "1rem" }}>
         <Paper elevation={3} sx={paperStyles}>
           <Typography>Client Name: </Typography>
