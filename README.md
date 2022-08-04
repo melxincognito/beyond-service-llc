@@ -9,6 +9,7 @@
 
 <li>The client side has been created using <b> React.JS</b>,<b>Material-UI</b> and <b>framer-motion</b>  </li>
 <li>The server side has been created using <b>firebase</b> </li>
+
 ---
 
 ## Getting Started
