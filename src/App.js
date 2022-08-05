@@ -31,7 +31,6 @@ export default function App() {
         />
         <Route path="/customerTestimonials" element={<CustomerReviewPage />} />
         <Route path="/contact" element={<ContactPage />} />
-
         <Route
           path="/login-beyond-service-admin-dashboard"
           element={<LoginPage />}
