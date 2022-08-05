@@ -74,3 +74,24 @@ Dependencies List:
 <li>@testing-library/react <i> 12.1.2 </i> </li>
 <li>@testing-library/user-event <i>13.5.0 </i> </li>
 </ul>
+
+---
+
+### Photo Galleries
+
+Mobile Galleries
+
+<ul>
+<li>There are currently five mobile galleries being displayed on the site. The data for each f these galleries is found in the <b>data</b> folder with each JSON file named after its associated gallery. </li>
+<li>The items data isn't being pulled from firebase because it doesn't render correctly when used with the <b>Lightbox</b> component being used for the mobile image gallery. The first photo is displayed correctly but it doesn't switch to the other photos using the toggle controls unless it's being pulled directly from the JSON file in the data folder. </li>
+
+Current Mobile Galleries:
+<ul>
+<li>AirBnb Gallery</li>
+<li>Bathroom Gallery</li>
+<li>Kitchen Gallery</li>
+<li>Ramada Gallery</li>
+<li>Misc Gallery</li>
+</ul>
+
+</ul>
