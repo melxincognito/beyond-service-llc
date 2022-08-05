@@ -1,57 +1,15 @@
-import React, { useState } from "react";
-import { Card, CardContent, Typography, Box, Container } from "@mui/material";
+import React from "react";
+import { Card, CardContent, Typography, Box } from "@mui/material";
 import HeaderImg from "../assets/photos/sunset.jpg";
+import HomePageReviewsCarousel from "../components/reviews/HomePageReviewsCarousel";
 import homepageImgGalleryData from "../data/homepageImageGallery.json";
 import BottomNavLabel from "../components/navigation/BottomNavLabel";
-// testimonies
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+
 // framer motion
 import { motion, AnimatePresence } from "framer-motion";
 import "../App.css";
 
 export default function HomePage() {
-  const John = {
-    name: "John",
-    review:
-      "I love how Jonathan and Juan really took the time to make sure they were making my home look exactly the way I wanted. Everything turned out phenomenal.",
-    img: "https://live.staticflickr.com/65535/51995160128_ef797fb6dd_z.jpg",
-  };
-
-  const Stacy = {
-    name: "Stacy",
-    review:
-      "Jonathan and Juan are amazing! They constructed the PERFECT luxury bathroom for me. I'd recommend them to anyone in the valley!",
-    img: "https://live.staticflickr.com/65535/51995653115_8d5de6ed7f_z.jpg",
-  };
-
-  const Robin = {
-    name: "Robin",
-    review:
-      "My Kitchen remodel turned out amazing! I couldn't be happier with the results, they really went above and beyond to make everything look so great!",
-    img: "https://live.staticflickr.com/65535/51995387404_bd22ae445c_z.jpg",
-  };
-
-  const [name, setName] = useState(John.name);
-  const [review, setReview] = useState(John.review);
-  const [custImg, setCustImg] = useState(John.img);
-
-  const flipReviews = () => {
-    if (name === "Stacy") {
-      setName(John.name);
-      setReview(John.review);
-      setCustImg(John.img);
-    } else if (name === "John") {
-      setName(Robin.name);
-      setReview(Robin.review);
-      setCustImg(Robin.img);
-    } else {
-      setName(Stacy.name);
-      setReview(Stacy.review);
-      setCustImg(Stacy.img);
-    }
-  };
-
   // center card style
   const cardStyles = {
     borderRadius: "5px 25px 5px 25px",
@@ -105,30 +63,6 @@ export default function HomePage() {
     padding: 2,
     backgroundColor: "rgba(255, 255, 255, 0.53)",
     display: { xs: "grid", md: "grid" },
-  };
-
-  const customerReviewContainerStyles = {
-    backgroundColor: "gray",
-    width: "95%",
-    borderRadius: 1.5,
-    display: "flex",
-    justifyContent: "space-around",
-    alignContent: "center",
-    justifyItems: "center",
-    alignItems: "center",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.5)",
-    marginBottom: 10,
-  };
-  const customerReviewCardStyles = {
-    borderRadius: "5px 25px 5px 25px",
-    display: "grid",
-    alignContent: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.4)",
-    margin: "10px auto 10px auto",
-    backgroundColor: "rgba(255, 255, 255, 0.53)",
-    minWidth: "100%",
   };
 
   const horizontalImgGalleryContainerStyles = {
@@ -285,83 +219,12 @@ export default function HomePage() {
             </Box>
             <Box
               sx={{
-                display: { xs: "none", md: "flex" },
-                justifyContent: "center",
+                display: { xs: "none", md: "block" },
+                width: "100%",
+                marginBottom: "3rem",
               }}
             >
-              <Box sx={customerReviewContainerStyles}>
-                {" "}
-                <ArrowBackIosIcon onClick={flipReviews} />
-                <Box>
-                  {" "}
-                  <Card sx={customerReviewCardStyles}>
-                    {" "}
-                    <CardContent>
-                      <Container
-                        sx={{
-                          margin: "5px auto",
-                          minWidth: "100%",
-                        }}
-                      >
-                        {" "}
-                        <img
-                          src={`${custImg}`}
-                          alt={`${name}`}
-                          style={{
-                            width: "115px",
-                            height: "115px",
-                            borderRadius: "50%",
-                            boxShadow: "0 0.25rem 0.75rem rgba(0, 0, 0, 0.6)",
-                          }}
-                        />
-                      </Container>{" "}
-                      <Container sx={{ width: "80%" }}>
-                        <Typography> {name}</Typography>
-                        <Typography variant="caption"> {review}</Typography>
-                      </Container>
-                      <div>
-                        <ul style={{ display: "inline-flex" }}>
-                          <li
-                            style={{
-                              marginRight: 20,
-                            }}
-                          >
-                            {" "}
-                          </li>
-                          <li
-                            style={{
-                              marginRight: 20,
-                            }}
-                          >
-                            {" "}
-                          </li>
-                          <li> </li>
-                        </ul>
-                      </div>{" "}
-                    </CardContent>
-                  </Card>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      color: "white",
-                    }}
-                  >
-                    <Typography variant="subtitle2">
-                      {" "}
-                      Read more customer testimonials{" "}
-                      <a
-                        style={{ textDecoration: "none" }}
-                        href="/customerTestimonials"
-                      >
-                        {" "}
-                        here{" "}
-                      </a>
-                    </Typography>
-                  </Box>
-                </Box>
-                <ArrowForwardIosIcon onClick={flipReviews} />
-              </Box>
+              <HomePageReviewsCarousel />
             </Box>{" "}
           </Box>{" "}
         </Box>
