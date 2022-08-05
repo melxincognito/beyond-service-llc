@@ -227,6 +227,7 @@ const NavBar = () => {
                 fontSize="large"
                 onClick={twitterPageClick}
               />
+
               <FacebookIcon
                 sx={socialLinkStyles}
                 fontSize="large"
